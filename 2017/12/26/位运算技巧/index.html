@@ -236,7 +236,7 @@
 
     
         <meta property="article:published_time" content="Tue Dec 26 2017 18:03:00 GMT+0800">
-        <meta property="article:modified_time" content="Tue Dec 26 2017 18:04:17 GMT+0800">
+        <meta property="article:modified_time" content="Wed Dec 27 2017 21:24:18 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/12/26/位运算技巧/index.html",
     "headline": "位运算技巧",
     "datePublished": "Tue Dec 26 2017 18:03:00 GMT+0800",
-    "dateModified": "Tue Dec 26 2017 18:04:17 GMT+0800",
+    "dateModified": "Wed Dec 27 2017 21:24:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Charles",
@@ -501,157 +501,190 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>我的个人博客：  <a href="http://www.icharles.top/2017/12/15/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91STL-Vector/" target="_blank" rel="noopener">地址</a></p>
-<p><strong>vector(向量)</strong><br>vector类称作向量类，它实现了动态数组，用于元素数量变化的对象数组。像数组一样，vector类也用从0开始的下标表示元素的位置；但和数组不同的是，当vector对象创建后，数组的元素个数会随着vector对象元素个数的增大和缩小而自动变化。<br>用法:</p>
-<pre><code class="c">#include&lt;vector&gt;
-using namespace std;
-vector &lt;int &gt; a
-int b = 5;
-
-a.push_back(b); //该函数下面有详解
-cout&lt;&lt;a[0];        //输出结果为5
+        <p><strong>一.获得int型最大值</strong><br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt() {  
+    return (1&lt;&lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略
+}
 </code></pre>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>动作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>push_back</td>
-<td>在数组的最后添加一个数据</td>
-</tr>
-<tr>
-<td>pop_back</td>
-<td>去掉数组的最后一个数据</td>
-</tr>
-<tr>
-<td>at</td>
-<td>得到编号位置的数据</td>
-</tr>
-<tr>
-<td>begin</td>
-<td>得到数组头的指针</td>
-</tr>
-<tr>
-<td>end</td>
-<td>得到数组的最后一个单元+1的指针</td>
-</tr>
-<tr>
-<td>front</td>
-<td>得到数组头的引用</td>
-</tr>
-<tr>
-<td>back</td>
-<td>得到数组的最后一个单元的引用</td>
-</tr>
-<tr>
-<td>max_size</td>
-<td>得到vector最大可以是多大</td>
-</tr>
-<tr>
-<td>capacity</td>
-<td>当前vector分配的大小</td>
-</tr>
-<tr>
-<td>size</td>
-<td>当前使用数据的大小</td>
-</tr>
-<tr>
-<td>resize</td>
-<td>改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</td>
-</tr>
-<tr>
-<td>reserve</td>
-<td>改变当前vecotr所分配空间的大小</td>
-</tr>
-<tr>
-<td>erase</td>
-<td>删除指针指向的数据项</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>清空当前的vector</td>
-</tr>
-<tr>
-<td>rbegin</td>
-<td>将vector反转后的开始指针返回(其实就是原来的end-1)</td>
-</tr>
-<tr>
-<td>rend</td>
-<td>将vector反转构的结束指针返回(其实就是原来的begin-1)</td>
-</tr>
-<tr>
-<td>empty</td>
-<td>判断vector是否为空</td>
-</tr>
-<tr>
-<td>swap</td>
-<td>与另一个vector交换数据</td>
-</tr>
-</tbody>
-</table>
-<p>详细的函数实现功能 ：<br>其中  vector &lt;int&gt; c  </p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>动作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>c.clear()</td>
-<td>移除容器中所有元素。</td>
-</tr>
-<tr>
-<td>c.empty()</td>
-<td>判断容器是否为空。</td>
-</tr>
-<tr>
-<td>c.erase(pos)</td>
-<td>删除pos位置之后的一个元素</td>
-</tr>
-<tr>
-<td>c.erase(begin,end)</td>
-<td>删除[begin,end)区间的元素</td>
-</tr>
-<tr>
-<td>c.front()</td>
-<td>传回第一个元素</td>
-</tr>
-<tr>
-<td>c.insert(pos,elem)</td>
-<td>在pos位置之后插入一个elem拷贝</td>
-</tr>
-<tr>
-<td>c.pop_back()</td>
-<td>删除最后一个元素</td>
-</tr>
-<tr>
-<td>c.push_back(elem)</td>
-<td>在尾部加入一个元素</td>
-</tr>
-<tr>
-<td>c.resize(num)</td>
-<td>重新设置该容器的大小</td>
-</tr>
-<tr>
-<td>c.size()</td>
-<td>回容器中元素的个数</td>
-</tr>
-<tr>
-<td>c.begin()</td>
-<td>返回指向容器第一个元素的迭代器</td>
-</tr>
-<tr>
-<td>c.end()</td>
-<td>返回指向容器最后一个元素的迭代器</td>
-</tr>
-</tbody>
-</table>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt() {  
+    return -(1&lt;&lt;-1) - 1;    //2147483647  
+}
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt() {  
+    return ~(1&lt;&lt;31);//2147483647  
+}
+</code></pre>
+<p>C语言中不知道int占几个字节时候<br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt(){  
+    return ((unsigned int)-1) &gt;&gt; 1;//2147483647  
+}
+</code></pre>
+<p><strong>二.获得int型最小值</strong><br>复制代码代码如下:</p>
+<pre><code class="c">int getMinInt() {  
+    return 1&lt;&lt;31;    //-2147483648  
+ }
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getMinInt(){  
+    return 1 &lt;&lt; -1;//-2147483648  
+}
+</code></pre>
+<p><strong>三.获得long类型的最大值</strong><br>C语言版<br>代码代码如下:</p>
+<pre><code class="c">long getMaxLong() {  
+    return ((unsigned long)-1) &gt;&gt; 1;    //2147483647  
+}
+</code></pre>
+<p>JAVA版<br>代码代码如下:</p>
+<pre><code class="java">long getMaxLong() {  
+    return ((long)1&lt;&lt;127)-1;    //9223372036854775807  
+}
+</code></pre>
+<p>获得long最小值，和其他类型的最大值，最小值同理.   </p>
+<p><strong>四.乘以2运算</strong><br>代码代码如下:</p>
+<pre><code class="c">int mulTwo(int n) {    //计算n*2   
+    return n&lt;&lt;1;  
+}
+</code></pre>
+<p><strong>五.除以2运算</strong><br>代码代码如下:  </p>
+<pre><code class="c">int divTwo(int n) {    //负奇数的运算不可用  
+    return n&gt;&gt;1;    //除以2  
+}
+</code></pre>
+<p><strong>六.乘以2的m次方</strong><br>代码代码如下:</p>
+<pre><code class="c">int divTwoPower(int n,int m){    //计算n/(2^m)  
+    return n&gt;&gt;m;  
+}
+</code></pre>
+<p><strong>七.除以2的m次方</strong><br>代码代码如下:</p>
+<pre><code class="c">int divTwoPower(int n,int m) {    //计算n/(2^m)  
+    return n&gt;&gt;m;  
+}
+</code></pre>
+<p><strong>八.判断一个数的奇偶性</strong><br>代码代码如下:</p>
+<pre><code class="c">boolean isOddNumber(int n) {  
+    return (n &amp; 1) == 1;  
+}
+</code></pre>
+<p><strong>九.不用临时变量交换两个数</strong><br>C语言版<br>代码代码如下:</p>
+<pre><code class="c">void swap(int *a,int *b) {     
+    (*a)^=(*b)^=(*a)^=(*b);   
+}
+</code></pre>
+<p>通用版（一些语言中得分开写）<br>代码代码如下:</p>
+<pre><code class="c">a ^= b;  
+b ^= a;  
+a ^= b;
+</code></pre>
+<p><strong>十.取绝对值</strong><br>代码代码如下:</p>
+<pre><code class="c">int abs(int n){  
+    return (n ^ (n &gt;&gt; 31)) - (n &gt;&gt; 31);   
+}
+/* n&gt;&gt;31 取得n的符号，若n为正数，n&gt;&gt;31等于0，若n为负数，n&gt;&gt;31等于-1 
+若n为正数 n^0=0,数不变，若n为负数有n^-1 需要计算n和-1的补码，然后进行异或运算， 
+结果n变号并且为n的绝对值减1，再减去-1就是绝对值 */
+</code></pre>
+<p><strong>十一.取两个数的最大值</strong><br>通用版<br>复制代码代码如下:</p>
+<pre><code class="c">int max(int a,int b) {  
+    return b&amp;((a-b)&gt;&gt;31) | a&amp;(~(a-b)&gt;&gt;31);  
+    // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1
+}
+</code></pre>
+<p>C语言版<br>代码代码如下:</p>
+<pre><code class="c">int max(int x,int y) {  
+    return x ^ ((x ^ y) &amp; -(x &lt; y));  
+    /*如果x&lt;y x&lt;y返回1，否则返回0， 与0做与运算结果为0，与-1做与运算结果不变*/  
+}
+</code></pre>
+<p><strong>十二.取两个数的最小值</strong><br>通用版<br>代码代码如下:</p>
+<pre><code class="c">int min(int a,int b) {  
+    return a&amp;((a-b)&gt;&gt;31) | b&amp;(~(a-b)&gt;&gt;31);  
+    // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1 
+}
+</code></pre>
+<p>C语言版<br>代码代码如下:</p>
+<pre><code class="c">int min(int x,int y) {  
+    return y ^ ((x ^ y) &amp; -(x &lt; y));  
+        // 如果x&lt;y x&lt;y返回1，否则返回0， 
+        // 与0做与运算结果为0，与-1做与运算结果不变
+}
+</code></pre>
+<p><strong>十三.判断符号是否相同</strong><br>代码如下:</p>
+<pre><code class="c">boolean isSameSign(int x, int y) {  
+    return (x ^ y) &gt; 0; 
+    // true 表示 x和y有相同的符号， false表示x，y有相反的符号。  
+}
+</code></pre>
+<p><strong>十四.计算2的n次方</strong><br>代码代码如下:</p>
+<pre><code class="c">int getFactorialofTwo(int n) {    //n &gt; 0  
+    return 2&lt;&lt;(n-1);        //2的n次方  
+}
+</code></pre>
+<p><strong>十五.判断一个数是不是2的幂</strong><br>代码代码如下:</p>
+<pre><code class="c">boolean isFactorialofTwo(int n) {  
+    return (n &amp; (n - 1)) == 0;  
+    // 如果是2的幂，n一定是100... n-1就是1111.... 
+    // 所以做与运算结果为0 
+}
+</code></pre>
+<p><strong>十六.对2的n次方取余</strong><br>代码代码如下:</p>
+<pre><code class="c">int quyu(int m,int n) {    //n为2的次方  
+    return m &amp; (n - 1);  
+    // 如果是2的幂，n一定是100... n-1就是1111.... 
+    // 所以做与运算结果保留m在n范围的非0的位
+}
+</code></pre>
+<p><strong>十七.求两个整数的平均值</strong><br>代码代码如下:</p>
+<pre><code class="c">int getAverage(int x, int y) {  
+        return (x+y) &gt;&gt; 1;   
+｝
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getAverage(int x, int y) {  
+        return ((x^y) &gt;&gt; 1) + (x&amp;y);   
+     // (x^y) &gt;&gt; 1得到x，y其中一个为1的位并除以2， 
+     // x&amp;y得到x，y都为1的部分，加一起就是平均数了 
+}
+</code></pre>
+<p>下面是三个最基本对二进制位的操作<br><strong>十八.从低位到高位,取n的第m位</strong><br>代码代码如下:</p>
+<pre><code class="c">int getBit(int n, int m) {  
+    return (n &gt;&gt; (m-1)) &amp; 1;  
+}
+</code></pre>
+<p><strong>十九.从低位到高位.将n的第m位置1</strong><br>代码代码如下:</p>
+<pre><code class="c">int setBitToOne(int n, int m) {  
+    return n | (1&lt;&lt;(m-1));  
+    // 将1左移m-1位找到第m位，得到000...1...000 
+    // n在和这个数做或运算
+}
+</code></pre>
+<p><strong>二十.从低位到高位,将n的第m位置0</strong><br>代码代码如下:</p>
+<pre><code class="c">int setBitToZero(int n, int m) {  
+    return n &amp; ~(1&lt;&lt;(m-1));  
+    // 将1左移m-1位找到第m位，取反后变成111...0...1111 
+    // n再和这个数做与运算 
+}
+</code></pre>
+<p>另附一些对程序效率上没有实质提高的位运算技巧，一些也是位运算的常识（面试也许会遇到）<br>计算n+1<br>代码代码如下:</p>
+<pre><code class="c">-~n
+</code></pre>
+<p>计算n-1<br>代码代码如下:</p>
+<pre><code class="c">~-n
+</code></pre>
+<p>取相反数<br>代码代码如下:</p>
+<pre><code class="c">~n + 1;
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">(n ^ -1) + 1;  
+if(x == a) x = b; if(x == b) x = a;
+</code></pre>
+<p>代码代码如下:</p>
+<pre><code class="c">x = a ^ b ^ x;
+</code></pre>
+<p>sign函数，参数为n，当n&gt;0时候返回1，n&lt;0时返回-1，n=0时返回0<br>复制代码代码如下:</p>
+<pre><code class="c">return !!n - (((unsigned)n&gt;&gt;31)&lt;&lt;1);
+</code></pre>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -693,7 +726,7 @@ cout&lt;&lt;a[0];        //输出结果为5
         appKey: "IRHQ1uiaFwiN5BqtGjm3mP2s",
         placeholder: "ヾﾉ≧∀≦)o  亲爱的小主，有何指教",
         pageSize:'10',
-        avatar:'identicon',
+        avatar:'',
         lang:'zh-cn'
     });
 </script>
@@ -784,7 +817,7 @@ cout&lt;&lt;a[0];        //输出结果为5
                 </li>
             
                 <li>
-                    <a href="mailto:728345629@qq.com?subject=From your blog" target="_blank" title="CSDN">
+                    <a href="http://my.csdn.net/qq_23320955" target="_blank" title="CSDN">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">link</i>
                         
@@ -810,21 +843,6 @@ cout&lt;&lt;a[0];        //输出结果为5
 
     <!-- Archives  -->
     
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">4</span></a>
-            </ul>
-        </li>
-        
-    
 
     <!-- Categories  -->
     
@@ -838,7 +856,7 @@ cout&lt;&lt;a[0];        //输出结果为5
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/MK/">MK<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/STL/">STL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/STL/Vectorr/">Vectorr<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/位运算/">位运算<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/GCD/">GCD<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/MK/">MK<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/STL/">STL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/位运算/">位运算<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -847,21 +865,21 @@ cout&lt;&lt;a[0];        //输出结果为5
     <!-- Pages  -->
     
         <li>
-            <a href="/tags" title="标签云">
-                
-                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
-                
-                标签云
-            </a>
-        </li>
-        
-    
-        <li>
             <a href="/gallery" title="图库">
                 
                     <i class="material-icons sidebar-material-icons">palette</i>
                 
                 图库
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
+                
+                标签云
             </a>
         </li>
         
