@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.icharles.top/"/>
   <updated>2017-12-27T13:20:40.664Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.icharles.top/</id>
   
   <author>
     <name>Charles</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>欧几里得算法</title>
-    <link href="http://yoursite.com/2017/12/27/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/12/27/欧几里得算法/</id>
+    <link href="http://www.icharles.top/2017/12/27/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/"/>
+    <id>http://www.icharles.top/2017/12/27/欧几里得算法/</id>
     <published>2017-12-27T08:29:00.000Z</published>
     <updated>2017-12-27T13:20:40.664Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="我的个人博客：地址"><a href="#我的个人博客：地址" class="headerlink" title="我的个人博客：地址"></a>我的个人博客：<a href="http://www.icharles.top/2017/12/15/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" target="_blank" rel="noopener">地址</a></h3><p><strong>欧几里得算法</strong>计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。</p><h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><ul><li><p>递归</p><pre><code class="c">int Gcd(int a, int b){  if(b == 0)      return a;  return Gcd(b, a % b);}</code></pre></li><li><p>迭代</p><pre><code class="c">int Gcd(int a, int b){  while(b != 0)  {      int r = b;      b = a % b;      a = r;  }  return a;}</code></pre></li></ul><h3 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h3><ul><li><p>介绍<br><strong>扩展欧几里德算法</strong>是用来在已知a, b求解一组p，q使得p<em>a+q</em>b=Gcd(a,b)(根据数论中的相关定理解一定存在，不展开叙述)。扩展欧几里德常用在求解模线性方程及方程组中。</p></li><li><p>算法</p><pre><code class="C">int exGcd(int a, int b, int &amp;x, int &amp;y){  if(b == 0)  {      x = 1;      y = 0;      return a;  }  int r = exGcd(b, a % b, x, y);  int t = x;  x = y;  y = t - a / b * y;  return r;}</code></pre></li><li>理解<br>把这个实现和Gcd的递归实现相比，发现多了下面的x,y赋值过程，这就是扩展欧几里德算法的精髓。 可以这样思考: 对于a’ =b , b’ =a%b 而言，我们求得x, y使得a’ x+b’ y=Gcd(a’, b’) 由于b’ = a % b = a - a / b <em> b 那么可以得到 :<br>a’ x + b’ y = Gcd(a’ , b’)<br>===&gt;<br>bx + (a - a/b </em>b)y = Gcd(a’ , b’) = Gcd(a, b)  //注意到这里的/是C语言中的出发<br>===&gt;<br>ay + b(x- a/b <em>y) = Gcd(a, b)<br>因此对于a和b而言，他们的相对应的p，q分别是 y和(x-a/b</em>y)</li></ul><p><a href="https://my.oschina.net/u/1780798/blog/646739" target="_blank" rel="noopener">推荐文章 ：https://my.oschina.net/u/1780798/blog/646739</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="我的个人博客：地址"><a href="#我的个人博客：地址" class="headerlink" title="我的个人博客：地址"></a>我的个人博客：<a href="http://www.icharles.top/2017/12/15/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">地址</a></h3><p><strong>欧几里得算法</strong>计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。</p><h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><ul><li><p>递归</p><pre><code class="c">int Gcd(int a, int b){  if(b == 0)      return a;  return Gcd(b, a % b);}</code></pre></li><li><p>迭代</p><pre><code class="c">int Gcd(int a, int b){  while(b != 0)  {      int r = b;      b = a % b;      a = r;  }  return a;}</code></pre></li></ul><h3 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h3><ul><li><p>介绍<br><strong>扩展欧几里德算法</strong>是用来在已知a, b求解一组p，q使得p<em>a+q</em>b=Gcd(a,b)(根据数论中的相关定理解一定存在，不展开叙述)。扩展欧几里德常用在求解模线性方程及方程组中。</p></li><li><p>算法</p><pre><code class="C">int exGcd(int a, int b, int &amp;x, int &amp;y){  if(b == 0)  {      x = 1;      y = 0;      return a;  }  int r = exGcd(b, a % b, x, y);  int t = x;  x = y;  y = t - a / b * y;  return r;}</code></pre></li><li>理解<br>把这个实现和Gcd的递归实现相比，发现多了下面的x,y赋值过程，这就是扩展欧几里德算法的精髓。 可以这样思考: 对于a’ =b , b’ =a%b 而言，我们求得x, y使得a’ x+b’ y=Gcd(a’, b’) 由于b’ = a % b = a - a / b <em> b 那么可以得到 :<br>a’ x + b’ y = Gcd(a’ , b’)<br>===&gt;<br>bx + (a - a/b </em>b)y = Gcd(a’ , b’) = Gcd(a, b)  //注意到这里的/是C语言中的出发<br>===&gt;<br>ay + b(x- a/b <em>y) = Gcd(a, b)<br>因此对于a和b而言，他们的相对应的p，q分别是 y和(x-a/b</em>y)</li></ul><p><a href="https://my.oschina.net/u/1780798/blog/646739" target="_blank" rel="noopener">推荐文章 ：https://my.oschina.net/u/1780798/blog/646739</a></p>]]></content>
     
     <summary type="html">
     
@@ -34,42 +34,43 @@
     
     </summary>
     
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://www.icharles.top/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://www.icharles.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>Vector--STL</title>
-    <link href="http://yoursite.com/2017/12/27/Vector-STL/"/>
-    <id>http://yoursite.com/2017/12/27/Vector-STL/</id>
+    <link href="http://www.icharles.top/2017/12/27/Vector-STL/"/>
+    <id>http://www.icharles.top/2017/12/27/Vector-STL/</id>
     <published>2017-12-27T08:27:00.000Z</published>
     <updated>2017-12-27T13:20:28.739Z</updated>
     
-    <content type="html"><![CDATA[<p>我的个人博客：  <a href="http://www.icharles.top/2017/12/15/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91STL-Vector/" target="_blank" rel="noopener">地址</a></p><p><strong>vector(向量)</strong><br>vector类称作向量类，它实现了动态数组，用于元素数量变化的对象数组。像数组一样，vector类也用从0开始的下标表示元素的位置；但和数组不同的是，当vector对象创建后，数组的元素个数会随着vector对象元素个数的增大和缩小而自动变化。<br>用法:</p><pre><code class="c">#include&lt;vector&gt;using namespace std;vector &lt;int &gt; aint b = 5;a.push_back(b); //该函数下面有详解cout&lt;&lt;a[0];        //输出结果为5</code></pre><table><thead><tr><th>函数</th><th>动作</th></tr></thead><tbody><tr><td>push_back</td><td>在数组的最后添加一个数据</td></tr><tr><td>pop_back</td><td>去掉数组的最后一个数据</td></tr><tr><td>at</td><td>得到编号位置的数据</td></tr><tr><td>begin</td><td>得到数组头的指针</td></tr><tr><td>end</td><td>得到数组的最后一个单元+1的指针</td></tr><tr><td>front</td><td>得到数组头的引用</td></tr><tr><td>back</td><td>得到数组的最后一个单元的引用</td></tr><tr><td>max_size</td><td>得到vector最大可以是多大</td></tr><tr><td>capacity</td><td>当前vector分配的大小</td></tr><tr><td>size</td><td>当前使用数据的大小</td></tr><tr><td>resize</td><td>改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</td></tr><tr><td>reserve</td><td>改变当前vecotr所分配空间的大小</td></tr><tr><td>erase</td><td>删除指针指向的数据项</td></tr><tr><td>clear</td><td>清空当前的vector</td></tr><tr><td>rbegin</td><td>将vector反转后的开始指针返回(其实就是原来的end-1)</td></tr><tr><td>rend</td><td>将vector反转构的结束指针返回(其实就是原来的begin-1)</td></tr><tr><td>empty</td><td>判断vector是否为空</td></tr><tr><td>swap</td><td>与另一个vector交换数据</td></tr></tbody></table><p>详细的函数实现功能 ：<br>其中  vector &lt;int&gt; c  </p><table><thead><tr><th>函数</th><th>动作</th></tr></thead><tbody><tr><td>c.clear()</td><td>移除容器中所有元素。</td></tr><tr><td>c.empty()</td><td>判断容器是否为空。</td></tr><tr><td>c.erase(pos)</td><td>删除pos位置之后的一个元素</td></tr><tr><td>c.erase(begin,end)</td><td>删除[begin,end)区间的元素</td></tr><tr><td>c.front()</td><td>传回第一个元素</td></tr><tr><td>c.insert(pos,elem)</td><td>在pos位置之后插入一个elem拷贝</td></tr><tr><td>c.pop_back()</td><td>删除最后一个元素</td></tr><tr><td>c.push_back(elem)</td><td>在尾部加入一个元素</td></tr><tr><td>c.resize(num)</td><td>重新设置该容器的大小</td></tr><tr><td>c.size()</td><td>回容器中元素的个数</td></tr><tr><td>c.begin()</td><td>返回指向容器第一个元素的迭代器</td></tr><tr><td>c.end()</td><td>返回指向容器最后一个元素的迭代器</td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<p>我的个人博客：  <a href="http://www.icharles.top/2017/12/15/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91STL-Vector/">地址</a></p><p><strong>vector(向量)</strong><br>vector类称作向量类，它实现了动态数组，用于元素数量变化的对象数组。像数组一样，vector类也用从0开始的下标表示元素的位置；但和数组不同的是，当vector对象创建后，数组的元素个数会随着vector对象元素个数的增大和缩小而自动变化。<br>用法:</p><pre><code class="c">#include&lt;vector&gt;using namespace std;vector &lt;int &gt; aint b = 5;a.push_back(b); //该函数下面有详解cout&lt;&lt;a[0];        //输出结果为5</code></pre><table><thead><tr><th>函数</th><th>动作</th></tr></thead><tbody><tr><td>push_back</td><td>在数组的最后添加一个数据</td></tr><tr><td>pop_back</td><td>去掉数组的最后一个数据</td></tr><tr><td>at</td><td>得到编号位置的数据</td></tr><tr><td>begin</td><td>得到数组头的指针</td></tr><tr><td>end</td><td>得到数组的最后一个单元+1的指针</td></tr><tr><td>front</td><td>得到数组头的引用</td></tr><tr><td>back</td><td>得到数组的最后一个单元的引用</td></tr><tr><td>max_size</td><td>得到vector最大可以是多大</td></tr><tr><td>capacity</td><td>当前vector分配的大小</td></tr><tr><td>size</td><td>当前使用数据的大小</td></tr><tr><td>resize</td><td>改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</td></tr><tr><td>reserve</td><td>改变当前vecotr所分配空间的大小</td></tr><tr><td>erase</td><td>删除指针指向的数据项</td></tr><tr><td>clear</td><td>清空当前的vector</td></tr><tr><td>rbegin</td><td>将vector反转后的开始指针返回(其实就是原来的end-1)</td></tr><tr><td>rend</td><td>将vector反转构的结束指针返回(其实就是原来的begin-1)</td></tr><tr><td>empty</td><td>判断vector是否为空</td></tr><tr><td>swap</td><td>与另一个vector交换数据</td></tr></tbody></table><p>详细的函数实现功能 ：<br>其中  vector &lt;int&gt; c  </p><table><thead><tr><th>函数</th><th>动作</th></tr></thead><tbody><tr><td>c.clear()</td><td>移除容器中所有元素。</td></tr><tr><td>c.empty()</td><td>判断容器是否为空。</td></tr><tr><td>c.erase(pos)</td><td>删除pos位置之后的一个元素</td></tr><tr><td>c.erase(begin,end)</td><td>删除[begin,end)区间的元素</td></tr><tr><td>c.front()</td><td>传回第一个元素</td></tr><tr><td>c.insert(pos,elem)</td><td>在pos位置之后插入一个elem拷贝</td></tr><tr><td>c.pop_back()</td><td>删除最后一个元素</td></tr><tr><td>c.push_back(elem)</td><td>在尾部加入一个元素</td></tr><tr><td>c.resize(num)</td><td>重新设置该容器的大小</td></tr><tr><td>c.size()</td><td>回容器中元素的个数</td></tr><tr><td>c.begin()</td><td>返回指向容器第一个元素的迭代器</td></tr><tr><td>c.end()</td><td>返回指向容器最后一个元素的迭代器</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;我的个人博客：  &lt;a href=&quot;http://www.icharles.top/2017/12/15/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91STL-Vector/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;地址&lt;/
+        &lt;p&gt;我的个人博客：  &lt;a href=&quot;http://www.icharles.top/2017/12/15/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91STL-Vector/&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;vector(向量)&lt;/s
       
     
     </summary>
     
-      <category term="STL" scheme="http://yoursite.com/categories/STL/"/>
+      <category term="STL" scheme="http://www.icharles.top/categories/STL/"/>
     
     
-      <category term="STL" scheme="http://yoursite.com/tags/STL/"/>
+      <category term="STL" scheme="http://www.icharles.top/tags/STL/"/>
     
   </entry>
   
   <entry>
     <title>位运算技巧</title>
-    <link href="http://yoursite.com/2017/12/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
-    <id>http://yoursite.com/2017/12/26/位运算技巧/</id>
+    <link href="http://www.icharles.top/2017/12/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
+    <id>http://www.icharles.top/2017/12/26/位运算技巧/</id>
     <published>2017-12-26T10:03:00.000Z</published>
     <updated>2017-12-27T13:24:18.970Z</updated>
     
@@ -86,17 +87,17 @@
     
     </summary>
     
-      <category term="位运算" scheme="http://yoursite.com/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="http://www.icharles.top/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
     
-      <category term="ACM" scheme="http://yoursite.com/tags/ACM/"/>
+      <category term="ACM" scheme="http://www.icharles.top/tags/ACM/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/12/25/hello-world/"/>
-    <id>http://yoursite.com/2017/12/25/hello-world/</id>
+    <link href="http://www.icharles.top/2017/12/25/hello-world/"/>
+    <id>http://www.icharles.top/2017/12/25/hello-world/</id>
     <published>2017-12-25T13:52:00.000Z</published>
     <updated>2017-12-26T09:46:11.731Z</updated>
     
@@ -111,10 +112,10 @@
     
     </summary>
     
-      <category term="MK" scheme="http://yoursite.com/categories/MK/"/>
+      <category term="MK" scheme="http://www.icharles.top/categories/MK/"/>
     
     
-      <category term="MarkDown" scheme="http://yoursite.com/tags/MarkDown/"/>
+      <category term="MarkDown" scheme="http://www.icharles.top/tags/MarkDown/"/>
     
   </entry>
   
