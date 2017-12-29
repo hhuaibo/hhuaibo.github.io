@@ -296,10 +296,6 @@
 
     <!-- Custom Head -->
     
-        
-            
-        
-    
 
 </head>
 
@@ -344,7 +340,7 @@
     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
         <!-- Author Avatar -->
         <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
+            <img src="/img/icon-crown.svg" width="32px" height="32px" alt="avatar">
         </div>
         <div>
             <strong>Charles</strong>
@@ -406,6 +402,12 @@
                 <a class="index_share-link" href="/timeline" title="时间轴">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         时间轴
+                    </li>
+                </a>
+            
+                <a class="index_share-link" href="/zuopin" title="作品集">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        作品集
                     </li>
                 </a>
             
@@ -507,7 +509,7 @@
         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
             <!-- Author Avatar -->
             <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Charles's avatar">
+                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
             </div>
             <div>
                 <strong>Charles</strong>
@@ -568,7 +570,7 @@
         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
             <!-- Author Avatar -->
             <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Charles's avatar">
+                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
             </div>
             <div>
                 <strong>Charles</strong>
@@ -629,7 +631,7 @@
         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
             <!-- Author Avatar -->
             <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Charles's avatar">
+                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
             </div>
             <div>
                 <strong>Charles</strong>
@@ -691,7 +693,7 @@ int getMa...
         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
             <!-- Author Avatar -->
             <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Charles's avatar">
+                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
             </div>
             <div>
                 <strong>Charles</strong>
@@ -729,7 +731,7 @@ int getMa...
     var randomNum;
 
     var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
+    for(var i = 0; i < 15; i++) {
         randomNum = Math.floor(Math.random() * 19 + 1);
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
@@ -767,7 +769,7 @@ int getMa...
 
     <!-- Sidebar Avatar -->
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Charles's avatar">
+        <img src="/img/icon-crown.svg" alt="Charles's avatar">
     </div>
 
     <!-- Sidebar Email -->
@@ -857,6 +859,16 @@ int getMa...
                     <i class="material-icons sidebar-material-icons">send</i>
                 
                 时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/zuopin" title="作品集">
+                
+                    <i class="material-icons sidebar-material-icons">dashboard</i>
+                
+                作品集
             </a>
         </li>
         
@@ -1177,11 +1189,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-   <!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151517"></script>
-<!-- UY END -->
 
 
 
