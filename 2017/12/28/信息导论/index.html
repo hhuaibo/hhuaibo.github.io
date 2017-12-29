@@ -685,12 +685,28 @@
                 <!-- Post Comments -->
                 
                     
-    <div id="comment"></div>
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151517"></script>
-<!-- UY END -->
-
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'true' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "TS3OlnXpJxMoAiQVH4FgMNyf-gzGzoHsz",
+        appKey: "IRHQ1uiaFwiN5BqtGjm3mP2s",
+        placeholder: "ヾﾉ≧∀≦)o  亲爱的小主，有何指教",
+        pageSize:'10',
+        avatar:'',
+        lang:'zh-cn'
+    });
+</script>
 
                 
             </div>
@@ -1164,7 +1180,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-   < ! - - c o m m o n . e j s   /fċ��Fh�v�W@x�Nx�R��k*Nċ���|�~��	g��]�vlQqQ�Nx�R��k�Y_(uYeg  J S   �e�NI{- - > 
+   
 
 
 
