@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icharles.top/"/>
-  <updated>2017-12-29T14:41:34.057Z</updated>
+  <updated>2017-12-30T06:50:35.508Z</updated>
   <id>http://www.icharles.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu</title>
+    <link href="http://www.icharles.top/2017/12/30/Ubuntu/"/>
+    <id>http://www.icharles.top/2017/12/30/Ubuntu/</id>
+    <published>2017-12-30T06:12:00.000Z</published>
+    <updated>2017-12-30T06:50:35.508Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Ubuntu安装教程"><a href="#Ubuntu安装教程" class="headerlink" title="Ubuntu安装教程"></a>Ubuntu安装教程</h3><h3 id="Ubuntu-16-04安装步骤："><a href="#Ubuntu-16-04安装步骤：" class="headerlink" title="Ubuntu 16.04安装步骤："></a>Ubuntu 16.04安装步骤：</h3><p>一、U盘安装准备步骤</p><p>(1) <a href="http://cn.ubuntu.com/download/" target="_blank" rel="noopener">官网下载</a> <strong>Ubuntu16.04</strong> 系统ISO镜像<br><img src="http://s271.photo.store.qq.com/psb?/V14X0or92DTMOc/wZpVK6ZSLRiEH3tWy34BSw*l0SoWsJjFWilV*z3YAIo!/b/dA8BAAAAAAAA&amp;bo=bASAAgAAAAARF8o!&amp;rf=viewer_4" alt="Ubuntu"></p><p>(2) 准备U盘一个，4G左右就够了，用于制作安装u盘</p><p>制作安装U盘，推荐使用软件：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">universal-usb-installer</a><br><img src="http://s163.photo.store.qq.com/psb?/V14X0or92DTMOc/KcIOQbUF2nSarubu1UIQGash92ulbqtSxSSw93lXMfo!/b/dKMAAAAAAAAA&amp;bo=wgFfAQAAAAADB78!&amp;rf=viewer_4" alt="universal-usb-installer"><br>将U盘插入电脑  </p><blockquote><p>第一步: 下拉列表选择Ubuntu（当然安装其他发行版时也可以选择相应的title）。<br>第二步: 单击右侧的Browse按钮，选择下载好的.iso格式的系统镜像。<br>第三步: 选择插入的U盘，一般默认的就是。根据要求是否进行格式化，其余按照默认的参数，单击create，等待一会儿后就可以了。结束画面如下：<br><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer2.png" alt=""><br>后续更新。。。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Ubuntu安装教程&quot;&gt;&lt;a href=&quot;#Ubuntu安装教程&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu安装教程&quot;&gt;&lt;/a&gt;Ubuntu安装教程&lt;/h3&gt;&lt;h3 id=&quot;Ubuntu-16-04安装步骤：&quot;&gt;&lt;a href=&quot;#Ubun
+      
+    
+    </summary>
+    
+    
+      <category term="Ubuntu" scheme="http://www.icharles.top/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>俄罗斯方块</title>
