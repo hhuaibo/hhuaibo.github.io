@@ -27,6 +27,8 @@
 
 
 
+        <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
+
 
 
 
@@ -1240,28 +1242,27 @@ bool ifPlayAgain() {
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style='padding:10px;' class="vcomment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick'.split(',').filter(function(item){
-        return GUEST_INFO.indexOf(item) > -1
-    });
-    var notify = 'false' == true;
-    var verify = 'true' == true;
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "TS3OlnXpJxMoAiQVH4FgMNyf-gzGzoHsz",
-        appKey: "IRHQ1uiaFwiN5BqtGjm3mP2s",
-        placeholder: "ヾﾉ≧∀≦)o  亲爱的小主，有何指教",
-        pageSize:'10',
-        avatar:'',
-        lang:'zh-cn'
-    });
-</script>
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjgxMy85Mzc0">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
 
                 
             </div>
