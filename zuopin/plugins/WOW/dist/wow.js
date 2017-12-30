@@ -495,7 +495,7 @@
       viewBottom = viewTop + Math.min(this.element.clientHeight, this.util().innerHeight()) - offset;
       top = this.offsetTop(box);
       bottom = top + box.clientHeight;
-      return top <= viewbottom="" &&="" bottom="">= viewTop;
+      return top <= viewBottom && bottom >= viewTop;
     };
 
     WOW.prototype.util = function() {
@@ -511,4 +511,3 @@
   })();
 
 }).call(this);
-</=>

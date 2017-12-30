@@ -90,7 +90,30 @@
       viewportSize   = viewportSize   || getViewportSize();
       viewportOffset = viewportOffset || getViewportOffset();
 
-      for (; i<elementslength; i++)="" {="" ignore="" elements="" that="" are="" not="" in="" the="" dom="" tree="" if="" (!$.contains(documentelement,="" $elements[i][0]))="" continue;="" }="" var="" $element="$($elements[i])," elementsize="{" height:="" $element.height(),="" width:="" $element.width()="" },="" elementoffset="$element.offset()," inview="$element.data('inview')," visiblepartx,="" visibleparty,="" visiblepartsmerged;="" don't="" ask="" me="" why="" because="" i="" haven't="" figured="" out="" yet:="" viewportoffset="" and="" viewportsize="" sometimes="" suddenly="" null="" firefox="" 5.="" even="" though="" it="" sounds="" weird:="" seems="" execution="" of="" this="" function="" is="" interferred="" by="" onresize="" onscroll="" event="" where="" unset="" (!viewportoffset="" ||="" !viewportsize)="" return;="" (elementoffset.top="" +="" elementsize.height=""> viewportOffset.top &&
+      for (; i<elementsLength; i++) {
+        // Ignore elements that are not in the DOM tree
+        if (!$.contains(documentElement, $elements[i][0])) {
+          continue;
+        }
+
+        var $element      = $($elements[i]),
+            elementSize   = { height: $element.height(), width: $element.width() },
+            elementOffset = $element.offset(),
+            inView        = $element.data('inview'),
+            visiblePartX,
+            visiblePartY,
+            visiblePartsMerged;
+
+        // Don't ask me why because I haven't figured out yet:
+        // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
+        // Even though it sounds weird:
+        // It seems that the execution of this function is interferred by the onresize/onscroll event
+        // where viewportOffset and viewportSize are unset
+        if (!viewportOffset || !viewportSize) {
+          return;
+        }
+
+        if (elementOffset.top + elementSize.height > viewportOffset.top &&
             elementOffset.top < viewportOffset.top + viewportSize.height &&
             elementOffset.left + elementSize.width > viewportOffset.left &&
             elementOffset.left < viewportOffset.left + viewportSize.width) {
@@ -122,4 +145,3 @@
     });
   }
 }));
-</elementslength;>
