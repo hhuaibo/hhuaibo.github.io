@@ -38,7 +38,7 @@ $(document).ready(function () {
         singleItem: true,
         transitionStyle: "fadeUp",
         autoPlay: true,
-        navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+        navigationText: ["<i class="fa fa-angle-left"></i>", "<i class="fa fa-angle-right"></i>"]
 
     });
 

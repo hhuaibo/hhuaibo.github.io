@@ -187,8 +187,8 @@ if (typeof Object.create !== "function") {
 
         wrapItems : function () {
             var base = this;
-            base.$userItems.wrapAll("<div class=\"owl-wrapper\">").wrap("<div class=\"owl-item\"></div>");
-            base.$elem.find(".owl-wrapper").wrap("<div class=\"owl-wrapper-outer\">");
+            base.$userItems.wrapAll("<div class="\"owl-wrapper\"">").wrap("<div class="\"owl-item\""></div>");
+            base.$elem.find(".owl-wrapper").wrap("<div class="\"owl-wrapper-outer\"">");
             base.wrapperOuter = base.$elem.find(".owl-wrapper-outer");
             base.$elem.css("display", "block");
         },
@@ -234,36 +234,7 @@ if (typeof Object.create !== "function") {
                 base.options.itemsCustom.sort(function (a, b) {return a[0] - b[0]; });
 
                 for (i = 0; i < base.options.itemsCustom.length; i += 1) {
-                    if (base.options.itemsCustom[i][0] <= width) {
-                        base.options.items = base.options.itemsCustom[i][1];
-                    }
-                }
-
-            } else {
-
-                if (width <= base.options.itemsDesktop[0] && base.options.itemsDesktop !== false) {
-                    base.options.items = base.options.itemsDesktop[1];
-                }
-
-                if (width <= base.options.itemsDesktopSmall[0] && base.options.itemsDesktopSmall !== false) {
-                    base.options.items = base.options.itemsDesktopSmall[1];
-                }
-
-                if (width <= base.options.itemsTablet[0] && base.options.itemsTablet !== false) {
-                    base.options.items = base.options.itemsTablet[1];
-                }
-
-                if (width <= base.options.itemsTabletSmall[0] && base.options.itemsTabletSmall !== false) {
-                    base.options.items = base.options.itemsTabletSmall[1];
-                }
-
-                if (width <= base.options.itemsMobile[0] && base.options.itemsMobile !== false) {
-                    base.options.items = base.options.itemsMobile[1];
-                }
-            }
-
-            //if number of items is less than declared
-            if (base.options.items > base.itemsAmount && base.options.itemsScaleUp === true) {
+                    if (base.options.itemsCustom[i][0] <= width)="" {="" base.options.items="base.options.itemsCustom[i][1];" }="" else="" if="" (width="" <="base.options.itemsDesktop[0]" &&="" base.options.itemsdesktop="" !="=" false)="" base.options.itemsdesktopsmall="" base.options.itemstablet="" base.options.itemstabletsmall="" base.options.itemsmobile="" number="" of="" items="" is="" less="" than="" declared="" (base.options.items=""> base.itemsAmount && base.options.itemsScaleUp === true) {
                 base.options.items = base.itemsAmount;
             }
         },
@@ -392,7 +363,7 @@ if (typeof Object.create !== "function") {
         buildControls : function () {
             var base = this;
             if (base.options.navigation === true || base.options.pagination === true) {
-                base.owlControls = $("<div class=\"owl-controls\"/>").toggleClass("clickable", !base.browser.isTouch).appendTo(base.$elem);
+                base.owlControls = $("<div class="\"owl-controls\"/">").toggleClass("clickable", !base.browser.isTouch).appendTo(base.$elem);
             }
             if (base.options.pagination === true) {
                 base.buildPagination();
@@ -404,15 +375,15 @@ if (typeof Object.create !== "function") {
 
         buildButtons : function () {
             var base = this,
-                buttonsWrapper = $("<div class=\"owl-buttons\"/>");
+                buttonsWrapper = $("<div class="\"owl-buttons\"/">");
             base.owlControls.append(buttonsWrapper);
 
-            base.buttonPrev = $("<div/>", {
+            base.buttonPrev = $("<div>", {
                 "class" : "owl-prev",
                 "html" : base.options.navigationText[0] || ""
             });
 
-            base.buttonNext = $("<div/>", {
+            base.buttonNext = $("<div>", {
                 "class" : "owl-next",
                 "html" : base.options.navigationText[1] || ""
             });
@@ -438,7 +409,7 @@ if (typeof Object.create !== "function") {
         buildPagination : function () {
             var base = this;
 
-            base.paginationWrapper = $("<div class=\"owl-pagination\"/>");
+            base.paginationWrapper = $("<div class="\"owl-pagination\"/">");
             base.owlControls.append(base.paginationWrapper);
 
             base.paginationWrapper.on("touchend.owlControls mouseup.owlControls", ".owl-page", function (event) {
@@ -473,7 +444,7 @@ if (typeof Object.create !== "function") {
                     if (lastPage === i) {
                         lastItem = base.itemsAmount - base.options.items;
                     }
-                    paginationButton = $("<div/>", {
+                    paginationButton = $("<div>", {
                         "class" : "owl-page"
                     });
                     paginationButtonInner = $("<span></span>", {
@@ -604,369 +575,9 @@ if (typeof Object.create !== "function") {
             }
             if (position >= base.maximumItem) {
                 position = base.maximumItem;
-            } else if (position <= 0) {
-                position = 0;
-            }
-
-            base.currentItem = base.owl.currentItem = position;
-            if (base.options.transitionStyle !== false && drag !== "drag" && base.options.items === 1 && base.browser.support3d === true) {
-                base.swapSpeed(0);
-                if (base.browser.support3d === true) {
-                    base.transition3d(base.positionsInArray[position]);
-                } else {
-                    base.css2slide(base.positionsInArray[position], 1);
-                }
-                base.afterGo();
-                base.singleItemTransition();
-                return false;
-            }
-            goToPixel = base.positionsInArray[position];
-
-            if (base.browser.support3d === true) {
-                base.isCss3Finish = false;
-
-                if (speed === true) {
-                    base.swapSpeed("paginationSpeed");
-                    window.setTimeout(function () {
-                        base.isCss3Finish = true;
-                    }, base.options.paginationSpeed);
-
-                } else if (speed === "rewind") {
-                    base.swapSpeed(base.options.rewindSpeed);
-                    window.setTimeout(function () {
-                        base.isCss3Finish = true;
-                    }, base.options.rewindSpeed);
-
-                } else {
-                    base.swapSpeed("slideSpeed");
-                    window.setTimeout(function () {
-                        base.isCss3Finish = true;
-                    }, base.options.slideSpeed);
-                }
-                base.transition3d(goToPixel);
-            } else {
-                if (speed === true) {
-                    base.css2slide(goToPixel, base.options.paginationSpeed);
-                } else if (speed === "rewind") {
-                    base.css2slide(goToPixel, base.options.rewindSpeed);
-                } else {
-                    base.css2slide(goToPixel, base.options.slideSpeed);
-                }
-            }
-            base.afterGo();
-        },
-
-        jumpTo : function (position) {
-            var base = this;
-            if (typeof base.options.beforeMove === "function") {
-                base.options.beforeMove.apply(this, [base.$elem]);
-            }
-            if (position >= base.maximumItem || position === -1) {
+            } else if (position <= 1="" 0)="" {="" position="0;" }="" base.currentitem="base.owl.currentItem" =="" position;="" if="" (base.options.transitionstyle="" !="=" false="" &&="" drag="" "drag"="" base.options.items="==" base.browser.support3d="==" true)="" base.swapspeed(0);="" (base.browser.support3d="==" base.transition3d(base.positionsinarray[position]);="" else="" base.css2slide(base.positionsinarray[position],="" 1);="" base.aftergo();="" base.singleitemtransition();="" return="" false;="" gotopixel="base.positionsInArray[position];" base.iscss3finish="false;" (speed="==" base.swapspeed("paginationspeed");="" window.settimeout(function="" ()="" },="" base.options.paginationspeed);="" "rewind")="" base.swapspeed(base.options.rewindspeed);="" base.options.rewindspeed);="" base.swapspeed("slidespeed");="" base.options.slidespeed);="" base.transition3d(gotopixel);="" base.css2slide(gotopixel,="" jumpto="" :="" function="" (position)="" var="" base="this;" (typeof="" base.options.beforemove="==" "function")="" base.options.beforemove.apply(this,="" [base.$elem]);="" (position="">= base.maximumItem || position === -1) {
                 position = base.maximumItem;
-            } else if (position <= 0) {
-                position = 0;
-            }
-            base.swapSpeed(0);
-            if (base.browser.support3d === true) {
-                base.transition3d(base.positionsInArray[position]);
-            } else {
-                base.css2slide(base.positionsInArray[position], 1);
-            }
-            base.currentItem = base.owl.currentItem = position;
-            base.afterGo();
-        },
-
-        afterGo : function () {
-            var base = this;
-
-            base.prevArr.push(base.currentItem);
-            base.prevItem = base.owl.prevItem = base.prevArr[base.prevArr.length - 2];
-            base.prevArr.shift(0);
-
-            if (base.prevItem !== base.currentItem) {
-                base.checkPagination();
-                base.checkNavigation();
-                base.eachMoveUpdate();
-
-                if (base.options.autoPlay !== false) {
-                    base.checkAp();
-                }
-            }
-            if (typeof base.options.afterMove === "function" && base.prevItem !== base.currentItem) {
-                base.options.afterMove.apply(this, [base.$elem]);
-            }
-        },
-
-        stop : function () {
-            var base = this;
-            base.apStatus = "stop";
-            window.clearInterval(base.autoPlayInterval);
-        },
-
-        checkAp : function () {
-            var base = this;
-            if (base.apStatus !== "stop") {
-                base.play();
-            }
-        },
-
-        play : function () {
-            var base = this;
-            base.apStatus = "play";
-            if (base.options.autoPlay === false) {
-                return false;
-            }
-            window.clearInterval(base.autoPlayInterval);
-            base.autoPlayInterval = window.setInterval(function () {
-                base.next(true);
-            }, base.options.autoPlay);
-        },
-
-        swapSpeed : function (action) {
-            var base = this;
-            if (action === "slideSpeed") {
-                base.$owlWrapper.css(base.addCssSpeed(base.options.slideSpeed));
-            } else if (action === "paginationSpeed") {
-                base.$owlWrapper.css(base.addCssSpeed(base.options.paginationSpeed));
-            } else if (typeof action !== "string") {
-                base.$owlWrapper.css(base.addCssSpeed(action));
-            }
-        },
-
-        addCssSpeed : function (speed) {
-            return {
-                "-webkit-transition": "all " + speed + "ms ease",
-                "-moz-transition": "all " + speed + "ms ease",
-                "-o-transition": "all " + speed + "ms ease",
-                "transition": "all " + speed + "ms ease"
-            };
-        },
-
-        removeTransition : function () {
-            return {
-                "-webkit-transition": "",
-                "-moz-transition": "",
-                "-o-transition": "",
-                "transition": ""
-            };
-        },
-
-        doTranslate : function (pixels) {
-            return {
-                "-webkit-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "-moz-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "-o-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "-ms-transform": "translate3d(" + pixels + "px, 0px, 0px)",
-                "transform": "translate3d(" + pixels + "px, 0px,0px)"
-            };
-        },
-
-        transition3d : function (value) {
-            var base = this;
-            base.$owlWrapper.css(base.doTranslate(value));
-        },
-
-        css2move : function (value) {
-            var base = this;
-            base.$owlWrapper.css({"left" : value});
-        },
-
-        css2slide : function (value, speed) {
-            var base = this;
-
-            base.isCssFinish = false;
-            base.$owlWrapper.stop(true, true).animate({
-                "left" : value
-            }, {
-                duration : speed || base.options.slideSpeed,
-                complete : function () {
-                    base.isCssFinish = true;
-                }
-            });
-        },
-
-        checkBrowser : function () {
-            var base = this,
-                translate3D = "translate3d(0px, 0px, 0px)",
-                tempElem = document.createElement("div"),
-                regex,
-                asSupport,
-                support3d,
-                isTouch;
-
-            tempElem.style.cssText = "  -moz-transform:" + translate3D +
-                                  "; -ms-transform:"     + translate3D +
-                                  "; -o-transform:"      + translate3D +
-                                  "; -webkit-transform:" + translate3D +
-                                  "; transform:"         + translate3D;
-            regex = /translate3d\(0px, 0px, 0px\)/g;
-            asSupport = tempElem.style.cssText.match(regex);
-            support3d = (asSupport !== null && asSupport.length === 1);
-
-            isTouch = "ontouchstart" in window || window.navigator.msMaxTouchPoints;
-
-            base.browser = {
-                "support3d" : support3d,
-                "isTouch" : isTouch
-            };
-        },
-
-        moveEvents : function () {
-            var base = this;
-            if (base.options.mouseDrag !== false || base.options.touchDrag !== false) {
-                base.gestures();
-                base.disabledEvents();
-            }
-        },
-
-        eventTypes : function () {
-            var base = this,
-                types = ["s", "e", "x"];
-
-            base.ev_types = {};
-
-            if (base.options.mouseDrag === true && base.options.touchDrag === true) {
-                types = [
-                    "touchstart.owl mousedown.owl",
-                    "touchmove.owl mousemove.owl",
-                    "touchend.owl touchcancel.owl mouseup.owl"
-                ];
-            } else if (base.options.mouseDrag === false && base.options.touchDrag === true) {
-                types = [
-                    "touchstart.owl",
-                    "touchmove.owl",
-                    "touchend.owl touchcancel.owl"
-                ];
-            } else if (base.options.mouseDrag === true && base.options.touchDrag === false) {
-                types = [
-                    "mousedown.owl",
-                    "mousemove.owl",
-                    "mouseup.owl"
-                ];
-            }
-
-            base.ev_types.start = types[0];
-            base.ev_types.move = types[1];
-            base.ev_types.end = types[2];
-        },
-
-        disabledEvents :  function () {
-            var base = this;
-            base.$elem.on("dragstart.owl", function (event) { event.preventDefault(); });
-            base.$elem.on("mousedown.disableTextSelect", function (e) {
-                return $(e.target).is('input, textarea, select, option');
-            });
-        },
-
-        gestures : function () {
-            /*jslint unparam: true*/
-            var base = this,
-                locals = {
-                    offsetX : 0,
-                    offsetY : 0,
-                    baseElWidth : 0,
-                    relativePos : 0,
-                    position: null,
-                    minSwipe : null,
-                    maxSwipe: null,
-                    sliding : null,
-                    dargging: null,
-                    targetElement : null
-                };
-
-            base.isCssFinish = true;
-
-            function getTouches(event) {
-                if (event.touches !== undefined) {
-                    return {
-                        x : event.touches[0].pageX,
-                        y : event.touches[0].pageY
-                    };
-                }
-
-                if (event.touches === undefined) {
-                    if (event.pageX !== undefined) {
-                        return {
-                            x : event.pageX,
-                            y : event.pageY
-                        };
-                    }
-                    if (event.pageX === undefined) {
-                        return {
-                            x : event.clientX,
-                            y : event.clientY
-                        };
-                    }
-                }
-            }
-
-            function swapEvents(type) {
-                if (type === "on") {
-                    $(document).on(base.ev_types.move, dragMove);
-                    $(document).on(base.ev_types.end, dragEnd);
-                } else if (type === "off") {
-                    $(document).off(base.ev_types.move);
-                    $(document).off(base.ev_types.end);
-                }
-            }
-
-            function dragStart(event) {
-                var ev = event.originalEvent || event || window.event,
-                    position;
-
-                if (ev.which === 3) {
-                    return false;
-                }
-                if (base.itemsAmount <= base.options.items) {
-                    return;
-                }
-                if (base.isCssFinish === false && !base.options.dragBeforeAnimFinish) {
-                    return false;
-                }
-                if (base.isCss3Finish === false && !base.options.dragBeforeAnimFinish) {
-                    return false;
-                }
-
-                if (base.options.autoPlay !== false) {
-                    window.clearInterval(base.autoPlayInterval);
-                }
-
-                if (base.browser.isTouch !== true && !base.$owlWrapper.hasClass("grabbing")) {
-                    base.$owlWrapper.addClass("grabbing");
-                }
-
-                base.newPosX = 0;
-                base.newRelativeX = 0;
-
-                $(this).css(base.removeTransition());
-
-                position = $(this).position();
-                locals.relativePos = position.left;
-
-                locals.offsetX = getTouches(ev).x - position.left;
-                locals.offsetY = getTouches(ev).y - position.top;
-
-                swapEvents("on");
-
-                locals.sliding = false;
-                locals.targetElement = ev.target || ev.srcElement;
-            }
-
-            function dragMove(event) {
-                var ev = event.originalEvent || event || window.event,
-                    minSwipe,
-                    maxSwipe;
-
-                base.newPosX = getTouches(ev).x - locals.offsetX;
-                base.newPosY = getTouches(ev).y - locals.offsetY;
-                base.newRelativeX = base.newPosX - locals.relativePos;
-
-                if (typeof base.options.startDragging === "function" && locals.dragging !== true && base.newRelativeX !== 0) {
-                    locals.dragging = true;
-                    base.options.startDragging.apply(base, [base.$elem]);
-                }
-
-                if ((base.newRelativeX > 8 || base.newRelativeX < -8) && (base.browser.isTouch === true)) {
+            } else if (position <= 0)="" {="" position="0;" }="" base.swapspeed(0);="" if="" (base.browser.support3d="==" true)="" base.transition3d(base.positionsinarray[position]);="" else="" base.css2slide(base.positionsinarray[position],="" 1);="" base.currentitem="base.owl.currentItem" =="" position;="" base.aftergo();="" },="" aftergo="" :="" function="" ()="" var="" base="this;" base.prevarr.push(base.currentitem);="" base.previtem="base.owl.prevItem" base.prevarr[base.prevarr.length="" -="" 2];="" base.prevarr.shift(0);="" (base.previtem="" !="=" base.currentitem)="" base.checkpagination();="" base.checknavigation();="" base.eachmoveupdate();="" (base.options.autoplay="" false)="" base.checkap();="" (typeof="" base.options.aftermove="==" "function"="" &&="" base.options.aftermove.apply(this,="" [base.$elem]);="" stop="" base.apstatus="stop" ;="" window.clearinterval(base.autoplayinterval);="" checkap="" (base.apstatus="" "stop")="" base.play();="" play="" return="" false;="" base.autoplayinterval="window.setInterval(function" base.next(true);="" base.options.autoplay);="" swapspeed="" (action)="" (action="==" "slidespeed")="" base.$owlwrapper.css(base.addcssspeed(base.options.slidespeed));="" "paginationspeed")="" base.$owlwrapper.css(base.addcssspeed(base.options.paginationspeed));="" action="" "string")="" base.$owlwrapper.css(base.addcssspeed(action));="" addcssspeed="" (speed)="" "-webkit-transition":="" "all="" "="" +="" speed="" "ms="" ease",="" "-moz-transition":="" "-o-transition":="" "transition":="" ease"="" };="" removetransition="" "",="" ""="" dotranslate="" (pixels)="" "-webkit-transform":="" "translate3d("="" pixels="" "px,="" 0px,="" 0px)",="" "-moz-transform":="" "-o-transform":="" "-ms-transform":="" "transform":="" 0px,0px)"="" transition3d="" (value)="" base.$owlwrapper.css(base.dotranslate(value));="" css2move="" base.$owlwrapper.css({"left"="" value});="" css2slide="" (value,="" speed)="" base.iscssfinish="false;" base.$owlwrapper.stop(true,="" true).animate({="" "left"="" value="" duration="" ||="" base.options.slidespeed,="" complete="" });="" checkbrowser="" translate3d="translate3d(0px, 0px, 0px)" ,="" tempelem="document.createElement("div")," regex,="" assupport,="" support3d,="" istouch;="" tempelem.style.csstext="  -moz-transform:" ";="" -ms-transform:"="" -o-transform:"="" -webkit-transform:"="" transform:"="" translate3d;="" regex="/translate3d\(0px," 0px\)="" g;="" assupport="tempElem.style.cssText.match(regex);" support3d="(asSupport" null="" assupport.length="==" istouch="ontouchstart" in="" window="" window.navigator.msmaxtouchpoints;="" base.browser="{" "support3d"="" "istouch"="" moveevents="" (base.options.mousedrag="" false="" base.options.touchdrag="" base.gestures();="" base.disabledevents();="" eventtypes="" types="["s"," "e",="" "x"];="" base.ev_types="{};" true="" "touchstart.owl="" mousedown.owl",="" "touchmove.owl="" mousemove.owl",="" "touchend.owl="" touchcancel.owl="" mouseup.owl"="" ];="" "touchstart.owl",="" "touchmove.owl",="" touchcancel.owl"="" "mousedown.owl",="" "mousemove.owl",="" "mouseup.owl"="" base.ev_types.start="types[0];" base.ev_types.move="types[1];" base.ev_types.end="types[2];" disabledevents="" base.$elem.on("dragstart.owl",="" (event)="" event.preventdefault();="" base.$elem.on("mousedown.disabletextselect",="" (e)="" $(e.target).is('input,="" textarea,="" select,="" option');="" gestures="" *jslint="" unparam:="" true*="" locals="{" offsetx="" 0,="" offsety="" baseelwidth="" relativepos="" position:="" null,="" minswipe="" maxswipe:="" sliding="" dargging:="" targetelement="" gettouches(event)="" (event.touches="" undefined)="" x="" event.touches[0].pagex,="" y="" event.touches[0].pagey="" (event.pagex="" event.pagex,="" event.pagey="" event.clientx,="" event.clienty="" swapevents(type)="" (type="==" "on")="" $(document).on(base.ev_types.move,="" dragmove);="" $(document).on(base.ev_types.end,="" dragend);="" "off")="" $(document).off(base.ev_types.move);="" $(document).off(base.ev_types.end);="" dragstart(event)="" ev="event.originalEvent" event="" window.event,="" (ev.which="==" 3)="" (base.itemsamount="" <="base.options.items)" return;="" (base.iscssfinish="==" !base.options.dragbeforeanimfinish)="" (base.iscss3finish="==" (base.browser.istouch="" !base.$owlwrapper.hasclass("grabbing"))="" base.$owlwrapper.addclass("grabbing");="" base.newposx="0;" base.newrelativex="0;" $(this).css(base.removetransition());="" locals.relativepos="position.left;" locals.offsetx="getTouches(ev).x" position.left;="" locals.offsety="getTouches(ev).y" position.top;="" swapevents("on");="" locals.sliding="false;" locals.targetelement="ev.target" ev.srcelement;="" dragmove(event)="" minswipe,="" maxswipe;="" locals.offsetx;="" base.newposy="getTouches(ev).y" locals.offsety;="" locals.relativepos;="" base.options.startdragging="==" locals.dragging="" base.options.startdragging.apply(base,="" ((base.newrelativex=""> 8 || base.newRelativeX < -8) && (base.browser.isTouch === true)) {
                     if (ev.preventDefault !== undefined) {
                         ev.preventDefault();
                     } else {
@@ -1197,218 +808,7 @@ if (typeof Object.create !== "function") {
                 iterations += 1;
                 if (base.completeImg($lazyImg.get(0)) || isBackgroundImg === true) {
                     showImage();
-                } else if (iterations <= 100) {//if image loads in less than 10 seconds 
-                    window.setTimeout(checkLazyImage, 100);
-                } else {
-                    showImage();
-                }
-            }
-
-            checkLazyImage();
-        },
-
-        autoHeight : function () {
-            var base = this,
-                $currentimg = $(base.$owlItems[base.currentItem]).find("img"),
-                iterations;
-
-            function addHeight() {
-                var $currentItem = $(base.$owlItems[base.currentItem]).height();
-                base.wrapperOuter.css("height", $currentItem + "px");
-                if (!base.wrapperOuter.hasClass("autoHeight")) {
-                    window.setTimeout(function () {
-                        base.wrapperOuter.addClass("autoHeight");
-                    }, 0);
-                }
-            }
-
-            function checkImage() {
-                iterations += 1;
-                if (base.completeImg($currentimg.get(0))) {
-                    addHeight();
-                } else if (iterations <= 100) { //if image loads in less than 10 seconds 
-                    window.setTimeout(checkImage, 100);
-                } else {
-                    base.wrapperOuter.css("height", ""); //Else remove height attribute
-                }
-            }
-
-            if ($currentimg.get(0) !== undefined) {
-                iterations = 0;
-                checkImage();
-            } else {
-                addHeight();
-            }
-        },
-
-        completeImg : function (img) {
-            var naturalWidthType;
-
-            if (!img.complete) {
-                return false;
-            }
-            naturalWidthType = typeof img.naturalWidth;
-            if (naturalWidthType !== "undefined" && img.naturalWidth === 0) {
-                return false;
-            }
-            return true;
-        },
-
-        onVisibleItems : function () {
-            var base = this,
-                i;
-
-            if (base.options.addClassActive === true) {
-                base.$owlItems.removeClass("active");
-            }
-            base.visibleItems = [];
-            for (i = base.currentItem; i < base.currentItem + base.options.items; i += 1) {
-                base.visibleItems.push(i);
-
-                if (base.options.addClassActive === true) {
-                    $(base.$owlItems[i]).addClass("active");
-                }
-            }
-            base.owl.visibleItems = base.visibleItems;
-        },
-
-        transitionTypes : function (className) {
-            var base = this;
-            //Currently available: "fade", "backSlide", "goDown", "fadeUp"
-            base.outClass = "owl-" + className + "-out";
-            base.inClass = "owl-" + className + "-in";
-        },
-
-        singleItemTransition : function () {
-            var base = this,
-                outClass = base.outClass,
-                inClass = base.inClass,
-                $currentItem = base.$owlItems.eq(base.currentItem),
-                $prevItem = base.$owlItems.eq(base.prevItem),
-                prevPos = Math.abs(base.positionsInArray[base.currentItem]) + base.positionsInArray[base.prevItem],
-                origin = Math.abs(base.positionsInArray[base.currentItem]) + base.itemWidth / 2,
-                animEnd = 'webkitAnimationEnd oAnimationEnd MSAnimationEnd animationend';
-
-            base.isTransition = true;
-
-            base.$owlWrapper
-                .addClass('owl-origin')
-                .css({
-                    "-webkit-transform-origin" : origin + "px",
-                    "-moz-perspective-origin" : origin + "px",
-                    "perspective-origin" : origin + "px"
-                });
-            function transStyles(prevPos) {
-                return {
-                    "position" : "relative",
-                    "left" : prevPos + "px"
-                };
-            }
-
-            $prevItem
-                .css(transStyles(prevPos, 10))
-                .addClass(outClass)
-                .on(animEnd, function () {
-                    base.endPrev = true;
-                    $prevItem.off(animEnd);
-                    base.clearTransStyle($prevItem, outClass);
-                });
-
-            $currentItem
-                .addClass(inClass)
-                .on(animEnd, function () {
-                    base.endCurrent = true;
-                    $currentItem.off(animEnd);
-                    base.clearTransStyle($currentItem, inClass);
-                });
-        },
-
-        clearTransStyle : function (item, classToRemove) {
-            var base = this;
-            item.css({
-                "position" : "",
-                "left" : ""
-            }).removeClass(classToRemove);
-
-            if (base.endPrev && base.endCurrent) {
-                base.$owlWrapper.removeClass('owl-origin');
-                base.endPrev = false;
-                base.endCurrent = false;
-                base.isTransition = false;
-            }
-        },
-
-        owlStatus : function () {
-            var base = this;
-            base.owl = {
-                "userOptions"   : base.userOptions,
-                "baseElement"   : base.$elem,
-                "userItems"     : base.$userItems,
-                "owlItems"      : base.$owlItems,
-                "currentItem"   : base.currentItem,
-                "prevItem"      : base.prevItem,
-                "visibleItems"  : base.visibleItems,
-                "isTouch"       : base.browser.isTouch,
-                "browser"       : base.browser,
-                "dragDirection" : base.dragDirection
-            };
-        },
-
-        clearEvents : function () {
-            var base = this;
-            base.$elem.off(".owl owl mousedown.disableTextSelect");
-            $(document).off(".owl owl");
-            $(window).off("resize", base.resizer);
-        },
-
-        unWrap : function () {
-            var base = this;
-            if (base.$elem.children().length !== 0) {
-                base.$owlWrapper.unwrap();
-                base.$userItems.unwrap().unwrap();
-                if (base.owlControls) {
-                    base.owlControls.remove();
-                }
-            }
-            base.clearEvents();
-            base.$elem
-                .attr("style", base.$elem.data("owl-originalStyles") || "")
-                .attr("class", base.$elem.data("owl-originalClasses"));
-        },
-
-        destroy : function () {
-            var base = this;
-            base.stop();
-            window.clearInterval(base.checkVisible);
-            base.unWrap();
-            base.$elem.removeData();
-        },
-
-        reinit : function (newOptions) {
-            var base = this,
-                options = $.extend({}, base.userOptions, newOptions);
-            base.unWrap();
-            base.init(options, base.$elem);
-        },
-
-        addItem : function (htmlString, targetPosition) {
-            var base = this,
-                position;
-
-            if (!htmlString) {return false; }
-
-            if (base.$elem.children().length === 0) {
-                base.$elem.append(htmlString);
-                base.setVars();
-                return false;
-            }
-            base.unWrap();
-            if (targetPosition === undefined || targetPosition === -1) {
-                position = -1;
-            } else {
-                position = targetPosition;
-            }
-            if (position >= base.$userItems.length || position === -1) {
+                } else if (iterations <= 10="" 100)="" {="" if="" image="" loads="" in="" less="" than="" seconds="" window.settimeout(checklazyimage,="" 100);="" }="" else="" showimage();="" checklazyimage();="" },="" autoheight="" :="" function="" ()="" var="" base="this," $currentimg="$(base.$owlItems[base.currentItem]).find("img")," iterations;="" addheight()="" $currentitem="$(base.$owlItems[base.currentItem]).height();" base.wrapperouter.css("height",="" +="" "px");="" (!base.wrapperouter.hasclass("autoheight"))="" window.settimeout(function="" base.wrapperouter.addclass("autoheight");="" 0);="" checkimage()="" iterations="" (base.completeimg($currentimg.get(0)))="" addheight();="" (iterations="" <="100)" window.settimeout(checkimage,="" "");="" remove="" height="" attribute="" ($currentimg.get(0)="" !="=" undefined)="" checkimage();="" completeimg="" (img)="" naturalwidthtype;="" (!img.complete)="" return="" false;="" naturalwidthtype="typeof" img.naturalwidth;="" (naturalwidthtype="" "undefined"="" &&="" img.naturalwidth="==" 0)="" true;="" onvisibleitems="" i;="" (base.options.addclassactive="==" true)="" base.$owlitems.removeclass("active");="" base.visibleitems="[];" for="" (i="base.currentItem;" i="" base.currentitem="" base.options.items;="" base.visibleitems.push(i);="" $(base.$owlitems[i]).addclass("active");="" base.owl.visibleitems="base.visibleItems;" transitiontypes="" (classname)="" currently="" available:="" "fade",="" "backslide",="" "godown",="" "fadeup"="" base.outclass="owl-" classname="" "-out";="" base.inclass="owl-" "-in";="" singleitemtransition="" outclass="base.outClass," inclass="base.inClass," $previtem="base.$owlItems.eq(base.prevItem)," prevpos="Math.abs(base.positionsInArray[base.currentItem])" base.positionsinarray[base.previtem],="" origin="Math.abs(base.positionsInArray[base.currentItem])" base.itemwidth="" 2,="" animend="webkitAnimationEnd oAnimationEnd MSAnimationEnd animationend" ;="" base.istransition="true;" base.$owlwrapper="" .addclass('owl-origin')="" .css({="" "-webkit-transform-origin"="" "px",="" "-moz-perspective-origin"="" "perspective-origin"="" "px"="" });="" transstyles(prevpos)="" "position"="" "relative",="" "left"="" };="" .css(transstyles(prevpos,="" 10))="" .addclass(outclass)="" .on(animend,="" base.endprev="true;" $previtem.off(animend);="" base.cleartransstyle($previtem,="" outclass);="" .addclass(inclass)="" base.endcurrent="true;" $currentitem.off(animend);="" base.cleartransstyle($currentitem,="" inclass);="" cleartransstyle="" (item,="" classtoremove)="" item.css({="" "",="" ""="" }).removeclass(classtoremove);="" (base.endprev="" base.endcurrent)="" base.$owlwrapper.removeclass('owl-origin');="" owlstatus="" base.owl="{" "useroptions"="" base.useroptions,="" "baseelement"="" base.$elem,="" "useritems"="" base.$useritems,="" "owlitems"="" base.$owlitems,="" "currentitem"="" base.currentitem,="" "previtem"="" base.previtem,="" "visibleitems"="" base.visibleitems,="" "istouch"="" base.browser.istouch,="" "browser"="" base.browser,="" "dragdirection"="" base.dragdirection="" clearevents="" base.$elem.off(".owl="" owl="" mousedown.disabletextselect");="" $(document).off(".owl="" owl");="" $(window).off("resize",="" base.resizer);="" unwrap="" (base.$elem.children().length="" base.$owlwrapper.unwrap();="" base.$useritems.unwrap().unwrap();="" (base.owlcontrols)="" base.owlcontrols.remove();="" base.clearevents();="" base.$elem="" .attr("style",="" base.$elem.data("owl-originalstyles")="" ||="" "")="" .attr("class",="" base.$elem.data("owl-originalclasses"));="" destroy="" base.stop();="" window.clearinterval(base.checkvisible);="" base.unwrap();="" base.$elem.removedata();="" reinit="" (newoptions)="" options="$.extend({}," newoptions);="" base.init(options,="" base.$elem);="" additem="" (htmlstring,="" targetposition)="" position;="" (!htmlstring)="" {return="" base.$elem.append(htmlstring);="" base.setvars();="" (targetposition="==" undefined="" targetposition="==" -1)="" position="-1;" (position="">= base.$userItems.length || position === -1) {
                 base.$userItems.eq(-1).after(htmlString);
             } else {
                 base.$userItems.eq(position).before(htmlString);
@@ -1509,4 +909,4 @@ if (typeof Object.create !== "function") {
         startDragging : false,
         afterLazyLoad: false
     };
-}(jQuery, window, document));
+}(jQuery, window, document));</=></=></=></div></div></div></div></div></div></=></div></div>
