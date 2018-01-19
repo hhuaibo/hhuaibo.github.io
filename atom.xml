@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icharles.top/"/>
-  <updated>2018-01-16T10:12:38.192Z</updated>
+  <updated>2018-01-19T13:34:00.187Z</updated>
   <id>http://www.icharles.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>KMP</title>
+    <link href="http://www.icharles.top/2018/01/19/KMP/"/>
+    <id>http://www.icharles.top/2018/01/19/KMP/</id>
+    <published>2018-01-19T13:31:00.000Z</published>
+    <updated>2018-01-19T13:34:00.187Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="利用Next数组来求连续字符串的个数"><a href="#利用Next数组来求连续字符串的个数" class="headerlink" title="利用Next数组来求连续字符串的个数"></a>利用Next数组来求连续字符串的个数</h1><h3 id="题目地址：Power-Strings"><a href="#题目地址：Power-Strings" class="headerlink" title="题目地址：Power Strings "></a>题目地址：<a href="https://vjudge.net/problem/POJ-2406" target="_blank" rel="noopener">Power Strings </a></h3><blockquote><p>题目大体意思就是求连续字符串个数<br>由于刚学习完KMP，就想到了利用Next数组来求连续字符串的个数，发现存在以下关系： N = len / (len - next[len])       </p></blockquote><pre><code class="c">#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;cstdio&gt;#include &lt;algorithm&gt;using namespace std;const int maxn = 1E6 + 5;char str[maxn];int nex[maxn], len;void getnext(){    int i = 0, j = -1;    memset(nex, 0, sizeof(nex));    nex[0] = -1;    while(i &lt; len) {        if(j == -1 || str[i] == str[j]) {            nex[++i] = ++j;        }        else {            j = nex[j];        }    }}int main(){    while(scanf(&quot;%s&quot;, str) != EOF) {        if(str[0] ==&#39;.&#39;) break;        len = strlen(str);        getnext();    //例如 aaaaa len = 4, len - nex[len] = 1        if(len % (len - nex[len]) == 0) cout &lt;&lt; len / (len - nex[len]) &lt;&lt; endl;        else cout &lt;&lt; &quot;1&quot; &lt;&lt; endl;    }    return 0;}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;利用Next数组来求连续字符串的个数&quot;&gt;&lt;a href=&quot;#利用Next数组来求连续字符串的个数&quot; class=&quot;headerlink&quot; title=&quot;利用Next数组来求连续字符串的个数&quot;&gt;&lt;/a&gt;利用Next数组来求连续字符串的个数&lt;/h1&gt;&lt;h3 id=&quot;题
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://www.icharles.top/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>谷歌访问助手</title>
