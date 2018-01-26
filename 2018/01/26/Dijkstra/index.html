@@ -45,7 +45,7 @@
     
     <title>
         
-            Vector--STL | 
+            Dijkstra | 
         
         Blog Charles
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="icharles, charles, icharles blog, charles blog,STL">
+    <meta name="keywords" content="icharles, charles, icharles blog, charles blog,Dijkstra">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -212,7 +212,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Blog Charles">
-    <meta name="msapplication-starturl" content="http://www.icharles.top/2017/12/27/Vector-STL/">
+    <meta name="msapplication-starturl" content="http://www.icharles.top/2018/01/26/Dijkstra/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Blog Charles">
@@ -227,16 +227,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.icharles.top/2017/12/27/Vector-STL/">
+    <meta property="og:url" content="http://www.icharles.top/2018/01/26/Dijkstra/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Vector--STL | Blog Charles">
+    <meta property="og:title" content="Dijkstra | Blog Charles">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="STL"> 
+    <meta property="og:article:tag" content="Dijkstra"> 
 
     
-        <meta property="article:published_time" content="Wed Dec 27 2017 16:27:00 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jan 16 2018 18:13:23 GMT+0800">
+        <meta property="article:published_time" content="Fri Jan 26 2018 20:06:00 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jan 26 2018 20:09:02 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,7 +244,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.icharles.top/2017/12/27/Vector-STL/index.html" />
+        <link rel="canonical" href="http://www.icharles.top/2018/01/26/Dijkstra/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -256,10 +256,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://www.icharles.top/2017/12/27/Vector-STL/index.html",
-    "headline": "Vector--STL",
-    "datePublished": "Wed Dec 27 2017 16:27:00 GMT+0800",
-    "dateModified": "Tue Jan 16 2018 18:13:23 GMT+0800",
+    "mainEntityOfPage": "http://www.icharles.top/2018/01/26/Dijkstra/index.html",
+    "headline": "Dijkstra",
+    "datePublished": "Fri Jan 26 2018 20:06:00 GMT+0800",
+    "dateModified": "Fri Jan 26 2018 20:09:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Charles",
@@ -277,7 +277,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",STLicharles, charles, icharles blog, charles blog",
+    "keywords": ",Dijkstraicharles, charles, icharles blog, charles blog",
     "description": "",
 }
 </script>
@@ -354,6 +354,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单源最短路径（1）：Dijkstra-算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">单源最短路径（1）：Dijkstra 算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一：背景展开目录"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一：背景展开目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二：算法过程展开目录"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">二：算法过程展开目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三：完整代码"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">三：完整代码</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -383,7 +392,7 @@
         
     
             <p class="article-headline-p">
-                Vector--STL
+                Dijkstra
             </p>
         </div>
 
@@ -402,7 +411,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Charles</strong>
-        <span>12月 27, 2017</span>
+        <span>1月 26, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -424,7 +433,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://www.icharles.top/2017/12/27/Vector-STL/">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://www.icharles.top/2018/01/26/Dijkstra/">
     
 </ul>
 
@@ -438,7 +447,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/STL/">STL</a>
+        <a class="post_tag-link" href="/tags/Dijkstra/">Dijkstra</a>
     </ul>
     
 
@@ -453,7 +462,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/12/27/Vector-STL/" class="leancloud-views_num" data-flag-title="Vector--STL">
+                <span id="/2018/01/26/Dijkstra/" class="leancloud-views_num" data-flag-title="Dijkstra">
      &nbsp;浏览量
 </span>
 
@@ -465,7 +474,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Vector--STL&url=http://www.icharles.top/2017/12/27/Vector-STL/index.html&pic=http://www.icharles.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Dijkstra&url=http://www.icharles.top/2018/01/26/Dijkstra/index.html&pic=http://www.icharles.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -474,7 +483,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Vector--STL&url=http://www.icharles.top/2017/12/27/Vector-STL/index.html&via=Charles" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Dijkstra&url=http://www.icharles.top/2018/01/26/Dijkstra/index.html&via=Charles" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -483,7 +492,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.icharles.top/2017/12/27/Vector-STL/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.icharles.top/2018/01/26/Dijkstra/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -492,7 +501,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.icharles.top/2017/12/27/Vector-STL/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.icharles.top/2018/01/26/Dijkstra/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -501,7 +510,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.icharles.top/2017/12/27/Vector-STL/index.html&title=Vector--STL" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.icharles.top/2018/01/26/Dijkstra/index.html&title=Dijkstra" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -510,7 +519,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Blog Charles&title=Vector--STL&summary=&pics=http://www.icharles.top/img/favicon.png&url=http://www.icharles.top/2017/12/27/Vector-STL/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Blog Charles&title=Dijkstra&summary=&pics=http://www.icharles.top/img/favicon.png&url=http://www.icharles.top/2018/01/26/Dijkstra/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -529,156 +538,167 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><strong>vector(向量)</strong><br>vector类称作向量类，它实现了动态数组，用于元素数量变化的对象数组。像数组一样，vector类也用从0开始的下标表示元素的位置；但和数组不同的是，当vector对象创建后，数组的元素个数会随着vector对象元素个数的增大和缩小而自动变化。<br>用法:</p>
-<pre><code class="c">#include&lt;vector&gt;
+        <h1 id="单源最短路径（1）：Dijkstra-算法"><a href="#单源最短路径（1）：Dijkstra-算法" class="headerlink" title="单源最短路径（1）：Dijkstra 算法"></a>单源最短路径（1）：Dijkstra 算法</h1><h3 id="一：背景展开目录"><a href="#一：背景展开目录" class="headerlink" title="一：背景展开目录"></a>一：背景展开目录</h3><p>Dijkstra 算法（中文名：迪杰斯特拉算法）是由荷兰计算机科学家 Edsger Wybe Dijkstra 提出。该算法常用于路由算法或者作为其他图算法的一个子模块。举例来说，如果图中的顶点表示城市，而边上的权重表示城市间开车行经的距离，该算法可以用来找到两个城市之间的最短路径。</p>
+<h3 id="二：算法过程展开目录"><a href="#二：算法过程展开目录" class="headerlink" title="二：算法过程展开目录"></a>二：算法过程展开目录</h3><p>我们用一个例子来具体说明迪杰斯特拉算法的流程。<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/1.png" alt=""><br>定义源点为 0， <code>dist[i]</code> 为源点 0 到顶点 i 的最短路径。其过程描述如下：<br>|步骤|dist[1]|dist[2]|dist[3]|dist[4]|已找到的集合|<br>|—-|——-|——-|——-|——-|————|<br>|第 1 步|    8    |1|2|    +∞|    {2}|</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th style="text-align:center">dist[1]</th>
+<th style="text-align:center">dist[2]</th>
+<th style="text-align:center">dist[3]</th>
+<th style="text-align:center">dist[4]</th>
+<th style="text-align:center">已找到的集合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第 1 步</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">+∞</td>
+<td style="text-align:center">{2}</td>
+</tr>
+<tr>
+<td>第 2 步</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">{2, 3}</td>
+</tr>
+<tr>
+<td>第 3 步</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">{2, 3, 4}</td>
+</tr>
+<tr>
+<td>第 4 步</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">{2, 3, 4, 1}</td>
+</tr>
+<tr>
+<td>第 5 步</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">{2, 3, 4, 1}</td>
+</tr>
+</tbody>
+</table>
+<p>第 1 步：从源点 0 开始，找到与其邻接的点：1，2，3，更新dist[]数组，因 0 不与 4 邻接，故dist[4]为正无穷。在dist[]中找到最小值，其顶点为 2，即此时已找到 0 到 2 的最短路。</p>
+<p>第 2 步：从 2 开始，继续更新dist[]数组：2 与 1 不邻接，不更新；2 与 3 邻接，因0→2→3比dist[3]大，故不更新dist[3] ；2 与 4 邻接，因0→2→4比dist[4]小，故更新dist[4]为 4。在dist[]中找到最小值，其顶点为 3，即此时又找到 0 到 3 的最短路。</p>
+<p>第 3 步：从 3 开始，继续更新dist[]数组：3 与 1 邻接，因0→3→1比dist[1]小，更新dist[1]为 5；3 与 4 邻接，因0→3→4比dist[4]大，故不更新。在dist[]中找到最小值，其顶点为 4，即此时又找到 0 到 4 的最短路。</p>
+<p>第 4 步：从 4 开始，继续更新dist[]数组：4 与 1 不邻接，不更新。在dist[]中找到最小值，其顶点为 1，即此时又找到 0 到 1 的最短路。</p>
+<p>第 5 步：所有点都已找到，停止。</p>
+<p>对于上述步骤，你可能存在以下的疑问：<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/2.png" alt=""></p>
+<p>若 A 作为源点，与其邻接的只有 B，C，D 三点，其dist[]最小时顶点为 C，即就可以确定A→C为 A 到 C 的最短路。但是我们存在疑问的是：是否还存在另一条路径使 A 到 C 的距离更小？ 用反证法证明。</p>
+<p>假设存在如上图的红色虚线路径，使A→D→C的距离更小，那么A→D作为A→D→C的子路径，其距离也比A→C小，这与前面所述 “dist[]最小时顶点为 C” 矛盾，故假设不成立。因此这个疑问不存在。</p>
+<p>根据上面的证明，我们可以推断出，<strong>Dijkstra 每次循环都可以确定一个顶点的最短路径，故程序需要循环 n-1 次</strong>。</p>
+<h4 id="三：完整代码"><a href="#三：完整代码" class="headerlink" title="三：完整代码"></a>三：完整代码</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
 using namespace std;
-vector &lt;int &gt; a
-int b = 5;
 
-a.push_back(b); //该函数下面有详解
-cout&lt;&lt;a[0];        //输出结果为5
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>动作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>push_back</td>
-<td>在数组的最后添加一个数据</td>
-</tr>
-<tr>
-<td>pop_back</td>
-<td>去掉数组的最后一个数据</td>
-</tr>
-<tr>
-<td>at</td>
-<td>得到编号位置的数据</td>
-</tr>
-<tr>
-<td>begin</td>
-<td>得到数组头的指针</td>
-</tr>
-<tr>
-<td>end</td>
-<td>得到数组的最后一个单元+1的指针</td>
-</tr>
-<tr>
-<td>front</td>
-<td>得到数组头的引用</td>
-</tr>
-<tr>
-<td>back</td>
-<td>得到数组的最后一个单元的引用</td>
-</tr>
-<tr>
-<td>max_size</td>
-<td>得到vector最大可以是多大</td>
-</tr>
-<tr>
-<td>capacity</td>
-<td>当前vector分配的大小</td>
-</tr>
-<tr>
-<td>size</td>
-<td>当前使用数据的大小</td>
-</tr>
-<tr>
-<td>resize</td>
-<td>改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</td>
-</tr>
-<tr>
-<td>reserve</td>
-<td>改变当前vecotr所分配空间的大小</td>
-</tr>
-<tr>
-<td>erase</td>
-<td>删除指针指向的数据项</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>清空当前的vector</td>
-</tr>
-<tr>
-<td>rbegin</td>
-<td>将vector反转后的开始指针返回(其实就是原来的end-1)</td>
-</tr>
-<tr>
-<td>rend</td>
-<td>将vector反转构的结束指针返回(其实就是原来的begin-1)</td>
-</tr>
-<tr>
-<td>empty</td>
-<td>判断vector是否为空</td>
-</tr>
-<tr>
-<td>swap</td>
-<td>与另一个vector交换数据</td>
-</tr>
-</tbody>
-</table>
-<p>详细的函数实现功能 ：<br>其中  vector &lt;int&gt; c  </p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>动作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>c.clear()</td>
-<td>移除容器中所有元素。</td>
-</tr>
-<tr>
-<td>c.empty()</td>
-<td>判断容器是否为空。</td>
-</tr>
-<tr>
-<td>c.erase(pos)</td>
-<td>删除pos位置之后的一个元素</td>
-</tr>
-<tr>
-<td>c.erase(begin,end)</td>
-<td>删除[begin,end)区间的元素</td>
-</tr>
-<tr>
-<td>c.front()</td>
-<td>传回第一个元素</td>
-</tr>
-<tr>
-<td>c.insert(pos,elem)</td>
-<td>在pos位置之后插入一个elem拷贝</td>
-</tr>
-<tr>
-<td>c.pop_back()</td>
-<td>删除最后一个元素</td>
-</tr>
-<tr>
-<td>c.push_back(elem)</td>
-<td>在尾部加入一个元素</td>
-</tr>
-<tr>
-<td>c.resize(num)</td>
-<td>重新设置该容器的大小</td>
-</tr>
-<tr>
-<td>c.size()</td>
-<td>回容器中元素的个数</td>
-</tr>
-<tr>
-<td>c.begin()</td>
-<td>返回指向容器第一个元素的迭代器</td>
-</tr>
-<tr>
-<td>c.end()</td>
-<td>返回指向容器最后一个元素的迭代器</td>
-</tr>
-</tbody>
-</table>
+int  matrix[100][100]; // 邻接矩阵
+bool visited[100];     // 标记数组
+int  dist[100];        // 源点到顶点i的最短距离
+int  path[100];        // 记录最短路的路径
+int  source;           // 源点
+int  vertex_num;       // 顶点数
+int  edge_num;         // 边数
+
+void Dijkstra(int source)
+{
+    memset(visited, 0, sizeof(visited));  // 初始化标记数组
+    visited[source] = true;
+    for (int i = 0; i &lt; vertex_num; i++)
+    {
+        dist[i] = matrix[source][i];
+        path[i] = source;
+    }
+
+    int min_cost;        // 权值最小
+    int min_cost_index;  // 权值最小的下标
+
+    for (int i = 1; i &lt; vertex_num; i++)  // 找到源点到另外 vertex_num-1 个点的最短路径
+    {
+        min_cost = INT_MAX;
+
+        for (int j = 0; j &lt; vertex_num; j++)
+        {
+            if (visited[j] == false &amp;&amp; dist[j] &lt; min_cost)  // 找到权值最小
+            {
+                min_cost = dist[j];
+                min_cost_index = j;
+            }
+        }
+
+        visited[min_cost_index] = true;  // 该点已找到，进行标记
+
+        for (int j = 0; j &lt; vertex_num; j++)  // 更新 dist 数组
+        {
+            if (visited[j] == false &amp;&amp;
+                matrix[min_cost_index][j] != INT_MAX &amp;&amp;  // 确保两点之间有边
+                matrix[min_cost_index][j] + min_cost &lt; dist[j])
+            {
+                dist[j] = matrix[min_cost_index][j] + min_cost;
+                path[j] = min_cost_index;
+            }
+        }
+    }
+}
+
+int main()
+{
+    cout &lt;&lt; &quot;请输入图的顶点数（&lt;100）：&quot;;
+    cin &gt;&gt; vertex_num;
+    cout &lt;&lt; &quot;请输入图的边数：&quot;;
+    cin &gt;&gt; edge_num;
+
+    for (int i = 0; i &lt; vertex_num; i++)
+        for (int j = 0; j &lt; vertex_num; j++)
+            matrix[i][j] = (i != j) ? INT_MAX : 0;  // 初始化 matrix 数组
+
+    cout &lt;&lt; &quot;请输入边的信息：\n&quot;;
+    int u, v, w;
+    for (int i = 0; i &lt; edge_num; i++)
+    {
+        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+        matrix[u][v] = matrix[v][u] = w;
+    }
+
+    cout &lt;&lt; &quot;请输入源点（&lt;&quot; &lt;&lt; vertex_num &lt;&lt; &quot;）：&quot;;
+    cin &gt;&gt; source;
+    Dijkstra(source);
+
+    for (int i = 0; i &lt; vertex_num; i++)
+    {
+        if (i != source)
+        {
+            cout &lt;&lt; source &lt;&lt; &quot;到&quot; &lt;&lt; i &lt;&lt; &quot;最短距离是：&quot; &lt;&lt; dist[i] &lt;&lt; &quot;，路径是：&quot; &lt;&lt; i;
+            int t = path[i];
+            while (t != source)
+            {
+                cout &lt;&lt; &quot;--&quot; &lt;&lt; t;
+                t = path[t];
+            }
+            cout &lt;&lt; &quot;--&quot; &lt;&lt; source &lt;&lt; endl;
+        }
+    }
+
+    return 0;
+}
+</code></pre><p>输入数据，结果为：</p>
+<p><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/3.png" alt=""></p>
+<p>###本文来源于：<a href="https://www.61mon.com/index.php/archives/194/" target="_blank" rel="noopener">https://www.61mon.com/index.php/archives/194/</a></p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -687,7 +707,7 @@ cout&lt;&lt;a[0];        //输出结果为5
                             作者: <a href="/about/index.html" target="_blank"> Charles</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="http://www.icharles.top/2017/12/27/Vector-STL/">http://www.icharles.top/2017/12/27/Vector-STL/</a>
+                        <strong>本文链接：</strong><a href="http://www.icharles.top/2018/01/26/Dijkstra/">http://www.icharles.top/2018/01/26/Dijkstra/</a>
                     </p>
                     
                 </blockquote>
@@ -735,21 +755,13 @@ cout&lt;&lt;a[0];        //输出结果为5
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/12/27/欧几里得算法/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            上一篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/12/26/位运算技巧/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/19/KMP/" id="post_nav-older" class="next-content">
             下一篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
