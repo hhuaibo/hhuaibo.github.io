@@ -236,7 +236,7 @@
 
     
         <meta property="article:published_time" content="Fri Jan 26 2018 20:06:00 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jan 26 2018 20:09:02 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jan 26 2018 22:12:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
     "mainEntityOfPage": "http://www.icharles.top/2018/01/26/Dijkstra/index.html",
     "headline": "Dijkstra",
     "datePublished": "Fri Jan 26 2018 20:06:00 GMT+0800",
-    "dateModified": "Fri Jan 26 2018 20:09:02 GMT+0800",
+    "dateModified": "Fri Jan 26 2018 22:12:59 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Charles",
@@ -360,7 +360,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单源最短路径（1）：Dijkstra-算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">单源最短路径（1）：Dijkstra 算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一：背景展开目录"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一：背景展开目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二：算法过程展开目录"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">二：算法过程展开目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三：完整代码"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">三：完整代码</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单源最短路径（1）：Dijkstra-算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">单源最短路径（1）：Dijkstra 算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一：背景展开目录"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一：背景展开目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二：算法过程展开目录"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">二：算法过程展开目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三：完整代码"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">三：完整代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#本文来源于：https-www-61mon-com-index-php-archives-194"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">本文来源于：https://www.61mon.com/index.php/archives/194/</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作者：刘毅"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">作者：刘毅</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -539,7 +539,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="单源最短路径（1）：Dijkstra-算法"><a href="#单源最短路径（1）：Dijkstra-算法" class="headerlink" title="单源最短路径（1）：Dijkstra 算法"></a>单源最短路径（1）：Dijkstra 算法</h1><h3 id="一：背景展开目录"><a href="#一：背景展开目录" class="headerlink" title="一：背景展开目录"></a>一：背景展开目录</h3><p>Dijkstra 算法（中文名：迪杰斯特拉算法）是由荷兰计算机科学家 Edsger Wybe Dijkstra 提出。该算法常用于路由算法或者作为其他图算法的一个子模块。举例来说，如果图中的顶点表示城市，而边上的权重表示城市间开车行经的距离，该算法可以用来找到两个城市之间的最短路径。</p>
-<h3 id="二：算法过程展开目录"><a href="#二：算法过程展开目录" class="headerlink" title="二：算法过程展开目录"></a>二：算法过程展开目录</h3><p>我们用一个例子来具体说明迪杰斯特拉算法的流程。<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/1.png" alt=""><br>定义源点为 0， <code>dist[i]</code> 为源点 0 到顶点 i 的最短路径。其过程描述如下：<br>|步骤|dist[1]|dist[2]|dist[3]|dist[4]|已找到的集合|<br>|—-|——-|——-|——-|——-|————|<br>|第 1 步|    8    |1|2|    +∞|    {2}|</p>
+<h3 id="二：算法过程展开目录"><a href="#二：算法过程展开目录" class="headerlink" title="二：算法过程展开目录"></a>二：算法过程展开目录</h3><p>我们用一个例子来具体说明迪杰斯特拉算法的流程。<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/1.png" alt=""><br>定义源点为 0， <code>dist[i]</code> 为源点 0 到顶点 i 的最短路径。其过程描述如下：    </p>
 <table>
 <thead>
 <tr>
@@ -594,14 +594,14 @@
 </tr>
 </tbody>
 </table>
-<p>第 1 步：从源点 0 开始，找到与其邻接的点：1，2，3，更新dist[]数组，因 0 不与 4 邻接，故dist[4]为正无穷。在dist[]中找到最小值，其顶点为 2，即此时已找到 0 到 2 的最短路。</p>
+<p>第 1 步：从源点 0 开始，找到与其邻接的点：1，2，3，更新 <code>dist[]</code> 数组，因 0 不与 4 邻接，故 <code>dist[4]</code> 为正无穷。在 <code>dist[]</code> 中找到最小值，其顶点为 2，即此时已找到 0 到 2 的最短路。</p>
 <p>第 2 步：从 2 开始，继续更新dist[]数组：2 与 1 不邻接，不更新；2 与 3 邻接，因0→2→3比dist[3]大，故不更新dist[3] ；2 与 4 邻接，因0→2→4比dist[4]小，故更新dist[4]为 4。在dist[]中找到最小值，其顶点为 3，即此时又找到 0 到 3 的最短路。</p>
-<p>第 3 步：从 3 开始，继续更新dist[]数组：3 与 1 邻接，因0→3→1比dist[1]小，更新dist[1]为 5；3 与 4 邻接，因0→3→4比dist[4]大，故不更新。在dist[]中找到最小值，其顶点为 4，即此时又找到 0 到 4 的最短路。</p>
-<p>第 4 步：从 4 开始，继续更新dist[]数组：4 与 1 不邻接，不更新。在dist[]中找到最小值，其顶点为 1，即此时又找到 0 到 1 的最短路。</p>
+<p>第 3 步：从 3 开始，继续更新 <code>dist[]</code> 数组：3 与 1 邻接，因0→3→1比 <code>dist[1]</code> 小，更新 <code>dist[1]</code> 为 5；3 与 4 邻接，因0→3→4比 <code>dist[4]</code> 大，故不更新。在 <code>dist[]</code> 中找到最小值，其顶点为 4，即此时又找到 0 到 4 的最短路。</p>
+<p>第 4 步：从 4 开始，继续更新 <code>dist[]</code> 数组：4 与 1 不邻接，不更新。在 <code>dist[]</code> 中找到最小值，其顶点为 1，即此时又找到 0 到 1 的最短路。</p>
 <p>第 5 步：所有点都已找到，停止。</p>
 <p>对于上述步骤，你可能存在以下的疑问：<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/2.png" alt=""></p>
-<p>若 A 作为源点，与其邻接的只有 B，C，D 三点，其dist[]最小时顶点为 C，即就可以确定A→C为 A 到 C 的最短路。但是我们存在疑问的是：是否还存在另一条路径使 A 到 C 的距离更小？ 用反证法证明。</p>
-<p>假设存在如上图的红色虚线路径，使A→D→C的距离更小，那么A→D作为A→D→C的子路径，其距离也比A→C小，这与前面所述 “dist[]最小时顶点为 C” 矛盾，故假设不成立。因此这个疑问不存在。</p>
+<p>若 A 作为源点，与其邻接的只有 B，C，D 三点，其dist[]最小时顶点为 C，即就可以确定A→C为 A 到 C 的最短路。但是我们存在疑问的是：<strong>是否还存在另一条路径使 A 到 C 的距离更小？ 用反证法证明。</strong></p>
+<p>假设存在如上图的红色虚线路径，使 <code>A→D→C</code> 的距离更小，那么 <code>A→D</code> 作为 <code>A→D→C</code> 的子路径，其距离也比 <code>A→C</code> 小，这与前面所述 “ <code>dist[]</code> 最小时顶点为 C” 矛盾，故假设不成立。因此这个疑问不存在。</p>
 <p>根据上面的证明，我们可以推断出，<strong>Dijkstra 每次循环都可以确定一个顶点的最短路径，故程序需要循环 n-1 次</strong>。</p>
 <h4 id="三：完整代码"><a href="#三：完整代码" class="headerlink" title="三：完整代码"></a>三：完整代码</h4><pre><code>#include &lt;iostream&gt;
 #include &lt;cstring&gt;
@@ -698,8 +698,7 @@ int main()
 }
 </code></pre><p>输入数据，结果为：</p>
 <p><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/3.png" alt=""></p>
-<p>###本文来源于：<a href="https://www.61mon.com/index.php/archives/194/" target="_blank" rel="noopener">https://www.61mon.com/index.php/archives/194/</a></p>
-
+<h3 id="本文来源于：https-www-61mon-com-index-php-archives-194"><a href="#本文来源于：https-www-61mon-com-index-php-archives-194" class="headerlink" title="本文来源于：https://www.61mon.com/index.php/archives/194/"></a>本文来源于：<a href="https://www.61mon.com/index.php/archives/194/" target="_blank" rel="noopener">https://www.61mon.com/index.php/archives/194/</a></h3><h3 id="作者：刘毅"><a href="#作者：刘毅" class="headerlink" title="作者：刘毅"></a>作者：刘毅</h3>
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
