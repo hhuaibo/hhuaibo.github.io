@@ -1,1563 +1,2754 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
+<html lang=zh>
+<head>
     <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
     
-    <title>
-        
-        Blog Charles
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" href="/img/favicon.png">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="icharles, charles, icharles blog, charles blog">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
+    <title>Blog Charles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Blog Charles">
+<meta property="og:url" content="http://www.icharles.top/index.html">
+<meta property="og:site_name" content="Blog Charles">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blog Charles">
     
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
-        
-
+    
+        <link rel="alternate" href="/" title="Blog Charles" type="application/atom+xml" />
     
 
     
 
-    <!-- Config CSS -->
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
+    <link rel="stylesheet" href="/css/style.css">
 
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-image: url(/img/bg.png);
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-
-
-    <!-- Import jQuery -->
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
-        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
     
-
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Blog Charles">
-    <meta name="msapplication-starturl" content="http://www.icharles.top/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Blog Charles">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Site Verification -->
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
     
     
 
-    <!-- RSS -->
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.icharles.top/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Blog Charles">
-    <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="http://www.icharles.top" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Organization",
-        "name": "Blog Charles",
-        "logo": "/img/favicon.png"
-    },
-    "url": "http://www.icharles.top",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://www.icharles.top"
-    },
-    "description": ""
-}
-</script>
-
-
-
-
-    
-
-    <!-- Analytics -->
-    
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-111633560-1', 'auto');ga('send', 'pageview');
-</script>
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?c23d075f9a00d1d7d268fa29835eb3c2';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-
-    <!-- Custom Head -->
-    
 
 </head>
 
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog Charles</span>
+            </a>
+            <nav id="main-nav">
                 
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
-        
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/garlly">Garlly</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
             
-                Hi, nice to meet you
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="https://www.gravatar.com/avatar/db0b6d4e635980bf709293e4f1c6015a" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
             
-        
-        </a></p>
-    </div>
+            <div id="search-form-wrap">
 
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/icon-crown.svg" width="32px" height="32px" alt="avatar">
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
-        <div>
-            <strong>Charles</strong>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
         </div>
     </div>
 </div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
 
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-
-
-    <!-- Swiftype -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder" action="">
-            <input class="mdl-textfield__input search-input st-default-search-input" type="text" name="q" id="search">
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-        </form>
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/garlly">Garlly</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
 
+        <div class="outer">
+            
+                
 
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/db0b6d4e635980bf709293e4f1c6015a?s=128" />
+            <h2 id="name">Charles</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Jinan, China</span>
+            <a id="follow" target="_blank" href="https://github.com/hhuaibo/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                8
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/hhuaibo/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
 
+            
+            <section id="main">
+    <article id="post-Dijkstra" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/01/26/Dijkstra/">Dijkstra</a>
+        </h1>
+    
 
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/logo.png" alt="logo" />
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/26/Dijkstra/">
+            <time datetime="2018-01-26T12:06:00.000Z" itemprop="datePublished">2018-01-26</time>
         </a>
     </div>
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>Blog Charles</strong>
-        </div>
-        <div class="section-spacer"></div>
 
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/gallery" title="图库">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        图库
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/tags" title="标签云">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        标签云
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/timeline" title="时间轴">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        时间轴
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="http://icharles.top/zuopin/index.html" title="作品集">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        作品集
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/about" title="关于我">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        关于我
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/links" title="友情链接">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        友情链接
-                    </li>
-                </a>
-            
-        </ul>
-
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-
-            
-
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Blog Charles&url=http://www.icharles.top&pic=http://www.icharles.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到微博
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=Blog Charles&url=http://www.icharles.top&via=Charles" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Twitter
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.icharles.top" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Facebook
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://plus.google.com/share?url=http://www.icharles.top" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Google+
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.icharles.top&title=Blog Charles" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 LinkedIn
-                    </li>
-                </a>
-            
-
-            
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Blog Charles&title=Blog Charles&summary=&pics=http://www.icharles.top/img/favicon.png&url=http://www.icharles.top" target="_blank">
-                    <li class="mdl-menu__item">
-                        分享到 QQ
-                    </li>
-                </a>
-            
-
-            
-        </ul>
-    </div>
-</div>
-
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/26/Dijkstra/">Dijkstra</a></p>
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/最小路/">最小路</a>
     </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/26/Dijkstra/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>1月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/最小路/">最小路</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/19/KMP/">KMP</a></p>
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Dijkstra/">Dijkstra</a>
     </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
         
             
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/19/KMP/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>1月 19, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/算法/">算法</a>
-              </span>
-            
+            <h1 id="单源最短路径（1）：Dijkstra-算法"><a href="#单源最短路径（1）：Dijkstra-算法" class="headerlink" title="单源最短路径（1）：Dijkstra 算法"></a>单源最短路径（1）：Dijkstra 算法</h1><h3 id="一：背景展开目录"><a href="#一：背景展开目录" class="headerlink" title="一：背景展开目录"></a>一：背景展开目录</h3><p>Dijkstra 算法（中文名：迪杰斯特拉算法）是由荷兰计算机科学家 Edsger Wybe Dijkstra 提出。该算法常用于路由算法或者作为其他图算法的一个子模块。举例来说，如果图中的顶点表示城市，而边上的权重表示城市间开车行经的距离，该算法可以用来找到两个城市之间的最短路径。</p>
+<h3 id="二：算法过程展开目录"><a href="#二：算法过程展开目录" class="headerlink" title="二：算法过程展开目录"></a>二：算法过程展开目录</h3><p>我们用一个例子来具体说明迪杰斯特拉算法的流程。<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/1.png" alt=""><br>定义源点为 0， <code>dist[i]</code> 为源点 0 到顶点 i 的最短路径。其过程描述如下：    </p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th style="text-align:center">dist[1]</th>
+<th style="text-align:center">dist[2]</th>
+<th style="text-align:center">dist[3]</th>
+<th style="text-align:center">dist[4]</th>
+<th style="text-align:center">已找到的集合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第 1 步</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">+∞</td>
+<td style="text-align:center">{2}</td>
+</tr>
+<tr>
+<td>第 2 步</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">{2, 3}</td>
+</tr>
+<tr>
+<td>第 3 步</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">{2, 3, 4}</td>
+</tr>
+<tr>
+<td>第 4 步</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">{2, 3, 4, 1}</td>
+</tr>
+<tr>
+<td>第 5 步</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">{2, 3, 4, 1}</td>
+</tr>
+</tbody>
+</table>
+<p>第 1 步：从源点 0 开始，找到与其邻接的点：1，2，3，更新 <code>dist[]</code> 数组，因 0 不与 4 邻接，故 <code>dist[4]</code> 为正无穷。在 <code>dist[]</code> 中找到最小值，其顶点为 2，即此时已找到 0 到 2 的最短路。</p>
+<p>第 2 步：从 2 开始，继续更新dist[]数组：2 与 1 不邻接，不更新；2 与 3 邻接，因0→2→3比dist[3]大，故不更新dist[3] ；2 与 4 邻接，因0→2→4比dist[4]小，故更新dist[4]为 4。在dist[]中找到最小值，其顶点为 3，即此时又找到 0 到 3 的最短路。</p>
+<p>第 3 步：从 3 开始，继续更新 <code>dist[]</code> 数组：3 与 1 邻接，因0→3→1比 <code>dist[1]</code> 小，更新 <code>dist[1]</code> 为 5；3 与 4 邻接，因0→3→4比 <code>dist[4]</code> 大，故不更新。在 <code>dist[]</code> 中找到最小值，其顶点为 4，即此时又找到 0 到 4 的最短路。</p>
+<p>第 4 步：从 4 开始，继续更新 <code>dist[]</code> 数组：4 与 1 不邻接，不更新。在 <code>dist[]</code> 中找到最小值，其顶点为 1，即此时又找到 0 到 1 的最短路。</p>
+<p>第 5 步：所有点都已找到，停止。</p>
+<p>对于上述步骤，你可能存在以下的疑问：<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/2.png" alt=""></p>
+<p>若 A 作为源点，与其邻接的只有 B，C，D 三点，其dist[]最小时顶点为 C，即就可以确定A→C为 A 到 C 的最短路。但是我们存在疑问的是：<strong>是否还存在另一条路径使 A 到 C 的距离更小？ 用反证法证明。</strong></p>
+<p>假设存在如上图的红色虚线路径，使 <code>A→D→C</code> 的距离更小，那么 <code>A→D</code> 作为 <code>A→D→C</code> 的子路径，其距离也比 <code>A→C</code> 小，这与前面所述 “ <code>dist[]</code> 最小时顶点为 C” 矛盾，故假设不成立。因此这个疑问不存在。</p>
+<p>根据上面的证明，我们可以推断出，<strong>Dijkstra 每次循环都可以确定一个顶点的最短路径，故程序需要循环 n-1 次</strong>。</p>
+<h4 id="三：完整代码"><a href="#三：完整代码" class="headerlink" title="三：完整代码"></a>三：完整代码</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
 
-            
+int  matrix[100][100]; // 邻接矩阵
+bool visited[100];     // 标记数组
+int  dist[100];        // 源点到顶点i的最短距离
+int  path[100];        // 记录最短路的路径
+int  source;           // 源点
+int  vertex_num;       // 顶点数
+int  edge_num;         // 边数
 
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/04/谷歌访问助手/">谷歌访问助手</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/04/谷歌访问助手/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>1月 04, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://www.linuxidc.com/upload/2017_07/17072609596256.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/30/Ubuntu/">Ubuntu</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/30/Ubuntu/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>12月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/29/俄罗斯方块/">俄罗斯方块</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文代码下载地址: 俄罗斯方块.c本文程序下载地址: 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/29/俄罗斯方块/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>12月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Game/">Game</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/27/欧几里得算法/">欧几里得算法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a,...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/27/欧几里得算法/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>12月 27, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/算法/">算法</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/27/Vector-STL/">Vector--STL</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            vector(向量)vector类称作向量类，它实现了动态数组，用于元素数量变化的对象数组。像数组一样，v...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/27/Vector-STL/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>12月 27, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/STL/">STL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/26/位运算技巧/">位运算技巧</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一.获得int型最大值代码代码如下:
-int getMa...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/26/位运算技巧/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/icon-crown.svg" width="44px" height="44px" alt="Charles's avatar">
-            </div>
-            <div>
-                <strong>Charles</strong>
-                <span>12月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/位运算/">位运算</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 15; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+void Dijkstra(int source)
+{
+    memset(visited, 0, sizeof(visited));  // 初始化标记数组
+    visited[source] = true;
+    for (int i = 0; i &lt; vertex_num; i++)
+    {
+        dist[i] = matrix[source][i];
+        path[i] = source;
     }
+
+    int min_cost;        // 权值最小
+    int min_cost_index;  // 权值最小的下标
+
+    for (int i = 1; i &lt; vertex_num; i++)  // 找到源点到另外 vertex_num-1 个点的最短路径
+    {
+        min_cost = INT_MAX;
+
+        for (int j = 0; j &lt; vertex_num; j++)
+        {
+            if (visited[j] == false &amp;&amp; dist[j] &lt; min_cost)  // 找到权值最小
+            {
+                min_cost = dist[j];
+                min_cost_index = j;
+            }
+        }
+
+        visited[min_cost_index] = true;  // 该点已找到，进行标记
+
+        for (int j = 0; j &lt; vertex_num; j++)  // 更新 dist 数组
+        {
+            if (visited[j] == false &amp;&amp;
+                matrix[min_cost_index][j] != INT_MAX &amp;&amp;  // 确保两点之间有边
+                matrix[min_cost_index][j] + min_cost &lt; dist[j])
+            {
+                dist[j] = matrix[min_cost_index][j] + min_cost;
+                path[j] = min_cost_index;
+            }
+        }
+    }
+}
+
+int main()
+{
+    cout &lt;&lt; &quot;请输入图的顶点数（&lt;100）：&quot;;
+    cin &gt;&gt; vertex_num;
+    cout &lt;&lt; &quot;请输入图的边数：&quot;;
+    cin &gt;&gt; edge_num;
+
+    for (int i = 0; i &lt; vertex_num; i++)
+        for (int j = 0; j &lt; vertex_num; j++)
+            matrix[i][j] = (i != j) ? INT_MAX : 0;  // 初始化 matrix 数组
+
+    cout &lt;&lt; &quot;请输入边的信息：\n&quot;;
+    int u, v, w;
+    for (int i = 0; i &lt; edge_num; i++)
+    {
+        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+        matrix[u][v] = matrix[v][u] = w;
+    }
+
+    cout &lt;&lt; &quot;请输入源点（&lt;&quot; &lt;&lt; vertex_num &lt;&lt; &quot;）：&quot;;
+    cin &gt;&gt; source;
+    Dijkstra(source);
+
+    for (int i = 0; i &lt; vertex_num; i++)
+    {
+        if (i != source)
+        {
+            cout &lt;&lt; source &lt;&lt; &quot;到&quot; &lt;&lt; i &lt;&lt; &quot;最短距离是：&quot; &lt;&lt; dist[i] &lt;&lt; &quot;，路径是：&quot; &lt;&lt; i;
+            int t = path[i];
+            while (t != source)
+            {
+                cout &lt;&lt; &quot;--&quot; &lt;&lt; t;
+                t = path[t];
+            }
+            cout &lt;&lt; &quot;--&quot; &lt;&lt; source &lt;&lt; endl;
+        }
+    }
+
+    return 0;
+}
+</code></pre><p>输入数据，结果为：</p>
+<p><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/3.png" alt=""></p>
+<h3 id="本文来源于：https-www-61mon-com-index-php-archives-194"><a href="#本文来源于：https-www-61mon-com-index-php-archives-194" class="headerlink" title="本文来源于：https://www.61mon.com/index.php/archives/194/"></a>本文来源于：<a href="https://www.61mon.com/index.php/archives/194/" target="_blank" rel="noopener">https://www.61mon.com/index.php/archives/194/</a></h3><h3 id="作者：刘毅"><a href="#作者：刘毅" class="headerlink" title="作者：刘毅"></a>作者：刘毅</h3>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/2018/01/26/Dijkstra/" data-id="cjcxcshjv0003ygq8sc9kej4q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
 </script>
 
+            
     
-</div>
+        <a href="http://www.icharles.top/2018/01/26/Dijkstra/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
 
 
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
+    <article id="post-KMP" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/01/19/KMP/">KMP</a>
+        </h1>
+    
 
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/icon-crown.svg" alt="Charles's avatar">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/19/KMP/">
+            <time datetime="2018-01-19T13:31:00.000Z" itemprop="datePublished">2018-01-19</time>
+        </a>
     </div>
 
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        联系我
-        <b class="caret"></b>
-    </a>
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/算法/">算法</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="利用Next数组来求连续字符串的个数"><a href="#利用Next数组来求连续字符串的个数" class="headerlink" title="利用Next数组来求连续字符串的个数"></a>利用Next数组来求连续字符串的个数</h1><h3 id="题目地址：Power-Strings"><a href="#题目地址：Power-Strings" class="headerlink" title="题目地址：Power Strings "></a>题目地址：<a href="https://vjudge.net/problem/POJ-2406" target="_blank" rel="noopener">Power Strings </a></h3><blockquote>
+<p>题目大体意思就是求连续字符串个数<br>由于刚学习完KMP，就想到了利用Next数组来求连续字符串的个数，发现存在以下关系： N = len / (len - next[len])       </p>
+</blockquote>
+<pre><code class="c">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int maxn = 1E6 + 5;
+char str[maxn];
+int nex[maxn], len;
+
+void getnext()
+{
+    int i = 0, j = -1;
+    memset(nex, 0, sizeof(nex));
+    nex[0] = -1;
+    while(i &lt; len) {
+        if(j == -1 || str[i] == str[j]) {
+            nex[++i] = ++j;
+        }
+        else {
+            j = nex[j];
+        }
+    }
+}
+
+int main()
+{
+    while(scanf(&quot;%s&quot;, str) != EOF) {
+        if(str[0] ==&#39;.&#39;) break;
+        len = strlen(str);
+        getnext();
+    //例如 aaaaa len = 4, len - nex[len] = 1
+        if(len % (len - nex[len]) == 0) cout &lt;&lt; len / (len - nex[len]) &lt;&lt; endl;
+        else cout &lt;&lt; &quot;1&quot; &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
 
+    <a data-url="http://www.icharles.top/2018/01/19/KMP/" data-id="cjcxcshka0007ygq8x8hlai1y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
             
-                <li>
-                    <a href="mailto:728345629@qq.com?subject=From your blog" target="_blank" title="Email Me">
+    
+        <a href="http://www.icharles.top/2018/01/19/KMP/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-谷歌访问助手" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/01/04/谷歌访问助手/">谷歌访问助手</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
                         
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/04/谷歌访问助手/">
+            <time datetime="2018-01-04T04:21:32.000Z" itemprop="datePublished">2018-01-04</time>
+        </a>
+    </div>
+
+
                         
-                        Email Me
-                    </a>
-                </li>
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
             
-                <li>
-                    <a href="http://my.csdn.net/qq_23320955" target="_blank" title="CSDN">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">link</i>
-                        
-                        CSDN
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">whatshot</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/Game/">Game<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/STL/">STL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/位运算/">位运算<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/最小路/">最小路<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/gallery" title="图库">
-                
-                    <i class="material-icons sidebar-material-icons">palette</i>
-                
-                图库
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tags" title="标签云">
-                
-                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
-                
-                标签云
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/timeline" title="时间轴">
-                
-                    <i class="material-icons sidebar-material-icons">send</i>
-                
-                时间轴
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="http://icharles.top/zuopin/index.html" title="作品集">
-                
-                    <i class="material-icons sidebar-material-icons">dashboard</i>
-                
-                作品集
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于我
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="友情链接">
-                
-                    <i class="material-icons sidebar-material-icons">links</i>
-                
-                友情链接
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
+            <h3 id="谷歌访问助手安装教程"><a href="#谷歌访问助手安装教程" class="headerlink" title="谷歌访问助手安装教程"></a>谷歌访问助手安装教程</h3><blockquote>
+<ul>
+<li>本教程以Google Chrome为例，其他浏览器请自行安装，激活方法一样</li>
 </ul>
+</blockquote>
+<ol>
+<li><p>打开Google Chrome浏览器，如下图<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/1.png" alt="1"></p>
+</li>
+<li><p>将下载的谷歌访问助手拖到扩展程序<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/2.png" alt="2"></p>
+</li>
+<li><p>永久激活谷歌访问助手，按照提示进行即可<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/3.png" alt="3"><br><img src="http://icharles.top/2018/01/04/谷歌访问助手/4.png" alt="4"></p>
+</li>
+<li><p>当然你不会或者嫌麻烦设置主页，可以按照下图步骤<br>点击设置<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/5.png" alt="5"><br>勾选自动打开主页<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/6.png" alt="6">  </p>
+</li>
+</ol>
+<h4 id="至此，你就完成所有设置，接下来就是畅游墙外世界"><a href="#至此，你就完成所有设置，接下来就是畅游墙外世界" class="headerlink" title="至此，你就完成所有设置，接下来就是畅游墙外世界"></a>至此，你就完成所有设置，接下来就是畅游墙外世界</h4><h4 id="别忘记点赞呦"><a href="#别忘记点赞呦" class="headerlink" title="别忘记点赞呦"></a>别忘记点赞呦</h4>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
+</div>
 
-<!-- Sidebar Divider -->
+    <a data-url="http://www.icharles.top/2018/01/04/谷歌访问助手/" data-id="cjcxcshkq000nygq8bntio339" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.icharles.top/2018/01/04/谷歌访问助手/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
 
 
-<!-- Theme Material -->
 
+    <article id="post-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/12/30/Ubuntu/">Ubuntu</a>
+        </h1>
+    
 
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/12/30/Ubuntu/">
+            <time datetime="2017-12-30T06:12:00.000Z" itemprop="datePublished">2017-12-30</time>
+        </a>
     </div>
 
-    <!-- Sidebar Image -->
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="Ubuntu安装教程"><a href="#Ubuntu安装教程" class="headerlink" title="Ubuntu安装教程"></a>Ubuntu安装教程</h3><h3 id="Ubuntu-16-04安装步骤："><a href="#Ubuntu-16-04安装步骤：" class="headerlink" title="Ubuntu 16.04安装步骤："></a>Ubuntu 16.04安装步骤：</h3><p>一、U盘安装准备步骤</p>
+<p>(1) <a href="http://cn.ubuntu.com/download/" target="_blank" rel="noopener">官网下载</a> <strong>Ubuntu16.04</strong> 系统ISO镜像<br><img src="http://www.linuxidc.com/upload/2017_07/17072609596256.jpg" alt="Ubuntu"></p>
+<p>(2) 准备U盘一个，4G左右就够了，用于制作安装u盘</p>
+<p>制作安装U盘，推荐使用软件：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">universal-usb-installer</a><br><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer.png" alt="universal-usb-installer">  </p>
+<p>将U盘插入电脑  </p>
+<blockquote>
+<p>第一步: 下拉列表选择Ubuntu（当然安装其他发行版时也可以选择相应的title）。<br>第二步: 单击右侧的Browse按钮，选择下载好的.iso格式的系统镜像。<br>第三步: 选择插入的U盘，一般默认的就是。根据要求是否进行格式化，其余按照默认的参数，单击create，等待一会儿后就可以了。<br>结束画面如下：  </p>
+</blockquote>
+<p><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer2.png" alt="">  </p>
+<p>二、Ubuntu系统空间准备</p>
+<p>在Windows 10中打开“磁盘管理器”，找一个空闲的磁盘分区，压缩出来一部分空间给Ubuntu使用，压缩出来的硬盘应处于未分配状态。或者通过删除某个不使用的本地磁盘使其处于未分配状态。<br><img src="https://upload-images.jianshu.io/upload_images/1272002-334e3e33d83fd8b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p>
+<blockquote>
+<p>绿色框中是留给Ubuntu的空间</p>
+</blockquote>
+<p>三、BIOS设置<br>1.关机，重新打开电脑，进入BIOS，关闭Windows系统的快速启动（Fast Boot）选项，即设置为Disable状态。<br><img src="https://upload-images.jianshu.io/upload_images/1272002-42f06103698c8961.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""><br>2.在BIOS中设置U盘为第一启动项，关闭电脑。</p>
+<p>四、安装Ubuntu 16.04<br>1.从U盘启动，进入刻录到U盘的Ubuntu系统中</p>
+<p>2.选择试用Install Ubuntu    </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1272002-ee7ebc172f38ab02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1272002-3d0beb819c154274.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1272002-6eb497d6e84d50d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<blockquote>
+<p>在硬盘中Ubuntu检测到有Windows系统存在，所以会默认使用未分配的那部分空间安 装Ubuntu。这也是刚开始说的方便之处，避免了自己分区的不合理<br>当然你也可以选择<strong>其他选项</strong>自定义安装，分区方案如下：</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/1272002-f7a72a5a941e4537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/614" alt=""></p>
+<p>3.配置完成后，接下来下载更新，自动安装</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1272002-b00039c66f342e51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<p>完成安装后，美化你的Ubuntu吧：<a href="http://www.linuxidc.com/Linux/2016-09/135165.htm" target="_blank" rel="noopener">美化教程</a></p>
+<p>本文来自于：<a href="http://www.jianshu.com/p/16b36b912b02" target="_blank" rel="noopener">七双叶</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/2017/12/30/Ubuntu/" data-id="cjcxcshka0008ygq86pytpiav" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
     
-    <span id="footer-image">
-        <a href="http://www.icharles.top/" target="_blank" title="upyun_logo">
-            <img src="https://dn-coding-net-production-static.qbox.me/static/f7272a0b7cd340571725c6734c6bdd6f.png" alt="upyun_logo"><!--
-     --></a>
-    </span>
+        <a href="http://www.icharles.top/2017/12/30/Ubuntu/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
 
 
+
+    <article id="post-俄罗斯方块" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/12/29/俄罗斯方块/">俄罗斯方块</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/12/29/俄罗斯方块/">
+            <time datetime="2017-12-29T14:16:00.000Z" itemprop="datePublished">2017-12-29</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Game/">Game</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Game/">Game</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>本文代码下载地址: <a href="/download/俄罗斯方块.zip">俄罗斯方块.c</a><br>本文程序下载地址: <a href="/download/俄罗斯方块.exe">俄罗斯方块.exe</a></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;windows.h&gt;
+
+#ifdef _MSC_VER  // M$的编译器要给予特殊照顾
+#if _MSC_VER &lt;= 1200  // VC6及以下版本
+#error 你是不是还在用VC6？！
+#else  // VC6以上版本
+#if _MSC_VER &gt;= 1600  // 据说VC10及以上版本有stdint.h了
+#include &lt;stdint.h&gt;
+#else  // VC10以下版本，自己定义int8_t和uint16_t
+typedef signed char int8_t;
+typedef unsigned short uint16_t;
+#endif
+#ifndef __cplusplus  // 据说VC都没有stdbool.h，不用C++编译，自己定义bool
+typedef int bool;
+#define true 1
+#define false 0
+#endif
+#endif
+#else  // 其他的编译器都好说
+#include &lt;stdint.h&gt;
+#ifndef __cplusplus  // 不用C++编译，需要stdbool.h里的bool
+#include &lt;stdbool.h&gt;
+#endif
+#endif
+
+// =============================================================================
+// 7种方块的4旋转状态（4位为一行）
+static const uint16_t gs_uTetrisTable[7][4] = { 
+        { 0x00F0U, 0x2222U, 0x00F0U, 0x2222U },  // I型
+        { 0x0072U, 0x0262U, 0x0270U, 0x0232U },  // T型
+        { 0x0223U, 0x0074U, 0x0622U, 0x0170U },  // L型
+        { 0x0226U, 0x0470U, 0x0322U, 0x0071U },  // J型
+        { 0x0063U, 0x0264U, 0x0063U, 0x0264U },  // Z型
+        { 0x006CU, 0x0462U, 0x006CU, 0x0462U },  // S型
+        { 0x0660U, 0x0660U, 0x0660U, 0x0660U }   // O型
+};
+
+// =============================================================================
+// 初始状态的游戏池
+// 每个元素表示游戏池的一行，下标大的是游戏池底部
+// 两端各置2个1，底部2全置为1，便于进行碰撞检测
+// 这样一来游戏池的宽度为12列
+// 如果想要传统的10列，只需多填两个1即可（0xE007），当然显示相关部分也要随之改动
+// 当某个元素为0xFFFFU时，说明该行已被填满
+// 顶部4行用于给方块，不显示出来
+// 再除去底部2行，显示出来的游戏池高度为22行
+static const uint16_t gs_uInitialTetrisPool[28] = { 0xC003U, 0xC003U, 0xC003U,
+        0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U,
+        0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U,
+        0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xC003U, 0xFFFFU,
+        0xFFFFU };
+
+#define COL_BEGIN 2
+#define COL_END 14
+#define ROW_BEGIN 4
+#define ROW_END 26
+
+// =============================================================================
+typedef struct TetrisManager  // 这个结构体存储游戏相关数据
+{
+    uint16_t pool[28];  // 游戏池
+    int8_t x;  // 当前方块x坐标，此处坐标为方块左上角坐标
+    int8_t y;  // 当前方块y坐标
+    int8_t type[3];  // 当前、下一个和下下一个方块类型
+    int8_t orientation[3];  // 当前、下一个和下下一个方块旋转状态
+    unsigned score;  // 得分
+    unsigned erasedCount[4];  // 消行数
+    unsigned erasedTotal;  // 消行总数
+    unsigned tetrisCount[7];  // 各方块数
+    unsigned tetrisTotal;  // 方块总数
+    bool dead;  // 挂
+} TetrisManager;
+
+// =============================================================================
+typedef struct TetrisControl  // 这个结构体存储控制相关数据
+{
+    bool pause;  // 暂停
+    bool clockwise;  // 旋转方向：顺时针为true
+    int8_t direction;  // 移动方向：0向左移动 1向右移动
+    // 游戏池内每格的颜色
+    // 由于此版本是彩色的，仅用游戏池数据无法存储颜色信息
+    // 当然，如果只实现单色版的，就没必要用这个数组了
+    int8_t color[28][16];
+} TetrisControl;
+
+HANDLE g_hConsoleOutput;  // 控制台输出句柄
+
+// =============================================================================
+// 函数声明
+// 如果使用全局变量方式实现，就没必要传参了
+void initGame(TetrisManager *manager, TetrisControl *control);  // 初始化游戏
+void restartGame(TetrisManager *manager, TetrisControl *control);  // 重新开始游戏
+void giveTetris(TetrisManager *manager);  // 给一个方块
+bool checkCollision(const TetrisManager *manager);  // 碰撞检测
+void insertTetris(TetrisManager *manager);  // 插入方块
+void removeTetris(TetrisManager *manager);  // 移除方块
+void horzMoveTetris(TetrisManager *manager, TetrisControl *control);  // 水平移动方块
+void moveDownTetris(TetrisManager *manager, TetrisControl *control);  // 向下移动方块
+void rotateTetris(TetrisManager *manager, TetrisControl *control);  // 旋转方块
+void dropDownTetris(TetrisManager *manager, TetrisControl *control);  // 方块直接落地
+bool checkErasing(TetrisManager *manager, TetrisControl *control);  // 消行检测
+void keydownControl(TetrisManager *manager, TetrisControl *control, int key); // 键按下
+void setPoolColor(const TetrisManager *manager, TetrisControl *control); // 设置颜色
+void gotoxyWithFullwidth(short x, short y);  // 以全角定位
+void printPoolBorder();  // 显示游戏池边界
+void printTetrisPool(const TetrisManager *manager, const TetrisControl *control); // 显示游戏池
+void printCurrentTetris(const TetrisManager *manager,
+        const TetrisControl *control);  // 显示当前方块
+void printNextTetris(const TetrisManager *manager);  // 显示下一个和下下一个方块
+void printScore(const TetrisManager *manager);  // 显示得分信息
+void runGame(TetrisManager *manager, TetrisControl *control);  // 运行游戏
+void printPrompting();  // 显示提示信息
+bool ifPlayAgain();  // 再来一次
+
+// =============================================================================
+// 出处：http://www.oschina.net/code/snippet_255612_16922
+// 主函数
+int main() {
+    TetrisManager tetrisManager;
+    TetrisControl tetrisControl;
+
+    initGame(&amp;tetrisManager, &amp;tetrisControl);  // 初始化游戏
+    do {
+        printPrompting();  // 显示提示信息
+        printPoolBorder();  // 显示游戏池边界
+        runGame(&amp;tetrisManager, &amp;tetrisControl);  // 运行游戏
+        if (ifPlayAgain())  // 再来一次
+        {
+            SetConsoleTextAttribute(g_hConsoleOutput, 0x7);
+            system(&quot;cls&quot;);  // 清屏
+            restartGame(&amp;tetrisManager, &amp;tetrisControl);  // 重新开始游戏
+        } else {
+            break;
+        }
+    } while (1);
+    gotoxyWithFullwidth(0, 0);
+    CloseHandle(g_hConsoleOutput);
+    return 0;
+}
+
+// =============================================================================
+// 初始化游戏
+void initGame(TetrisManager *manager, TetrisControl *control) {
+    CONSOLE_CURSOR_INFO cursorInfo = { 1, FALSE };  // 光标信息
+
+    g_hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);  // 获取控制台输出句柄
+    SetConsoleCursorInfo(g_hConsoleOutput, &amp;cursorInfo);  // 设置光标隐藏
+    SetConsoleTitleA(&quot;俄罗斯方块&quot;);
+
+    restartGame(manager, control);
+}
+
+// =============================================================================
+// 重新开始游戏
+void restartGame(TetrisManager *manager, TetrisControl *control) {
+    memset(manager, 0, sizeof(TetrisManager));  // 全部置0
+
+    // 初始化游戏池
+    memcpy(manager-&gt;pool, gs_uInitialTetrisPool, sizeof(uint16_t[28]));
+    srand((unsigned) time(NULL ));  // 设置随机种子
+
+    manager-&gt;type[1] = rand() % 7;  // 下一个
+    manager-&gt;orientation[1] = rand() &amp; 3;
+
+    manager-&gt;type[2] = rand() % 7;  // 下下一个
+    manager-&gt;orientation[2] = rand() &amp; 3;
+
+    memset(control, 0, sizeof(TetrisControl));  // 全部置0
+
+    giveTetris(manager);  // 给下一个方块
+    setPoolColor(manager, control);  // 设置颜色
+}
+
+// =============================================================================
+// 给一个方块
+void giveTetris(TetrisManager *manager) {
+    uint16_t tetris;
+
+    manager-&gt;type[0] = manager-&gt;type[1];  // 下一个方块置为当前
+    manager-&gt;orientation[0] = manager-&gt;orientation[1];
+
+    manager-&gt;type[1] = manager-&gt;type[2];  // 下下一个置方块为下一个
+    manager-&gt;orientation[1] = manager-&gt;orientation[2];
+
+    manager-&gt;type[2] = rand() % 7;  // 随机生成下下一个方块
+    manager-&gt;orientation[2] = rand() &amp; 3;
+
+    tetris = gs_uTetrisTable[manager-&gt;type[0]][manager-&gt;orientation[0]]; // 当前方块
+
+    // 设置当前方块y坐标，保证刚给出时只显示方块最下面一行
+    // 这种实现使得玩家可以以很快的速度将方块落在不显示出来的顶部4行内
+    if (tetris &amp; 0xF000) {
+        manager-&gt;y = 0;
+    } else {
+        manager-&gt;y = (tetris &amp; 0xFF00) ? 1 : 2;
+    }
+    manager-&gt;x = 6;  // 设置当前方块x坐标
+
+    if (checkCollision(manager))  // 检测到碰撞
+            {
+        manager-&gt;dead = true;  // 标记游戏结束
+    } else  // 未检测到碰撞
+    {
+        insertTetris(manager);  // 将当前方块加入游戏池
+    }
+
+    ++manager-&gt;tetrisTotal;  // 方块总数
+    ++manager-&gt;tetrisCount[manager-&gt;type[0]];  // 相应方块数
+
+    printNextTetris(manager);  // 显示下一个方块
+    printScore(manager);  // 显示得分信息
+}
+
+// =============================================================================
+// 碰撞检测
+bool checkCollision(const TetrisManager *manager) {
+    // 当前方块
+    uint16_t tetris = gs_uTetrisTable[manager-&gt;type[0]][manager-&gt;orientation[0]];
+    uint16_t dest = 0;
+
+    // 获取当前方块在游戏池中的区域：
+    // 游戏池坐标x y处小方格信息，按低到高存放在16位无符号数中
+    dest |= (((manager-&gt;pool[manager-&gt;y + 0] &gt;&gt; manager-&gt;x) &lt;&lt; 0x0) &amp; 0x000F);
+    dest |= (((manager-&gt;pool[manager-&gt;y + 1] &gt;&gt; manager-&gt;x) &lt;&lt; 0x4) &amp; 0x00F0);
+    dest |= (((manager-&gt;pool[manager-&gt;y + 2] &gt;&gt; manager-&gt;x) &lt;&lt; 0x8) &amp; 0x0F00);
+    dest |= (((manager-&gt;pool[manager-&gt;y + 3] &gt;&gt; manager-&gt;x) &lt;&lt; 0xC) &amp; 0xF000);
+
+    // 若当前方块与目标区域存在重叠（碰撞），则位与的结果不为0
+    return ((dest &amp; tetris) != 0);
+}
+
+// =============================================================================
+// 插入方块
+void insertTetris(TetrisManager *manager) {
+    // 当前方块
+    uint16_t tetris = gs_uTetrisTable[manager-&gt;type[0]][manager-&gt;orientation[0]];
+
+    // 当前方块每4位取出，位或到游戏池相应位置，即完成插入方块
+    manager-&gt;pool[manager-&gt;y + 0] |= (((tetris &gt;&gt; 0x0) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+    manager-&gt;pool[manager-&gt;y + 1] |= (((tetris &gt;&gt; 0x4) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+    manager-&gt;pool[manager-&gt;y + 2] |= (((tetris &gt;&gt; 0x8) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+    manager-&gt;pool[manager-&gt;y + 3] |= (((tetris &gt;&gt; 0xC) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+}
+
+// =============================================================================
+// 移除方块
+void removeTetris(TetrisManager *manager) {
+    // 当前方块
+    uint16_t tetris = gs_uTetrisTable[manager-&gt;type[0]][manager-&gt;orientation[0]];
+
+    // 当前方块每4位取出，按位取反后位与到游戏池相应位置，即完成移除方块
+    manager-&gt;pool[manager-&gt;y + 0] &amp;=
+            ~(((tetris &gt;&gt; 0x0) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+    manager-&gt;pool[manager-&gt;y + 1] &amp;=
+            ~(((tetris &gt;&gt; 0x4) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+    manager-&gt;pool[manager-&gt;y + 2] &amp;=
+            ~(((tetris &gt;&gt; 0x8) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+    manager-&gt;pool[manager-&gt;y + 3] &amp;=
+            ~(((tetris &gt;&gt; 0xC) &amp; 0x000F) &lt;&lt; manager-&gt;x);
+}
+
+// =============================================================================
+// 设置颜色
+void setPoolColor(const TetrisManager *manager, TetrisControl *control) {
+    // 由于显示游戏池时，先要在游戏池里判断某一方格有方块才显示相应方格的颜色
+    // 这里只作设置即可，没必要清除
+    // 当移动方块或给一个方块时调用
+
+    int8_t i, x, y;
+
+    // 当前方块
+    uint16_t tetris = gs_uTetrisTable[manager-&gt;type[0]][manager-&gt;orientation[0]];
+
+    for (i = 0; i &lt; 16; ++i) {
+        y = (i &gt;&gt; 2) + manager-&gt;y;  // 待设置的列
+        if (y &gt; ROW_END)  // 超过底部限制
+        {
+            break;
+        }
+        x = (i &amp; 3) + manager-&gt;x;  // 待设置的行
+        if ((tetris &gt;&gt; i) &amp; 1)  // 检测的到小方格属于当前方块区域
+                {
+            control-&gt;color[y][x] = (manager-&gt;type[0] | 8);  // 设置颜色
+        }
+    }
+}
+
+// =============================================================================
+// 旋转方块
+void rotateTetris(TetrisManager *manager, TetrisControl *control) {
+    int8_t ori = manager-&gt;orientation[0];  // 记录原旋转状态
+
+    removeTetris(manager);  // 移走当前方块
+
+    // 顺/逆时针旋转
+    manager-&gt;orientation[0] =
+            (control-&gt;clockwise) ? ((ori + 1) &amp; 3) : ((ori + 3) &amp; 3);
+
+    if (checkCollision(manager))  // 检测到碰撞
+            {
+        manager-&gt;orientation[0] = ori;  // 恢复为原旋转状态
+        insertTetris(manager);  // 放入当前方块。由于状态没改变，不需要设置颜色
+    } else {
+        insertTetris(manager);  // 放入当前方块
+        setPoolColor(manager, control);  // 设置颜色
+        printCurrentTetris(manager, control);  // 显示当前方块
+    }
+}
+
+// =============================================================================
+// 水平移动方块
+void horzMoveTetris(TetrisManager *manager, TetrisControl *control) {
+    int x = manager-&gt;x;  // 记录原列位置
+
+    removeTetris(manager);  // 移走当前方块
+    control-&gt;direction == 0 ? (--manager-&gt;x) : (++manager-&gt;x);  // 左/右移动
+
+    if (checkCollision(manager))  // 检测到碰撞
+            {
+        manager-&gt;x = x;  // 恢复为原列位置
+        insertTetris(manager);  // 放入当前方块。由于位置没改变，不需要设置颜色
+    } else {
+        insertTetris(manager);  // 放入当前方块
+        setPoolColor(manager, control);  // 设置颜色
+        printCurrentTetris(manager, control);  // 显示当前方块
+    }
+}
+
+// =============================================================================
+// 向下移动方块
+void moveDownTetris(TetrisManager *manager, TetrisControl *control) {
+    int8_t y = manager-&gt;y;  // 记录原行位置
+
+    removeTetris(manager);  // 移走当前方块
+    ++manager-&gt;y;  // 向下移动
+
+    if (checkCollision(manager))  // 检测到碰撞
+            {
+        manager-&gt;y = y;  // 恢复为原行位置
+        insertTetris(manager);  // 放入当前方块。由于位置没改变，不需要设置颜色
+        if (checkErasing(manager, control))  // 检测到消行
+                {
+            printTetrisPool(manager, control);  // 显示游戏池
+        }
+    } else {
+        insertTetris(manager);  // 放入当前方块
+        setPoolColor(manager, control);  // 设置颜色
+        printCurrentTetris(manager, control);  // 显示当前方块
+    }
+}
+
+// =============================================================================
+// 方块直接落地
+void dropDownTetris(TetrisManager *manager, TetrisControl *control) {
+    removeTetris(manager);  // 移走当前方块
+    for (; manager-&gt;y &lt; ROW_END; ++manager-&gt;y)  // 从上往下
+            {
+        if (checkCollision(manager))  // 检测到碰撞
+                {
+            break;
+        }
+    }
+    --manager-&gt;y;  // 上移一格当然没有碰撞
+
+    insertTetris(manager);  // 放入当前方块
+    setPoolColor(manager, control);  // 设置颜色
+
+    checkErasing(manager, control);  // 检测消行
+    printTetrisPool(manager, control);  // 显示游戏池
+}
+
+// =============================================================================
+// 消行检测
+bool checkErasing(TetrisManager *manager, TetrisControl *control) {
+    static const unsigned scores[5] = { 0, 10, 30, 90, 150 };  // 消行得分
+    int8_t count = 0;
+    int8_t k = 0, y = manager-&gt;y + 3;  // 从下往上检测
+
+    do {
+        if (y &lt; ROW_END &amp;&amp; manager-&gt;pool[y] == 0xFFFFU)  // 有效区域内且一行已填满
+                {
+            ++count;
+            // 消除一行方块
+            memmove(manager-&gt;pool + 1, manager-&gt;pool, sizeof(uint16_t) * y);
+            // 颜色数组的元素随之移动
+            memmove(control-&gt;color[1], control-&gt;color[0],
+                    sizeof(int8_t[16]) * y);
+        } else {
+            --y;
+            ++k;
+        }
+    } while (y &gt;= manager-&gt;y &amp;&amp; k &lt; 4);
+
+    manager-&gt;erasedTotal += count;  // 消行总数
+    manager-&gt;score += scores[count];  // 得分
+
+    if (count &gt; 0) {
+        ++manager-&gt;erasedCount[count - 1];  // 消行
+    }
+
+    giveTetris(manager);  // 给下一个方块
+    setPoolColor(manager, control);  // 设置颜色
+
+    return (count &gt; 0);
+}
+
+// =============================================================================
+// 键按下
+void keydownControl(TetrisManager *manager, TetrisControl *control, int key) {
+    if (key == 13)  // 暂停/解除暂停
+            {
+        control-&gt;pause = !control-&gt;pause;
+    }
+
+    if (control-&gt;pause)  // 暂停状态，不作处理
+    {
+        return;
+    }
+
+    switch (key) {
+    case &#39;w&#39;:
+    case &#39;W&#39;:
+    case &#39;8&#39;:
+    case 72:  // 上
+        control-&gt;clockwise = true;  // 顺时针旋转
+        rotateTetris(manager, control);  // 旋转方块
+        break;
+    case &#39;a&#39;:
+    case &#39;A&#39;:
+    case &#39;4&#39;:
+    case 75:  // 左
+        control-&gt;direction = 0;  // 向左移动
+        horzMoveTetris(manager, control);  // 水平移动方块
+        break;
+    case &#39;d&#39;:
+    case &#39;D&#39;:
+    case &#39;6&#39;:
+    case 77:  // 右
+        control-&gt;direction = 1;  // 向右移动
+        horzMoveTetris(manager, control);  // 水平移动方块
+        break;
+    case &#39;s&#39;:
+    case &#39;S&#39;:
+    case &#39;2&#39;:
+    case 80:  // 下
+        moveDownTetris(manager, control);  // 向下移动方块
+        break;
+    case &#39; &#39;:  // 直接落地
+        dropDownTetris(manager, control);
+        break;
+    case &#39;0&#39;:  // 反转
+        control-&gt;clockwise = false;  // 逆时针旋转
+        rotateTetris(manager, control);  // 旋转方块
+        break;
+    default:
+        break;
+    }
+}
+
+// =============================================================================
+// 以全角定位
+void gotoxyWithFullwidth(short x, short y) {
+    static COORD cd;
+
+    cd.X = (short) (x &lt;&lt; 1);
+    cd.Y = y;
+    SetConsoleCursorPosition(g_hConsoleOutput, cd);
+}
+
+// =============================================================================
+// 显示游戏池边界
+void printPoolBorder() {
+    int8_t y;
+
+    SetConsoleTextAttribute(g_hConsoleOutput, 0xF0);
+    for (y = ROW_BEGIN; y &lt; ROW_END; ++y)  // 不显示顶部4行和底部2行
+            {
+        gotoxyWithFullwidth(10, y - 3);
+        printf(&quot;%2s&quot;, &quot;&quot;);
+        gotoxyWithFullwidth(23, y - 3);
+        printf(&quot;%2s&quot;, &quot;&quot;);
+    }
+
+    gotoxyWithFullwidth(10, y - 3);  // 底部边界
+    printf(&quot;%28s&quot;, &quot;&quot;);
+}
+
+// 定位到游戏池中的方格
+#define gotoxyInPool(x, y) gotoxyWithFullwidth(x + 9, y - 3)
+
+// =============================================================================
+// 显示游戏池
+void printTetrisPool(const TetrisManager *manager, const TetrisControl *control) {
+    int8_t x, y;
+
+    for (y = ROW_BEGIN; y &lt; ROW_END; ++y)  // 不显示顶部4行和底部2行
+            {
+        gotoxyInPool(2, y);
+        // 定点到游戏池中的方格
+        for (x = COL_BEGIN; x &lt; COL_END; ++x)  // 不显示左右边界
+                {
+            if ((manager-&gt;pool[y] &gt;&gt; x) &amp; 1)  // 游戏池该方格有方块
+                    {
+                // 用相应颜色，显示一个实心方块
+                SetConsoleTextAttribute(g_hConsoleOutput, control-&gt;color[y][x]);
+                printf(&quot;■&quot;);
+            } else  // 没有方块，显示空白
+            {
+                SetConsoleTextAttribute(g_hConsoleOutput, 0);
+                printf(&quot;%2s&quot;, &quot;&quot;);
+            }
+        }
+    }
+}
+
+// =============================================================================
+// 显示当前方块
+void printCurrentTetris(const TetrisManager *manager,
+        const TetrisControl *control) {
+    int8_t x, y;
+
+    // 显示当前方块是在移动后调用的，为擦去移动前的方块，需要扩展显示区域
+    // 由于不可能向上移动，故不需要向下扩展
+    y = (manager-&gt;y &gt; ROW_BEGIN) ? (manager-&gt;y - 1) : ROW_BEGIN;  // 向上扩展一格
+    for (; y &lt; ROW_END &amp;&amp; y &lt; manager-&gt;y + 4; ++y) {
+        x = (manager-&gt;x &gt; COL_BEGIN) ? (manager-&gt;x - 1) : COL_BEGIN;  // 向左扩展一格
+        for (; x &lt; COL_END &amp;&amp; x &lt; manager-&gt;x + 5; ++x)  // 向右扩展一格
+                {
+            gotoxyInPool(x, y);
+            // 定点到游戏池中的方格
+            if ((manager-&gt;pool[y] &gt;&gt; x) &amp; 1)  // 游戏池该方格有方块
+                    {
+                // 用相应颜色，显示一个实心方块
+                SetConsoleTextAttribute(g_hConsoleOutput, control-&gt;color[y][x]);
+                printf(&quot;■&quot;);
+            } else  // 没有方块，显示空白
+            {
+                SetConsoleTextAttribute(g_hConsoleOutput, 0);
+                printf(&quot;%2s&quot;, &quot;&quot;);
+            }
+        }
+    }
+}
+
+// =============================================================================
+// 显示下一个和下下一个方块
+void printNextTetris(const TetrisManager *manager) {
+    int8_t i;
+    uint16_t tetris;
+
+    // 边框
+    SetConsoleTextAttribute(g_hConsoleOutput, 0xF);
+    gotoxyWithFullwidth(26, 1);
+    printf(&quot;┏━━━━┳━━━━┓&quot;);
+    gotoxyWithFullwidth(26, 2);
+    printf(&quot;┃%8s┃%8s┃&quot;, &quot;&quot;, &quot;&quot;);
+    gotoxyWithFullwidth(26, 3);
+    printf(&quot;┃%8s┃%8s┃&quot;, &quot;&quot;, &quot;&quot;);
+    gotoxyWithFullwidth(26, 4);
+    printf(&quot;┃%8s┃%8s┃&quot;, &quot;&quot;, &quot;&quot;);
+    gotoxyWithFullwidth(26, 5);
+    printf(&quot;┃%8s┃%8s┃&quot;, &quot;&quot;, &quot;&quot;);
+    gotoxyWithFullwidth(26, 6);
+    printf(&quot;┗━━━━┻━━━━┛&quot;);
+
+    // 下一个，用相应颜色显示
+    tetris = gs_uTetrisTable[manager-&gt;type[1]][manager-&gt;orientation[1]];
+    SetConsoleTextAttribute(g_hConsoleOutput, manager-&gt;type[1] | 8);
+    for (i = 0; i &lt; 16; ++i) {
+        gotoxyWithFullwidth((i &amp; 3) + 27, (i &gt;&gt; 2) + 2);
+        ((tetris &gt;&gt; i) &amp; 1) ? printf(&quot;■&quot;) : printf(&quot;%2s&quot;, &quot;&quot;);
+    }
+
+    // 下下一个，不显示彩色
+    tetris = gs_uTetrisTable[manager-&gt;type[2]][manager-&gt;orientation[2]];
+    SetConsoleTextAttribute(g_hConsoleOutput, 8);
+    for (i = 0; i &lt; 16; ++i) {
+        gotoxyWithFullwidth((i &amp; 3) + 32, (i &gt;&gt; 2) + 2);
+        ((tetris &gt;&gt; i) &amp; 1) ? printf(&quot;■&quot;) : printf(&quot;%2s&quot;, &quot;&quot;);
+    }
+}
+
+// =============================================================================
+// 显示得分信息
+void printScore(const TetrisManager *manager) {
+    static const char *tetrisName = &quot;ITLJZSO&quot;;
+    int8_t i;
+
+    SetConsoleTextAttribute(g_hConsoleOutput, 0xE);
+
+    gotoxyWithFullwidth(2, 2);
+    printf(&quot;■得分：%u&quot;, manager-&gt;score);
+
+    gotoxyWithFullwidth(1, 6);
+    printf(&quot;■消行总数：%u&quot;, manager-&gt;erasedTotal);
+    for (i = 0; i &lt; 4; ++i) {
+        gotoxyWithFullwidth(2, 8 + i);
+        printf(&quot;□消%d：%u&quot;, i + 1, manager-&gt;erasedCount[i]);
+    }
+
+    gotoxyWithFullwidth(1, 15);
+    printf(&quot;■方块总数：%u&quot;, manager-&gt;tetrisTotal);
+
+    for (i = 0; i &lt; 7; ++i) {
+        gotoxyWithFullwidth(2, 17 + i);
+        printf(&quot;□%c形：%u&quot;, tetrisName[i], manager-&gt;tetrisCount[i]);
+    }
+}
+
+// =============================================================================
+// 显示提示信息
+void printPrompting() {
+    SetConsoleTextAttribute(g_hConsoleOutput, 0xB);
+    gotoxyWithFullwidth(26, 10);
+    printf(&quot;■控制：&quot;);
+    gotoxyWithFullwidth(27, 12);
+    printf(&quot;□向左移动：← A 4&quot;);
+    gotoxyWithFullwidth(27, 13);
+    printf(&quot;□向右移动：→ D 6&quot;);
+    gotoxyWithFullwidth(27, 14);
+    printf(&quot;□向下移动：↓ S 2&quot;);
+    gotoxyWithFullwidth(27, 15);
+    printf(&quot;□顺时针转：↑ W 8&quot;);
+    gotoxyWithFullwidth(27, 16);
+    printf(&quot;□逆时针转：0&quot;);
+    gotoxyWithFullwidth(27, 17);
+    printf(&quot;□直接落地：空格&quot;);
+    gotoxyWithFullwidth(27, 18);
+    printf(&quot;□暂停游戏：回车&quot;);
+    gotoxyWithFullwidth(25, 23);
+    printf(&quot;■By: wohaaitinciu 12.12.29&quot;);
+}
+
+// =============================================================================
+// 运行游戏
+void runGame(TetrisManager *manager, TetrisControl *control) {
+    clock_t clockLast, clockNow;
+
+    clockLast = clock();  // 计时
+    printTetrisPool(manager, control);  // 显示游戏池
+
+    while (!manager-&gt;dead)  // 没挂
+    {
+        while (_kbhit())  // 有键按下
+        {
+            keydownControl(manager, control, _getch());  // 处理按键
+        }
+
+        if (!control-&gt;pause)  // 未暂停
+        {
+            clockNow = clock();  // 计时
+            // 两次记时的间隔超过0.45秒
+            if (clockNow - clockLast &gt; 0.45F * CLOCKS_PER_SEC ) {
+                clockLast = clockNow;
+                keydownControl(manager, control, 80);  // 方块往下移
+            }
+        }
+    }
+}
+
+// =============================================================================
+// 再来一次
+bool ifPlayAgain() {
+    int ch;
+
+    SetConsoleTextAttribute(g_hConsoleOutput, 0xF0);
+    gotoxyWithFullwidth(15, 10);
+    printf(&quot;游戏结束&quot;);
+    gotoxyWithFullwidth(13, 11);
+    printf(&quot;按Y重玩，按N退出&quot;);
+
+    do {
+        ch = _getch();
+        if (ch == &#39;Y&#39; || ch == &#39;y&#39;) {
+            return true;
+        } else if (ch == &#39;N&#39; || ch == &#39;n&#39;) {
+            return false;
+        }
+    } while (1);
+}
+</code></pre>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/2017/12/29/俄罗斯方块/" data-id="cjcxcshka000hygq8serwy31g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.icharles.top/2017/12/29/俄罗斯方块/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-欧几里得算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/12/27/欧几里得算法/">欧几里得算法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/12/27/欧几里得算法/">
+            <time datetime="2017-12-27T08:29:00.000Z" itemprop="datePublished">2017-12-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/算法/">算法</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>欧几里得算法</strong>计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。</p>
+<h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><ul>
+<li>递归<pre><code class="c">int Gcd(int a, int b)
+{
+  if(b == 0)
+      return a;
+  return Gcd(b, a % b);
+}
+</code></pre>
+</li>
+<li>迭代<pre><code class="c">int Gcd(int a, int b)
+{
+  while(b != 0)
+  {
+      int r = b;
+      b = a % b;
+      a = r;
+  }
+  return a;
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h3><ul>
+<li>介绍<br><strong>扩展欧几里德算法</strong>是用来在已知a, b求解一组p，q使得p<em>a+q</em>b=Gcd(a,b)(根据数论中的相关定理解一定存在，不展开叙述)。扩展欧几里德常用在求解模线性方程及方程组中。        </li>
+<li><p>算法</p>
+<pre><code class="C">int exGcd(int a, int b, int &amp;x, int &amp;y)
+{
+  if(b == 0)
+  {
+      x = 1;
+      y = 0;
+      return a;
+  }
+  int r = exGcd(b, a % b, x, y);
+  int t = x;
+  x = y;
+  y = t - a / b * y;
+
+  return r;
+}
+</code></pre>
+</li>
+<li>理解<br>把这个实现和Gcd的递归实现相比，发现多了下面的x,y赋值过程，这就是扩展欧几里德算法的精髓。 可以这样思考: 对于a’ =b , b’ =a%b 而言，我们求得x, y使得a’ x+b’ y=Gcd(a’, b’) 由于b’ = a % b = a - a / b <em> b 那么可以得到 :<br>a’ x + b’ y = Gcd(a’ , b’)<br>===&gt;<br>bx + (a - a/b </em>b)y = Gcd(a’ , b’) = Gcd(a, b)  //注意到这里的/是C语言中的出发<br>===&gt;<br>ay + b(x- a/b <em>y) = Gcd(a, b)<br>因此对于a和b而言，他们的相对应的p，q分别是 y和(x-a/b</em>y)</li>
+</ul>
+<p><a href="https://my.oschina.net/u/1780798/blog/646739" target="_blank" rel="noopener">推荐文章 ：https://my.oschina.net/u/1780798/blog/646739</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/2017/12/27/欧几里得算法/" data-id="cjcxcshka000dygq889cxo793" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.icharles.top/2017/12/27/欧几里得算法/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Vector-STL" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/12/27/Vector-STL/">Vector--STL</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/12/27/Vector-STL/">
+            <time datetime="2017-12-27T08:27:00.000Z" itemprop="datePublished">2017-12-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/STL/">STL</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/STL/">STL</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>vector(向量)</strong><br>vector类称作向量类，它实现了动态数组，用于元素数量变化的对象数组。像数组一样，vector类也用从0开始的下标表示元素的位置；但和数组不同的是，当vector对象创建后，数组的元素个数会随着vector对象元素个数的增大和缩小而自动变化。<br>用法:</p>
+<pre><code class="c">#include&lt;vector&gt;
+using namespace std;
+vector &lt;int &gt; a
+int b = 5;
+
+a.push_back(b); //该函数下面有详解
+cout&lt;&lt;a[0];        //输出结果为5
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push_back</td>
+<td>在数组的最后添加一个数据</td>
+</tr>
+<tr>
+<td>pop_back</td>
+<td>去掉数组的最后一个数据</td>
+</tr>
+<tr>
+<td>at</td>
+<td>得到编号位置的数据</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>得到数组头的指针</td>
+</tr>
+<tr>
+<td>end</td>
+<td>得到数组的最后一个单元+1的指针</td>
+</tr>
+<tr>
+<td>front</td>
+<td>得到数组头的引用</td>
+</tr>
+<tr>
+<td>back</td>
+<td>得到数组的最后一个单元的引用</td>
+</tr>
+<tr>
+<td>max_size</td>
+<td>得到vector最大可以是多大</td>
+</tr>
+<tr>
+<td>capacity</td>
+<td>当前vector分配的大小</td>
+</tr>
+<tr>
+<td>size</td>
+<td>当前使用数据的大小</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</td>
+</tr>
+<tr>
+<td>reserve</td>
+<td>改变当前vecotr所分配空间的大小</td>
+</tr>
+<tr>
+<td>erase</td>
+<td>删除指针指向的数据项</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>清空当前的vector</td>
+</tr>
+<tr>
+<td>rbegin</td>
+<td>将vector反转后的开始指针返回(其实就是原来的end-1)</td>
+</tr>
+<tr>
+<td>rend</td>
+<td>将vector反转构的结束指针返回(其实就是原来的begin-1)</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>判断vector是否为空</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>与另一个vector交换数据</td>
+</tr>
+</tbody>
+</table>
+<p>详细的函数实现功能 ：<br>其中  vector &lt;int&gt; c  </p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.clear()</td>
+<td>移除容器中所有元素。</td>
+</tr>
+<tr>
+<td>c.empty()</td>
+<td>判断容器是否为空。</td>
+</tr>
+<tr>
+<td>c.erase(pos)</td>
+<td>删除pos位置之后的一个元素</td>
+</tr>
+<tr>
+<td>c.erase(begin,end)</td>
+<td>删除[begin,end)区间的元素</td>
+</tr>
+<tr>
+<td>c.front()</td>
+<td>传回第一个元素</td>
+</tr>
+<tr>
+<td>c.insert(pos,elem)</td>
+<td>在pos位置之后插入一个elem拷贝</td>
+</tr>
+<tr>
+<td>c.pop_back()</td>
+<td>删除最后一个元素</td>
+</tr>
+<tr>
+<td>c.push_back(elem)</td>
+<td>在尾部加入一个元素</td>
+</tr>
+<tr>
+<td>c.resize(num)</td>
+<td>重新设置该容器的大小</td>
+</tr>
+<tr>
+<td>c.size()</td>
+<td>回容器中元素的个数</td>
+</tr>
+<tr>
+<td>c.begin()</td>
+<td>返回指向容器第一个元素的迭代器</td>
+</tr>
+<tr>
+<td>c.end()</td>
+<td>返回指向容器最后一个元素的迭代器</td>
+</tr>
+</tbody>
+</table>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/2017/12/27/Vector-STL/" data-id="cjcxcshka000cygq80k8slj4j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.icharles.top/2017/12/27/Vector-STL/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-位运算技巧" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/12/26/位运算技巧/">位运算技巧</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/12/26/位运算技巧/">
+            <time datetime="2017-12-26T10:03:00.000Z" itemprop="datePublished">2017-12-26</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/位运算/">位运算</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ACM/">ACM</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>一.获得int型最大值</strong><br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt() {  
+    return (1&lt;&lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略
+}
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt() {  
+    return -(1&lt;&lt;-1) - 1;    //2147483647  
+}
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt() {  
+    return ~(1&lt;&lt;31);//2147483647  
+}
+</code></pre>
+<p>C语言中不知道int占几个字节时候<br>代码代码如下:</p>
+<pre><code class="c">int getMaxInt(){  
+    return ((unsigned int)-1) &gt;&gt; 1;//2147483647  
+}
+</code></pre>
+<p><strong>二.获得int型最小值</strong><br>复制代码代码如下:</p>
+<pre><code class="c">int getMinInt() {  
+    return 1&lt;&lt;31;    //-2147483648  
+ }
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getMinInt(){  
+    return 1 &lt;&lt; -1;//-2147483648  
+}
+</code></pre>
+<p><strong>三.获得long类型的最大值</strong><br>C语言版<br>代码代码如下:</p>
+<pre><code class="c">long getMaxLong() {  
+    return ((unsigned long)-1) &gt;&gt; 1;    //2147483647  
+}
+</code></pre>
+<p>JAVA版<br>代码代码如下:</p>
+<pre><code class="java">long getMaxLong() {  
+    return ((long)1&lt;&lt;127)-1;    //9223372036854775807  
+}
+</code></pre>
+<p>获得long最小值，和其他类型的最大值，最小值同理.   </p>
+<p><strong>四.乘以2运算</strong><br>代码代码如下:</p>
+<pre><code class="c">int mulTwo(int n) {    //计算n*2   
+    return n&lt;&lt;1;  
+}
+</code></pre>
+<p><strong>五.除以2运算</strong><br>代码代码如下:  </p>
+<pre><code class="c">int divTwo(int n) {    //负奇数的运算不可用  
+    return n&gt;&gt;1;    //除以2  
+}
+</code></pre>
+<p><strong>六.乘以2的m次方</strong><br>代码代码如下:</p>
+<pre><code class="c">int divTwoPower(int n,int m){    //计算n/(2^m)  
+    return n&gt;&gt;m;  
+}
+</code></pre>
+<p><strong>七.除以2的m次方</strong><br>代码代码如下:</p>
+<pre><code class="c">int divTwoPower(int n,int m) {    //计算n/(2^m)  
+    return n&gt;&gt;m;  
+}
+</code></pre>
+<p><strong>八.判断一个数的奇偶性</strong><br>代码代码如下:</p>
+<pre><code class="c">boolean isOddNumber(int n) {  
+    return (n &amp; 1) == 1;  
+}
+</code></pre>
+<p><strong>九.不用临时变量交换两个数</strong><br>C语言版<br>代码代码如下:</p>
+<pre><code class="c">void swap(int *a,int *b) {     
+    (*a)^=(*b)^=(*a)^=(*b);   
+}
+</code></pre>
+<p>通用版（一些语言中得分开写）<br>代码代码如下:</p>
+<pre><code class="c">a ^= b;  
+b ^= a;  
+a ^= b;
+</code></pre>
+<p><strong>十.取绝对值</strong><br>代码代码如下:</p>
+<pre><code class="c">int abs(int n){  
+    return (n ^ (n &gt;&gt; 31)) - (n &gt;&gt; 31);   
+}
+/* n&gt;&gt;31 取得n的符号，若n为正数，n&gt;&gt;31等于0，若n为负数，n&gt;&gt;31等于-1 
+若n为正数 n^0=0,数不变，若n为负数有n^-1 需要计算n和-1的补码，然后进行异或运算， 
+结果n变号并且为n的绝对值减1，再减去-1就是绝对值 */
+</code></pre>
+<p><strong>十一.取两个数的最大值</strong><br>通用版<br>复制代码代码如下:</p>
+<pre><code class="c">int max(int a,int b) {  
+    return b&amp;((a-b)&gt;&gt;31) | a&amp;(~(a-b)&gt;&gt;31);  
+    // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1
+}
+</code></pre>
+<p>C语言版<br>代码代码如下:</p>
+<pre><code class="c">int max(int x,int y) {  
+    return x ^ ((x ^ y) &amp; -(x &lt; y));  
+    /*如果x&lt;y x&lt;y返回1，否则返回0， 与0做与运算结果为0，与-1做与运算结果不变*/  
+}
+</code></pre>
+<p><strong>十二.取两个数的最小值</strong><br>通用版<br>代码代码如下:</p>
+<pre><code class="c">int min(int a,int b) {  
+    return a&amp;((a-b)&gt;&gt;31) | b&amp;(~(a-b)&gt;&gt;31);  
+    // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1 
+}
+</code></pre>
+<p>C语言版<br>代码代码如下:</p>
+<pre><code class="c">int min(int x,int y) {  
+    return y ^ ((x ^ y) &amp; -(x &lt; y));  
+        // 如果x&lt;y x&lt;y返回1，否则返回0， 
+        // 与0做与运算结果为0，与-1做与运算结果不变
+}
+</code></pre>
+<p><strong>十三.判断符号是否相同</strong><br>代码如下:</p>
+<pre><code class="c">boolean isSameSign(int x, int y) {  
+    return (x ^ y) &gt; 0; 
+    // true 表示 x和y有相同的符号， false表示x，y有相反的符号。  
+}
+</code></pre>
+<p><strong>十四.计算2的n次方</strong><br>代码代码如下:</p>
+<pre><code class="c">int getFactorialofTwo(int n) {    //n &gt; 0  
+    return 2&lt;&lt;(n-1);        //2的n次方  
+}
+</code></pre>
+<p><strong>十五.判断一个数是不是2的幂</strong><br>代码代码如下:</p>
+<pre><code class="c">boolean isFactorialofTwo(int n) {  
+    return (n &amp; (n - 1)) == 0;  
+    // 如果是2的幂，n一定是100... n-1就是1111.... 
+    // 所以做与运算结果为0 
+}
+</code></pre>
+<p><strong>十六.对2的n次方取余</strong><br>代码代码如下:</p>
+<pre><code class="c">int quyu(int m,int n) {    //n为2的次方  
+    return m &amp; (n - 1);  
+    // 如果是2的幂，n一定是100... n-1就是1111.... 
+    // 所以做与运算结果保留m在n范围的非0的位
+}
+</code></pre>
+<p><strong>十七.求两个整数的平均值</strong><br>代码代码如下:</p>
+<pre><code class="c">int getAverage(int x, int y) {  
+        return (x+y) &gt;&gt; 1;   
+｝
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">int getAverage(int x, int y) {  
+        return ((x^y) &gt;&gt; 1) + (x&amp;y);   
+     // (x^y) &gt;&gt; 1得到x，y其中一个为1的位并除以2， 
+     // x&amp;y得到x，y都为1的部分，加一起就是平均数了 
+}
+</code></pre>
+<p>下面是三个最基本对二进制位的操作<br><strong>十八.从低位到高位,取n的第m位</strong><br>代码代码如下:</p>
+<pre><code class="c">int getBit(int n, int m) {  
+    return (n &gt;&gt; (m-1)) &amp; 1;  
+}
+</code></pre>
+<p><strong>十九.从低位到高位.将n的第m位置1</strong><br>代码代码如下:</p>
+<pre><code class="c">int setBitToOne(int n, int m) {  
+    return n | (1&lt;&lt;(m-1));  
+    // 将1左移m-1位找到第m位，得到000...1...000 
+    // n在和这个数做或运算
+}
+</code></pre>
+<p><strong>二十.从低位到高位,将n的第m位置0</strong><br>代码代码如下:</p>
+<pre><code class="c">int setBitToZero(int n, int m) {  
+    return n &amp; ~(1&lt;&lt;(m-1));  
+    // 将1左移m-1位找到第m位，取反后变成111...0...1111 
+    // n再和这个数做与运算 
+}
+</code></pre>
+<p>另附一些对程序效率上没有实质提高的位运算技巧，一些也是位运算的常识（面试也许会遇到）<br>计算n+1<br>代码代码如下:</p>
+<pre><code class="c">-~n
+</code></pre>
+<p>计算n-1<br>代码代码如下:</p>
+<pre><code class="c">~-n
+</code></pre>
+<p>取相反数<br>代码代码如下:</p>
+<pre><code class="c">~n + 1;
+</code></pre>
+<p>另一种写法<br>代码代码如下:</p>
+<pre><code class="c">(n ^ -1) + 1;  
+if(x == a) x = b; if(x == b) x = a;
+</code></pre>
+<p>代码代码如下:</p>
+<pre><code class="c">x = a ^ b ^ x;
+</code></pre>
+<p>sign函数，参数为n，当n&gt;0时候返回1，n&lt;0时返回-1，n=0时返回0<br>复制代码代码如下:</p>
+<pre><code class="c">return !!n - (((unsigned)n&gt;&gt;31)&lt;&lt;1);
+</code></pre>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/2017/12/26/位运算技巧/" data-id="cjcxcshka000jygq8ra737bmt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.icharles.top/2017/12/26/位运算技巧/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/26/Dijkstra/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/最小路/">最小路</a></p>
+                            <p class="item-title"><a href="/2018/01/26/Dijkstra/" class="title">Dijkstra</a></p>
+                            <p class="item-date"><time datetime="2018-01-26T12:06:00.000Z" itemprop="datePublished">2018-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/19/KMP/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/算法/">算法</a></p>
+                            <p class="item-title"><a href="/2018/01/19/KMP/" class="title">KMP</a></p>
+                            <p class="item-date"><time datetime="2018-01-19T13:31:00.000Z" itemprop="datePublished">2018-01-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/04/谷歌访问助手/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/04/谷歌访问助手/" class="title">谷歌访问助手</a></p>
+                            <p class="item-date"><time datetime="2018-01-04T04:21:32.000Z" itemprop="datePublished">2018-01-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/30/Ubuntu/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://www.linuxidc.com/upload/2017_07/17072609596256.jpg)" alt="Ubuntu" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/30/Ubuntu/" class="title">Ubuntu</a></p>
+                            <p class="item-date"><time datetime="2017-12-30T06:12:00.000Z" itemprop="datePublished">2017-12-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/29/俄罗斯方块/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Game/">Game</a></p>
+                            <p class="item-title"><a href="/2017/12/29/俄罗斯方块/" class="title">俄罗斯方块</a></p>
+                            <p class="item-date"><time datetime="2017-12-29T14:16:00.000Z" itemprop="datePublished">2017-12-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/STL/">STL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/位运算/">位运算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/最小路/">最小路</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dijkstra/">Dijkstra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/">Game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/ACM/" style="font-size: 10px;">ACM</a> <a href="/tags/Dijkstra/" style="font-size: 10px;">Dijkstra</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
 
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/facebook" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-        <a href="https://weibo.com/u/6024032736" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
-
-        
-        <!--可删除-->
-        <script>
-            (function(){
-                var bp = document.createElement('script');
-                bp.src = '//push.zhanzhang.baidu.com/push.js';
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(bp, s);
-            })();
-        </script>
-        <!--360-->
-        <script>(function(){
-            var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?069dab0afe395f93033b9cc2f9285d7b":                        "https://jspassport.ssl.qhimg.com/11.0.1.js?069dab0afe395f93033b9cc2f9285d7b";
-            document.write('<script src="' + src + '" id="sozz"><\/script>');
-            })();
-        </script>
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Blog Charles
             
         </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">我的世界不允许你的消失<a href="" target="_blank" class="footer-develop-a"></a></div>
-                <div class="footer-develop-div">不管结局是否完美<a href="" target="_blank" class="footer-develop-a"></a></div>
-            </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Charles<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
-    
+    </div>
 </footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#7BC8A4'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #7BC8A4, 0 0 15px #7BC8A4'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#7BC8A4',
-        'border-left-color': '#7BC8A4'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-    
-        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
-    
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('TS3OlnXpJxMoAiQVH4FgMNyf-gzGzoHsz', 'IRHQ1uiaFwiN5BqtGjm3mP2s');
-    </script>
-    <script type="text/ls-javascript" id="leancloud-views-script">
-    function showTime(Counter) {
-        var query = new AV.Query(Counter);
-        $('.leancloud-views_num').each(function() {
-            var url = $(this).attr('id').trim();
-            query.equalTo('url', url);
-            query.find({
-                success: function(results) {
-                    if (results.length === 0) {
-                        var content = '0 ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                        return;
-                    }
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    }
-                },
-                error: function(object, error) {
-                    console.log('Error: ' + error.code + ' ' + error.message);
-                }
-            });
-        });
-    }
-
-    function addCount(Counter) {
-      var Counter = AV.Object.extend('Counter');
-      url = $('.leancloud-views_num').attr('id').trim();
-      title = $('.leancloud-views_num').attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-      query.equalTo('url', url);
-      query.find({
-          success: function(results) {
-            if (results.length > 0) {
-                var counter = results[0];
-                counter.fetchWhenSave(true);
-                counter.increment('time');
-                counter.save(null, {
-                    success: function(counter) {
-                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    },
-                    error: function(counter, error) {
-                        console.log('Failed to save Visitor num, with error message: ' + error.message);
-                    }
-                });
-            } else {
-              var newcounter = new Counter();
-              newcounter.set('title', title);
-              newcounter.set('url', url);
-              newcounter.set('time', 1);
-              newcounter.save(null, {
-                  success: function(newcounter) {
-                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
-                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-                      $(document.getElementById(url)).text(content);
-                  },
-                  error: function(newcounter, error) {
-                      console.log('Failed to create');
-                  }
-              });
-            }
-        },
-        error: function(error) {
-            console.log('Error:' + error.code + ' ' + error.message);
-        }
-      });
-    }
-    $(function() {
-        var Counter = AV.Object.extend('Counter');
-        if ($('.leancloud-views_num').length === 1) {
-            addCount(Counter);
-        } else if ($('.post-title-link').length > 1) {
-            showTime(Counter);
-        }
-    });
-</script>
-
-
-
-
-
-
-   
-
-
-
-
-    <!-- Swiftye -->
-    
-        <script type="text/ls-javascript" id="search-swiftype-js-script">
-    (function(w,d,t,u,n,s,e) {w['SwiftypeObject']=n;w[n]=w[n]||function() {
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-    _st('install','-cLjtVUKkC_HUxNmuAKP','2.0.0');
-</script>
-
-    
-
-    <!-- Local Search-->
-    
-
-
-<!-- UC Browser Compatible 
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
--->
-
-<!-- Import prettify js  -->
-
-
-    
-        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
-    
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
-    
         
-        
-        HanabiBrowser.start('pre code',true);
     
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151517"></script>
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        </body>
     
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
 </html>

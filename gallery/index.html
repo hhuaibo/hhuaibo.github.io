@@ -1,445 +1,546 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
+<html lang=zh>
+<head>
     <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
     
-    <title>
-        
-            gallery | 
-        
-        Blog Charles
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" href="/img/favicon.png">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="icharles, charles, icharles blog, charles blog">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
+    <title>gallery | Blog Charles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="gallery">
+<meta property="og:url" content="http://www.icharles.top/gallery/index.html">
+<meta property="og:site_name" content="Blog Charles">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-26T09:01:39.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gallery">
     
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
-        
-
+    
+        <link rel="alternate" href="/" title="Blog Charles" type="application/atom+xml" />
     
 
     
 
-    <!-- Config CSS -->
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
+    <link rel="stylesheet" href="/css/style.css">
 
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-image: url(/img/bg.png);
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-
-
-    <!-- Import jQuery -->
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
-        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
     
-
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Blog Charles">
-    <meta name="msapplication-starturl" content="http://www.icharles.top/gallery/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Blog Charles">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Site Verification -->
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
     
     
 
-    <!-- RSS -->
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.icharles.top/gallery/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="gallery | Blog Charles">
-    <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="http://www.icharles.top/gallery/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
-
-
-    
-
-    <!-- Analytics -->
-    
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-111633560-1', 'auto');ga('send', 'pageview');
-</script>
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?c23d075f9a00d1d7d268fa29835eb3c2';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-
-    <!-- Custom Head -->
-    
 
 </head>
 
-
-    
-        <!-- Single Gallery Page -->
-        
-    <link rel="stylesheet" href="/css/gallery.min.css">
-
-  
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Header -->
+<body>
+    <div id="container">
         <header id="header">
-            <h1>
-                <a href="/"><strong>Blog Charles</strong></a> - gallery
-            </h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#footer" class="icon fa-info-circle">
-                            ©&nbsp;Charles
-                        </a>
-                    </li>
-                </ul>
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog Charles</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/garlly">Garlly</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
             </nav>
-        </header>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="https://www.gravatar.com/avatar/db0b6d4e635980bf709293e4f1c6015a" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
 
-        <!-- Main -->
-        <div id="main">
-            
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/nltxa6v.bcHo5HXm91mIEb8SYwR2UqIKwfUPIb.noxw!/r/dCUAAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/nltxa6v.bcHo5HXm91mIEb8SYwR2UqIKwfUPIb.noxw!/r/dCUAAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/nltxa6v.bcHo5HXm91mIEb8SYwR2UqIKwfUPIb.noxw!/r/dCUAAAAAAAAA" alt="img1" /></a>
-                        <h2>img1</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/CVvreRpvEdC9RlCcKvExeKsTsYoMWrlG1bAT2.UJ*zY!/r/dBYAAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/CVvreRpvEdC9RlCcKvExeKsTsYoMWrlG1bAT2.UJ*zY!/r/dBYAAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/CVvreRpvEdC9RlCcKvExeKsTsYoMWrlG1bAT2.UJ*zY!/r/dBYAAAAAAAAA" alt="img2" /></a>
-                        <h2>img2</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/QREaYxG.In0FW.W6xB8pnUqi9we4ztWA3S6a8hp.DRQ!/r/dH4BAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/QREaYxG.In0FW.W6xB8pnUqi9we4ztWA3S6a8hp.DRQ!/r/dH4BAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/QREaYxG.In0FW.W6xB8pnUqi9we4ztWA3S6a8hp.DRQ!/r/dH4BAAAAAAAA" alt="img3" /></a>
-                        <h2>img3</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/Qjpb2SoRtVInS57lyw4HOj*pzYYq827hKhcazu3Gkn0!/r/dG4BAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/Qjpb2SoRtVInS57lyw4HOj*pzYYq827hKhcazu3Gkn0!/r/dG4BAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/Qjpb2SoRtVInS57lyw4HOj*pzYYq827hKhcazu3Gkn0!/r/dG4BAAAAAAAA" alt="img4" /></a>
-                        <h2>img4</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/uld.ent5pqhiS3Ay4I4RpqVRa0LSfyXlB3h25SK0ybM!/r/dG4BAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/uld.ent5pqhiS3Ay4I4RpqVRa0LSfyXlB3h25SK0ybM!/r/dG4BAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/uld.ent5pqhiS3Ay4I4RpqVRa0LSfyXlB3h25SK0ybM!/r/dG4BAAAAAAAA" alt="img5" /></a>
-                        <h2>img5</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/0WNC9gdRSvWNlLPeIRphORQWgkOeQx9U3l0ocxuXAqo!/r/dIMBAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/0WNC9gdRSvWNlLPeIRphORQWgkOeQx9U3l0ocxuXAqo!/r/dIMBAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/0WNC9gdRSvWNlLPeIRphORQWgkOeQx9U3l0ocxuXAqo!/r/dIMBAAAAAAAA" alt="img6" /></a>
-                        <h2>img6</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/Cnq1AVusNCe5VSSlUPK*yrbql5NyLTuoa9M5sVLNsTg!/r/dDwBAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/Cnq1AVusNCe5VSSlUPK*yrbql5NyLTuoa9M5sVLNsTg!/r/dDwBAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/Cnq1AVusNCe5VSSlUPK*yrbql5NyLTuoa9M5sVLNsTg!/r/dDwBAAAAAAAA" alt="img7" /></a>
-                        <h2>img7</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/UR5aAtfv0AT.E2J0O6e8MTzGjwo.*JsDsaf0qekINt4!/r/dG0BAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/UR5aAtfv0AT.E2J0O6e8MTzGjwo.*JsDsaf0qekINt4!/r/dG0BAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/UR5aAtfv0AT.E2J0O6e8MTzGjwo.*JsDsaf0qekINt4!/r/dG0BAAAAAAAA" alt="img8" /></a>
-                        <h2>img8</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-                    <article class="thumb">
-                        <a href="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/aM3bMFeiPotFLsD48YhDNJdVQ2nRzp6mWgXf.02Uky4!/r/dIMBAAAAAAAA" class="image lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/aM3bMFeiPotFLsD48YhDNJdVQ2nRzp6mWgXf.02Uky4!/r/dIMBAAAAAAAA"><img class="lazy" data-original="http://r.photo.store.qq.com/psb?/V14X0or92AuulN/aM3bMFeiPotFLsD48YhDNJdVQ2nRzp6mWgXf.02Uky4!/r/dIMBAAAAAAAA" alt="img9" /></a>
-                        <h2>img9</h2>
-                        <p>����һ��</p>
-                    </article>
-                
-            
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
-        <!-- Footer -->
-        <!--
-        <footer id="footer" class="panel">
-          <div class="inner split">
-            <div>
-              <section>
-                <h2>Magna feugiat sed adipiscing</h2>
-                <p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
-              </section>
-              <section>
-                <h2>Follow me on ...</h2>
-                <ul class="icons">
-                  <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                  <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                  <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                  <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-                  <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                  <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                  <li><a href="#" class="icon fa-telegram"><span class="label">Telegram</span></a></li>
-                </ul>
-              </section>
-              <p class="copyright">
-                &copy; Design: <a href="#">Gallery</a>.
-              </p>
-            </div>
-            <div>
-              <section>
-                <h2>Get in touch</h2>
-                <form method="post" action="#">
-                  <div class="field half first">
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                  </div>
-                  <div class="field half">
-                    <input type="text" name="email" id="email" placeholder="Email" />
-                  </div>
-                  <div class="field">
-                    <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-                  </div>
-                  <ul class="actions">
-                    <li><input type="submit" value="Send" class="special" /></li>
-                    <li><input type="reset" value="Reset" /></li>
-                  </ul>
-                </form>
-              </section>
-            </div>
-          </div>
-        </footer>
-        -->
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
 
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/garlly">Garlly</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
-    <!-- Scripts -->
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/db0b6d4e635980bf709293e4f1c6015a?s=128" />
+            <h2 id="name">Charles</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Jinan, China</span>
+            <a id="follow" target="_blank" href="https://github.com/hhuaibo/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                8
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/hhuaibo/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="gallery-" class="article article-type-gallery" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
     
-        <script src="/js/gallery/gallery.js"></script>
+        <h1 class="article-title" itemprop="name">
+            gallery
+        </h1>
     
 
-    
-        <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
-    
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/gallery/index.html">
+            <time datetime="2017-12-26T09:01:39.233Z" itemprop="datePublished">2017-12-26</time>
+        </a>
+    </div>
 
-    <script>
-        queue.offer(function(){
-            $('.lazy').lazyload({
-              effect: 'fadeIn',
-              event: 'scrollstop'
-            });
-        })
-        <!-- Start Queue -->
-        $(document).ready(function(){
-            setInterval(function(){
-                queue.execNext();
-            },200);
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.icharles.top/gallery/index.html" data-id="cjcxcshmh0018ygq8z0a4nkjd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
         });
-    </script>
-</body>
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.icharles.top/gallery/index.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
 
     
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/26/Dijkstra/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/最小路/">最小路</a></p>
+                            <p class="item-title"><a href="/2018/01/26/Dijkstra/" class="title">Dijkstra</a></p>
+                            <p class="item-date"><time datetime="2018-01-26T12:06:00.000Z" itemprop="datePublished">2018-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/19/KMP/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/算法/">算法</a></p>
+                            <p class="item-title"><a href="/2018/01/19/KMP/" class="title">KMP</a></p>
+                            <p class="item-date"><time datetime="2018-01-19T13:31:00.000Z" itemprop="datePublished">2018-01-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/04/谷歌访问助手/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/04/谷歌访问助手/" class="title">谷歌访问助手</a></p>
+                            <p class="item-date"><time datetime="2018-01-04T04:21:32.000Z" itemprop="datePublished">2018-01-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/30/Ubuntu/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://www.linuxidc.com/upload/2017_07/17072609596256.jpg)" alt="Ubuntu" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/30/Ubuntu/" class="title">Ubuntu</a></p>
+                            <p class="item-date"><time datetime="2017-12-30T06:12:00.000Z" itemprop="datePublished">2017-12-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/29/俄罗斯方块/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Game/">Game</a></p>
+                            <p class="item-title"><a href="/2017/12/29/俄罗斯方块/" class="title">俄罗斯方块</a></p>
+                            <p class="item-date"><time datetime="2017-12-29T14:16:00.000Z" itemprop="datePublished">2017-12-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/STL/">STL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/位运算/">位运算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/最小路/">最小路</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/">ACM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dijkstra/">Dijkstra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/">Game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/ACM/" style="font-size: 10px;">ACM</a> <a href="/tags/Dijkstra/" style="font-size: 10px;">Dijkstra</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Charles<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151517"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
 </html>
