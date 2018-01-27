@@ -54,17 +54,17 @@
             </a>
             <nav id="main-nav">
                 
-                    <a class="main-nav-link" href="/.">Home</a>
+                    <a class="main-nav-link" href="/.">主页</a>
                 
-                    <a class="main-nav-link" href="/archives">Archives</a>
+                    <a class="main-nav-link" href="/archives">归档</a>
                 
-                    <a class="main-nav-link" href="/tags">Tags</a>
+                    <a class="main-nav-link" href="/tags">标签</a>
                 
-                    <a class="main-nav-link" href="/gallery">Gallery</a>
+                    <a class="main-nav-link" href="/gallery">图库</a>
                 
-                    <a class="main-nav-link" href="http://icharles.top/zuopin">Zuopin</a>
+                    <a class="main-nav-link" href="http://icharles.top/zuopin">作品</a>
                 
-                    <a class="main-nav-link" href="/about">About</a>
+                    <a class="main-nav-link" href="/about">关于</a>
                 
             </nav>
             
@@ -80,19 +80,39 @@
             
             <div id="search-form-wrap">
 
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-    <button type="submit" class="search-form-submit"></button>
-</form>
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
 <script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:www.icharles.top ' + keyword;
-        return false;
-    });
-})(jQuery);
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -101,33 +121,23 @@
         <table class="menu outer">
             <tr>
                 
-                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                    <td><a class="main-nav-link" href="/.">主页</a></td>
                 
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
                 
-                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
                 
-                    <td><a class="main-nav-link" href="/gallery">Gallery</a></td>
+                    <td><a class="main-nav-link" href="/gallery">图库</a></td>
                 
-                    <td><a class="main-nav-link" href="http://icharles.top/zuopin">Zuopin</a></td>
+                    <td><a class="main-nav-link" href="http://icharles.top/zuopin">作品</a></td>
                 
-                    <td><a class="main-nav-link" href="/about">About</a></td>
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
                 
                 <td>
                     
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-    <button type="submit" class="search-form-submit"></button>
-</form>
-<script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:www.icharles.top ' + keyword;
-        return false;
-    });
-})(jQuery);
-</script>
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
 
                 </td>
             </tr>
@@ -144,7 +154,7 @@
         <div class="base-info profile-block">
             <img id="avatar" src="/css/images/avatar.png" />
             <h2 id="name">Charles</h2>
-            <h3 id="title">��������,�س�����</h3>
+            <h3 id="title">欲戴王冠，必承其重</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Jinan, China</span>
             <a id="follow" target="_blank" href="https://github.com/ppoffice/">关注我</a>
         </div>
@@ -395,7 +405,7 @@
             <ul>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="http://my.csdn.net/qq_23320955">CSDN</a>
                     </li>
                 
             </ul>
@@ -412,8 +422,8 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2018 Charles<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            &copy; 2017-2018  Charles<br>
+            我的世界不允许你消失，不管结局如何
         </div>
     </div>
 </footer>
@@ -429,7 +439,7 @@
             verify:false,
             app_id: 'TS3OlnXpJxMoAiQVH4FgMNyf-gzGzoHsz',
             app_key: 'IRHQ1uiaFwiN5BqtGjm3mP2s',
-            placeholder: 'Just Do It',
+            placeholder: '留下点什么吧...',
             avatar:'mm',
             lang:'zh-cn'
         });

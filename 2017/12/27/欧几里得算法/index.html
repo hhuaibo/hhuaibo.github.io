@@ -5,18 +5,18 @@
     
     <title>欧几里得算法 | Blog Charles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。 欧几里得算法 递归int Gcd(int a, int b) {   if(b == 0)       return a;   return Gcd(b, a % b); }   迭代int Gcd(int a, int b) {   while(b !">
+    <meta name="description" content="欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧几里得算法">
 <meta property="og:url" content="http://www.icharles.top/2017/12/27/欧几里得算法/index.html">
 <meta property="og:site_name" content="Blog Charles">
-<meta property="og:description" content="欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。 欧几里得算法 递归int Gcd(int a, int b) {   if(b == 0)       return a;   return Gcd(b, a % b); }   迭代int Gcd(int a, int b) {   while(b !">
+<meta property="og:description" content="欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-16T10:18:14.794Z">
+<meta property="og:updated_time" content="2018-01-27T14:55:19.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="欧几里得算法">
-<meta name="twitter:description" content="欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。 欧几里得算法 递归int Gcd(int a, int b) {   if(b == 0)       return a;   return Gcd(b, a % b); }   迭代int Gcd(int a, int b) {   while(b !">
+<meta name="twitter:description" content="欧几里得算法计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。">
     
 
     
@@ -59,17 +59,17 @@
             </a>
             <nav id="main-nav">
                 
-                    <a class="main-nav-link" href="/.">Home</a>
+                    <a class="main-nav-link" href="/.">主页</a>
                 
-                    <a class="main-nav-link" href="/archives">Archives</a>
+                    <a class="main-nav-link" href="/archives">归档</a>
                 
-                    <a class="main-nav-link" href="/tags">Tags</a>
+                    <a class="main-nav-link" href="/tags">标签</a>
                 
-                    <a class="main-nav-link" href="/gallery">Gallery</a>
+                    <a class="main-nav-link" href="/gallery">图库</a>
                 
-                    <a class="main-nav-link" href="http://icharles.top/zuopin">Zuopin</a>
+                    <a class="main-nav-link" href="http://icharles.top/zuopin">作品</a>
                 
-                    <a class="main-nav-link" href="/about">About</a>
+                    <a class="main-nav-link" href="/about">关于</a>
                 
             </nav>
             
@@ -85,19 +85,39 @@
             
             <div id="search-form-wrap">
 
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-    <button type="submit" class="search-form-submit"></button>
-</form>
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
 <script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:www.icharles.top ' + keyword;
-        return false;
-    });
-})(jQuery);
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -106,33 +126,23 @@
         <table class="menu outer">
             <tr>
                 
-                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                    <td><a class="main-nav-link" href="/.">主页</a></td>
                 
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
                 
-                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
                 
-                    <td><a class="main-nav-link" href="/gallery">Gallery</a></td>
+                    <td><a class="main-nav-link" href="/gallery">图库</a></td>
                 
-                    <td><a class="main-nav-link" href="http://icharles.top/zuopin">Zuopin</a></td>
+                    <td><a class="main-nav-link" href="http://icharles.top/zuopin">作品</a></td>
                 
-                    <td><a class="main-nav-link" href="/about">About</a></td>
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
                 
                 <td>
                     
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-    <button type="submit" class="search-form-submit"></button>
-</form>
-<script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:www.icharles.top ' + keyword;
-        return false;
-    });
-})(jQuery);
-</script>
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
 
                 </td>
             </tr>
@@ -149,7 +159,7 @@
         <div class="base-info profile-block">
             <img id="avatar" src="/css/images/avatar.png" />
             <h2 id="name">Charles</h2>
-            <h3 id="title">��������,�س�����</h3>
+            <h3 id="title">欲戴王冠，必承其重</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Jinan, China</span>
             <a id="follow" target="_blank" href="https://github.com/ppoffice/">关注我</a>
         </div>
@@ -251,6 +261,7 @@
         
             
             <p><strong>欧几里得算法</strong>计算的是两个自然数a和b的最大公约数，两个数的最大公约数通常写成gcd(a, b)，如果有gcd(a, b)==1，则有a，b互质。</p>
+<a id="more"></a>
 <h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><ul>
 <li>递归<pre><code class="c">int Gcd(int a, int b)
 {
@@ -302,75 +313,60 @@
         <footer class="article-footer">
             <div class="share-container">
 
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
 
 
 </div>
-
-    <a data-url="http://www.icharles.top/2017/12/27/欧几里得算法/" data-id="cjcxgsagn000l9oq871hfydgj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
 
             
     
@@ -564,7 +560,7 @@
             <ul>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="http://my.csdn.net/qq_23320955">CSDN</a>
                     </li>
                 
             </ul>
@@ -581,8 +577,8 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2018 Charles<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            &copy; 2017-2018  Charles<br>
+            我的世界不允许你消失，不管结局如何
         </div>
     </div>
 </footer>
@@ -598,7 +594,7 @@
             verify:false,
             app_id: 'TS3OlnXpJxMoAiQVH4FgMNyf-gzGzoHsz',
             app_key: 'IRHQ1uiaFwiN5BqtGjm3mP2s',
-            placeholder: 'Just Do It',
+            placeholder: '留下点什么吧...',
             avatar:'mm',
             lang:'zh-cn'
         });
