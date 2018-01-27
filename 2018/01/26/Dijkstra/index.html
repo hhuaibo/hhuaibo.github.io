@@ -89,39 +89,19 @@
             
             <div id="search-form-wrap">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
+    <button type="submit" class="search-form-submit"></button>
+</form>
 <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:www.icharles.top ' + keyword;
+        return false;
+    });
+})(jQuery);
 </script>
-<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -144,9 +124,19 @@
                 
                 <td>
                     
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
+    <button type="submit" class="search-form-submit"></button>
+</form>
+<script>
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:www.icharles.top ' + keyword;
+        return false;
+    });
+})(jQuery);
+</script>
 
                 </td>
             </tr>
@@ -434,7 +424,7 @@ int main()
 
 </div>
 
-    <a data-url="http://www.icharles.top/2018/01/26/Dijkstra/" data-id="cjcxfqyz20006p0q8hd269j1f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.icharles.top/2018/01/26/Dijkstra/" data-id="cjcxgsag700089oq855jwms15" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -525,7 +515,7 @@ int main()
     
     
         <section id="comments">
-	<div id="commentContainer"></div>
+    <div id="valine-thread"></div>
 </section>
     
 
@@ -707,20 +697,22 @@ int main()
 </footer>
         
     
-	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-	<script>
-		var gitment = new Gitment({
-			owner: 'hhuaibo',
-			repo: 'https://github.com/hhuaibo/gitment-comments',
-			oauth: {
-				client_id: '9aa2c5572a42b6927d86',
-				client_secret: 'ad760033968146d80f819719e14eb7e5968178f2',
-			},
-		})
-		gitment.render('commentContainer')
-	</script>
-	
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            guest_info:['nick'],
+            notify:false,
+            verify:false,
+            app_id: 'TS3OlnXpJxMoAiQVH4FgMNyf-gzGzoHsz',
+            app_key: 'IRHQ1uiaFwiN5BqtGjm3mP2s',
+            placeholder: 'Just Do It',
+            avatar:'mm',
+            lang:'zh-cn'
+        });
+    </script>
+
 
 
 
