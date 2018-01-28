@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icharles.top/"/>
-  <updated>2018-01-27T14:54:10.823Z</updated>
+  <updated>2018-01-28T15:18:48.415Z</updated>
   <id>http://www.icharles.top/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://www.icharles.top/2018/01/28/TOP/"/>
+    <id>http://www.icharles.top/2018/01/28/TOP/</id>
+    <published>2018-01-28T14:30:08.693Z</published>
+    <updated>2018-01-28T15:18:48.415Z</updated>
+    
+    <content type="html"><![CDATA[<p>﻿—<br>title: TOP<br>date: 2018-01-28 22:30:08<br>thumbnail: <a href="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg" target="_blank" rel="noopener">http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg</a><br>banner:  <a href="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg" target="_blank" rel="noopener">http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg</a><br>comments: false</p><h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;﻿—&lt;br&gt;title: TOP&lt;br&gt;date: 2018-01-28 22:30:08&lt;br&gt;thumbnail: &lt;a href=&quot;http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Dijkstra</title>
-    <link href="http://www.icharles.top/2018/01/26/Dijkstra/"/>
-    <id>http://www.icharles.top/2018/01/26/Dijkstra/</id>
-    <published>2018-01-26T12:06:00.000Z</published>
-    <updated>2018-01-27T14:54:10.823Z</updated>
+    <link href="http://www.icharles.top/2018/01/28/Dijkstra/"/>
+    <id>http://www.icharles.top/2018/01/28/Dijkstra/</id>
+    <published>2018-01-28T14:23:11.000Z</published>
+    <updated>2018-01-28T14:53:12.465Z</updated>
     
     <content type="html"><![CDATA[<h1 id="单源最短路径（1）：Dijkstra-算法"><a href="#单源最短路径（1）：Dijkstra-算法" class="headerlink" title="单源最短路径（1）：Dijkstra 算法"></a>单源最短路径（1）：Dijkstra 算法</h1><h3 id="一：背景展开目录"><a href="#一：背景展开目录" class="headerlink" title="一：背景展开目录"></a>一：背景展开目录</h3><p>Dijkstra 算法（中文名：迪杰斯特拉算法）是由荷兰计算机科学家 Edsger Wybe Dijkstra 提出。该算法常用于路由算法或者作为其他图算法的一个子模块。举例来说，如果图中的顶点表示城市，而边上的权重表示城市间开车行经的距离，该算法可以用来找到两个城市之间的最短路径。<br><a id="more"></a></p><h3 id="二：算法过程展开目录"><a href="#二：算法过程展开目录" class="headerlink" title="二：算法过程展开目录"></a>二：算法过程展开目录</h3><p>我们用一个例子来具体说明迪杰斯特拉算法的流程。<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/1.png" alt=""><br>定义源点为 0， <code>dist[i]</code> 为源点 0 到顶点 i 的最短路径。其过程描述如下：    </p><table><thead><tr><th>步骤</th><th style="text-align:center">dist[1]</th><th style="text-align:center">dist[2]</th><th style="text-align:center">dist[3]</th><th style="text-align:center">dist[4]</th><th style="text-align:center">已找到的集合</th></tr></thead><tbody><tr><td>第 1 步</td><td style="text-align:center">8</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">+∞</td><td style="text-align:center">{2}</td></tr><tr><td>第 2 步</td><td style="text-align:center">8</td><td style="text-align:center">×</td><td style="text-align:center">2</td><td style="text-align:center">4</td><td style="text-align:center">{2, 3}</td></tr><tr><td>第 3 步</td><td style="text-align:center">5</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">4</td><td style="text-align:center">{2, 3, 4}</td></tr><tr><td>第 4 步</td><td style="text-align:center">5</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">{2, 3, 4, 1}</td></tr><tr><td>第 5 步</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">{2, 3, 4, 1}</td></tr></tbody></table><p>第 1 步：从源点 0 开始，找到与其邻接的点：1，2，3，更新 <code>dist[]</code> 数组，因 0 不与 4 邻接，故 <code>dist[4]</code> 为正无穷。在 <code>dist[]</code> 中找到最小值，其顶点为 2，即此时已找到 0 到 2 的最短路。</p><p>第 2 步：从 2 开始，继续更新dist[]数组：2 与 1 不邻接，不更新；2 与 3 邻接，因0→2→3比dist[3]大，故不更新dist[3] ；2 与 4 邻接，因0→2→4比dist[4]小，故更新dist[4]为 4。在dist[]中找到最小值，其顶点为 3，即此时又找到 0 到 3 的最短路。</p><p>第 3 步：从 3 开始，继续更新 <code>dist[]</code> 数组：3 与 1 邻接，因0→3→1比 <code>dist[1]</code> 小，更新 <code>dist[1]</code> 为 5；3 与 4 邻接，因0→3→4比 <code>dist[4]</code> 大，故不更新。在 <code>dist[]</code> 中找到最小值，其顶点为 4，即此时又找到 0 到 4 的最短路。</p><p>第 4 步：从 4 开始，继续更新 <code>dist[]</code> 数组：4 与 1 不邻接，不更新。在 <code>dist[]</code> 中找到最小值，其顶点为 1，即此时又找到 0 到 1 的最短路。</p><p>第 5 步：所有点都已找到，停止。</p><p>对于上述步骤，你可能存在以下的疑问：<br><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/2.png" alt=""></p><p>若 A 作为源点，与其邻接的只有 B，C，D 三点，其dist[]最小时顶点为 C，即就可以确定A→C为 A 到 C 的最短路。但是我们存在疑问的是：<strong>是否还存在另一条路径使 A 到 C 的距离更小？ 用反证法证明。</strong></p><p>假设存在如上图的红色虚线路径，使 <code>A→D→C</code> 的距离更小，那么 <code>A→D</code> 作为 <code>A→D→C</code> 的子路径，其距离也比 <code>A→C</code> 小，这与前面所述 “ <code>dist[]</code> 最小时顶点为 C” 矛盾，故假设不成立。因此这个疑问不存在。</p><p>根据上面的证明，我们可以推断出，<strong>Dijkstra 每次循环都可以确定一个顶点的最短路径，故程序需要循环 n-1 次</strong>。</p><h4 id="三：完整代码"><a href="#三：完整代码" class="headerlink" title="三：完整代码"></a>三：完整代码</h4><pre><code>#include &lt;iostream&gt;#include &lt;cstring&gt;using namespace std;int  matrix[100][100]; // 邻接矩阵bool visited[100];     // 标记数组int  dist[100];        // 源点到顶点i的最短距离int  path[100];        // 记录最短路的路径int  source;           // 源点int  vertex_num;       // 顶点数int  edge_num;         // 边数void Dijkstra(int source){    memset(visited, 0, sizeof(visited));  // 初始化标记数组    visited[source] = true;    for (int i = 0; i &lt; vertex_num; i++)    {        dist[i] = matrix[source][i];        path[i] = source;    }    int min_cost;        // 权值最小    int min_cost_index;  // 权值最小的下标    for (int i = 1; i &lt; vertex_num; i++)  // 找到源点到另外 vertex_num-1 个点的最短路径    {        min_cost = INT_MAX;        for (int j = 0; j &lt; vertex_num; j++)        {            if (visited[j] == false &amp;&amp; dist[j] &lt; min_cost)  // 找到权值最小            {                min_cost = dist[j];                min_cost_index = j;            }        }        visited[min_cost_index] = true;  // 该点已找到，进行标记        for (int j = 0; j &lt; vertex_num; j++)  // 更新 dist 数组        {            if (visited[j] == false &amp;&amp;                matrix[min_cost_index][j] != INT_MAX &amp;&amp;  // 确保两点之间有边                matrix[min_cost_index][j] + min_cost &lt; dist[j])            {                dist[j] = matrix[min_cost_index][j] + min_cost;                path[j] = min_cost_index;            }        }    }}int main(){    cout &lt;&lt; &quot;请输入图的顶点数（&lt;100）：&quot;;    cin &gt;&gt; vertex_num;    cout &lt;&lt; &quot;请输入图的边数：&quot;;    cin &gt;&gt; edge_num;    for (int i = 0; i &lt; vertex_num; i++)        for (int j = 0; j &lt; vertex_num; j++)            matrix[i][j] = (i != j) ? INT_MAX : 0;  // 初始化 matrix 数组    cout &lt;&lt; &quot;请输入边的信息：\n&quot;;    int u, v, w;    for (int i = 0; i &lt; edge_num; i++)    {        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;        matrix[u][v] = matrix[v][u] = w;    }    cout &lt;&lt; &quot;请输入源点（&lt;&quot; &lt;&lt; vertex_num &lt;&lt; &quot;）：&quot;;    cin &gt;&gt; source;    Dijkstra(source);    for (int i = 0; i &lt; vertex_num; i++)    {        if (i != source)        {            cout &lt;&lt; source &lt;&lt; &quot;到&quot; &lt;&lt; i &lt;&lt; &quot;最短距离是：&quot; &lt;&lt; dist[i] &lt;&lt; &quot;，路径是：&quot; &lt;&lt; i;            int t = path[i];            while (t != source)            {                cout &lt;&lt; &quot;--&quot; &lt;&lt; t;                t = path[t];            }            cout &lt;&lt; &quot;--&quot; &lt;&lt; source &lt;&lt; endl;        }    }    return 0;}</code></pre><p>输入数据，结果为：</p><p><img src="https://61mon.com/images/illustrations/SingleSourceShortestPaths/3.png" alt=""></p><h3 id="本文来源于：https-www-61mon-com-index-php-archives-194"><a href="#本文来源于：https-www-61mon-com-index-php-archives-194" class="headerlink" title="本文来源于：https://www.61mon.com/index.php/archives/194/"></a>本文来源于：<a href="https://www.61mon.com/index.php/archives/194/" target="_blank" rel="noopener">https://www.61mon.com/index.php/archives/194/</a></h3><h3 id="作者：刘毅"><a href="#作者：刘毅" class="headerlink" title="作者：刘毅"></a>作者：刘毅</h3>]]></content>
     
@@ -31,10 +52,6 @@
     
     </summary>
     
-      <category term="最小路" scheme="http://www.icharles.top/categories/%E6%9C%80%E5%B0%8F%E8%B7%AF/"/>
-    
-    
-      <category term="Dijkstra" scheme="http://www.icharles.top/tags/Dijkstra/"/>
     
   </entry>
   
@@ -43,7 +60,7 @@
     <link href="http://www.icharles.top/2018/01/19/KMP/"/>
     <id>http://www.icharles.top/2018/01/19/KMP/</id>
     <published>2018-01-19T13:31:00.000Z</published>
-    <updated>2018-01-27T14:54:22.646Z</updated>
+    <updated>2018-01-28T14:55:47.965Z</updated>
     
     <content type="html"><![CDATA[<h1 id="利用Next数组来求连续字符串的个数"><a href="#利用Next数组来求连续字符串的个数" class="headerlink" title="利用Next数组来求连续字符串的个数"></a>利用Next数组来求连续字符串的个数</h1><h3 id="题目地址：Power-Strings"><a href="#题目地址：Power-Strings" class="headerlink" title="题目地址：Power Strings "></a>题目地址：<a href="https://vjudge.net/problem/POJ-2406" target="_blank" rel="noopener">Power Strings </a></h3><a id="more"></a><blockquote><p>题目大体意思就是求连续字符串个数<br>由于刚学习完KMP，就想到了利用Next数组来求连续字符串的个数，发现存在以下关系： N = len / (len - next[len])       </p></blockquote><pre><code class="c">#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;cstdio&gt;#include &lt;algorithm&gt;using namespace std;const int maxn = 1E6 + 5;char str[maxn];int nex[maxn], len;void getnext(){    int i = 0, j = -1;    memset(nex, 0, sizeof(nex));    nex[0] = -1;    while(i &lt; len) {        if(j == -1 || str[i] == str[j]) {            nex[++i] = ++j;        }        else {            j = nex[j];        }    }}int main(){    while(scanf(&quot;%s&quot;, str) != EOF) {        if(str[0] ==&#39;.&#39;) break;        len = strlen(str);        getnext();    //例如 aaaaa len = 4, len - nex[len] = 1        if(len % (len - nex[len]) == 0) cout &lt;&lt; len / (len - nex[len]) &lt;&lt; endl;        else cout &lt;&lt; &quot;1&quot; &lt;&lt; endl;    }    return 0;}</code></pre>]]></content>
     
@@ -56,6 +73,8 @@
       <category term="算法" scheme="http://www.icharles.top/categories/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="KMP" scheme="http://www.icharles.top/tags/KMP/"/>
+    
   </entry>
   
   <entry>
@@ -63,15 +82,13 @@
     <link href="http://www.icharles.top/2018/01/04/%E8%B0%B7%E6%AD%8C%E8%AE%BF%E9%97%AE%E5%8A%A9%E6%89%8B/"/>
     <id>http://www.icharles.top/2018/01/04/谷歌访问助手/</id>
     <published>2018-01-04T04:21:32.000Z</published>
-    <updated>2018-01-27T14:54:53.653Z</updated>
+    <updated>2018-01-28T15:04:00.614Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="谷歌访问助手安装教程"><a href="#谷歌访问助手安装教程" class="headerlink" title="谷歌访问助手安装教程"></a>谷歌访问助手安装教程</h3><blockquote><ul><li>本教程以Google Chrome为例，其他浏览器请自行安装，激活方法一样<a id="more"></a></li></ul></blockquote><ol><li><p>打开Google Chrome浏览器，如下图<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/1.png" alt="1"></p></li><li><p>将下载的谷歌访问助手拖到扩展程序<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/2.png" alt="2"></p></li><li><p>永久激活谷歌访问助手，按照提示进行即可<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/3.png" alt="3"><br><img src="http://icharles.top/2018/01/04/谷歌访问助手/4.png" alt="4"></p></li><li><p>当然你不会或者嫌麻烦设置主页，可以按照下图步骤<br>点击设置<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/5.png" alt="5"><br>勾选自动打开主页<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/6.png" alt="6">  </p></li></ol><h4 id="至此，你就完成所有设置，接下来就是畅游墙外世界"><a href="#至此，你就完成所有设置，接下来就是畅游墙外世界" class="headerlink" title="至此，你就完成所有设置，接下来就是畅游墙外世界"></a>至此，你就完成所有设置，接下来就是畅游墙外世界</h4><h4 id="别忘记点赞呦"><a href="#别忘记点赞呦" class="headerlink" title="别忘记点赞呦"></a>别忘记点赞呦</h4>]]></content>
+    <content type="html"><![CDATA[<h3 id="谷歌访问助手安装教程"><a href="#谷歌访问助手安装教程" class="headerlink" title="谷歌访问助手安装教程"></a>谷歌访问助手安装教程</h3><a id="more"></a><blockquote><ul><li>本教程以Google Chrome为例，其他浏览器请自行安装，激活方法一样</li></ul></blockquote><ol><li><p>打开Google Chrome浏览器，如下图<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/1.png" alt="1"></p></li><li><p>将下载的谷歌访问助手拖到扩展程序<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/2.png" alt="2"></p></li><li><p>永久激活谷歌访问助手，按照提示进行即可<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/3.png" alt="3"><br><img src="http://icharles.top/2018/01/04/谷歌访问助手/4.png" alt="4"></p></li><li><p>当然你不会或者嫌麻烦设置主页，可以按照下图步骤<br>点击设置<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/5.png" alt="5"><br>勾选自动打开主页<br><img src="http://icharles.top/2018/01/04/谷歌访问助手/6.png" alt="6">  </p></li></ol><h4 id="至此，你就完成所有设置，接下来就是畅游墙外世界"><a href="#至此，你就完成所有设置，接下来就是畅游墙外世界" class="headerlink" title="至此，你就完成所有设置，接下来就是畅游墙外世界"></a>至此，你就完成所有设置，接下来就是畅游墙外世界</h4><h4 id="别忘记点赞呦"><a href="#别忘记点赞呦" class="headerlink" title="别忘记点赞呦"></a>别忘记点赞呦</h4>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;谷歌访问助手安装教程&quot;&gt;&lt;a href=&quot;#谷歌访问助手安装教程&quot; class=&quot;headerlink&quot; title=&quot;谷歌访问助手安装教程&quot;&gt;&lt;/a&gt;谷歌访问助手安装教程&lt;/h3&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;本教程以Google Chrome为例，其他浏览器请自行安装，激活方法一样
+      &lt;h3 id=&quot;谷歌访问助手安装教程&quot;&gt;&lt;a href=&quot;#谷歌访问助手安装教程&quot; class=&quot;headerlink&quot; title=&quot;谷歌访问助手安装教程&quot;&gt;&lt;/a&gt;谷歌访问助手安装教程&lt;/h3&gt;
     
     </summary>
     
@@ -80,21 +97,19 @@
   
   <entry>
     <title>Ubuntu</title>
-    <link href="http://www.icharles.top/2017/12/30/Ubuntu/"/>
-    <id>http://www.icharles.top/2017/12/30/Ubuntu/</id>
-    <published>2017-12-30T06:12:00.000Z</published>
-    <updated>2018-01-27T14:55:03.261Z</updated>
+    <link href="http://www.icharles.top/2018/01/02/Ubuntu/"/>
+    <id>http://www.icharles.top/2018/01/02/Ubuntu/</id>
+    <published>2018-01-02T15:09:00.000Z</published>
+    <updated>2018-01-28T15:15:23.290Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Ubuntu安装教程"><a href="#Ubuntu安装教程" class="headerlink" title="Ubuntu安装教程"></a>Ubuntu安装教程</h3><h3 id="Ubuntu-16-04安装步骤："><a href="#Ubuntu-16-04安装步骤：" class="headerlink" title="Ubuntu 16.04安装步骤："></a>Ubuntu 16.04安装步骤：</h3><a id="more"></a><p>一、U盘安装准备步骤</p><p>(1) <a href="http://cn.ubuntu.com/download/" target="_blank" rel="noopener">官网下载</a> <strong>Ubuntu16.04</strong> 系统ISO镜像<br><img src="http://www.linuxidc.com/upload/2017_07/17072609596256.jpg" alt="Ubuntu"></p><p>(2) 准备U盘一个，4G左右就够了，用于制作安装u盘</p><p>制作安装U盘，推荐使用软件：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">universal-usb-installer</a><br><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer.png" alt="universal-usb-installer">  </p><p>将U盘插入电脑  </p><blockquote><p>第一步: 下拉列表选择Ubuntu（当然安装其他发行版时也可以选择相应的title）。<br>第二步: 单击右侧的Browse按钮，选择下载好的.iso格式的系统镜像。<br>第三步: 选择插入的U盘，一般默认的就是。根据要求是否进行格式化，其余按照默认的参数，单击create，等待一会儿后就可以了。<br>结束画面如下：  </p></blockquote><p><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer2.png" alt="">  </p><p>二、Ubuntu系统空间准备</p><p>在Windows 10中打开“磁盘管理器”，找一个空闲的磁盘分区，压缩出来一部分空间给Ubuntu使用，压缩出来的硬盘应处于未分配状态。或者通过删除某个不使用的本地磁盘使其处于未分配状态。<br><img src="https://upload-images.jianshu.io/upload_images/1272002-334e3e33d83fd8b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p><blockquote><p>绿色框中是留给Ubuntu的空间</p></blockquote><p>三、BIOS设置<br>1.关机，重新打开电脑，进入BIOS，关闭Windows系统的快速启动（Fast Boot）选项，即设置为Disable状态。<br><img src="https://upload-images.jianshu.io/upload_images/1272002-42f06103698c8961.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""><br>2.在BIOS中设置U盘为第一启动项，关闭电脑。</p><p>四、安装Ubuntu 16.04<br>1.从U盘启动，进入刻录到U盘的Ubuntu系统中</p><p>2.选择试用Install Ubuntu    </p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-ee7ebc172f38ab02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-3d0beb819c154274.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-6eb497d6e84d50d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p><blockquote><p>在硬盘中Ubuntu检测到有Windows系统存在，所以会默认使用未分配的那部分空间安 装Ubuntu。这也是刚开始说的方便之处，避免了自己分区的不合理<br>当然你也可以选择<strong>其他选项</strong>自定义安装，分区方案如下：</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/1272002-f7a72a5a941e4537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/614" alt=""></p><p>3.配置完成后，接下来下载更新，自动安装</p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-b00039c66f342e51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p><p>完成安装后，美化你的Ubuntu吧：<a href="http://www.linuxidc.com/Linux/2016-09/135165.htm" target="_blank" rel="noopener">美化教程</a></p><p>本文来自于：<a href="http://www.jianshu.com/p/16b36b912b02" target="_blank" rel="noopener">七双叶</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Ubuntu安装教程"><a href="#Ubuntu安装教程" class="headerlink" title="Ubuntu安装教程"></a>Ubuntu安装教程</h3><a id="more"></a><h3 id="Ubuntu-16-04安装步骤："><a href="#Ubuntu-16-04安装步骤：" class="headerlink" title="Ubuntu 16.04安装步骤："></a>Ubuntu 16.04安装步骤：</h3><p>一、U盘安装准备步骤</p><p>(1) <a href="http://cn.ubuntu.com/download/" target="_blank" rel="noopener">官网下载</a> <strong>Ubuntu16.04</strong> 系统ISO镜像<br><img src="http://www.linuxidc.com/upload/2017_07/17072609596256.jpg" alt="Ubuntu"></p><p>(2) 准备U盘一个，4G左右就够了，用于制作安装u盘</p><p>制作安装U盘，推荐使用软件：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">universal-usb-installer</a><br><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer.png" alt="universal-usb-installer">  </p><p>将U盘插入电脑  </p><blockquote><p>第一步: 下拉列表选择Ubuntu（当然安装其他发行版时也可以选择相应的title）。<br>第二步: 单击右侧的Browse按钮，选择下载好的.iso格式的系统镜像。<br>第三步: 选择插入的U盘，一般默认的就是。根据要求是否进行格式化，其余按照默认的参数，单击create，等待一会儿后就可以了。<br>结束画面如下：  </p></blockquote><p><img src="https://www.pendrivelinux.com/wp-content/uploads/Universal-USB-Installer2.png" alt="">  </p><p>二、Ubuntu系统空间准备</p><p>在Windows 10中打开“磁盘管理器”，找一个空闲的磁盘分区，压缩出来一部分空间给Ubuntu使用，压缩出来的硬盘应处于未分配状态。或者通过删除某个不使用的本地磁盘使其处于未分配状态。<br><img src="https://upload-images.jianshu.io/upload_images/1272002-334e3e33d83fd8b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p><blockquote><p>绿色框中是留给Ubuntu的空间</p></blockquote><p>三、BIOS设置<br>1.关机，重新打开电脑，进入BIOS，关闭Windows系统的快速启动（Fast Boot）选项，即设置为Disable状态。<br><img src="https://upload-images.jianshu.io/upload_images/1272002-42f06103698c8961.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""><br>2.在BIOS中设置U盘为第一启动项，关闭电脑。</p><p>四、安装Ubuntu 16.04<br>1.从U盘启动，进入刻录到U盘的Ubuntu系统中</p><p>2.选择试用Install Ubuntu    </p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-ee7ebc172f38ab02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-3d0beb819c154274.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">    </p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-6eb497d6e84d50d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p><blockquote><p>在硬盘中Ubuntu检测到有Windows系统存在，所以会默认使用未分配的那部分空间安 装Ubuntu。这也是刚开始说的方便之处，避免了自己分区的不合理<br>当然你也可以选择<strong>其他选项</strong>自定义安装，分区方案如下：</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/1272002-f7a72a5a941e4537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/614" alt=""></p><p>3.配置完成后，接下来下载更新，自动安装</p><p><img src="https://upload-images.jianshu.io/upload_images/1272002-b00039c66f342e51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p><p>完成安装后，美化你的Ubuntu吧：<a href="http://www.linuxidc.com/Linux/2016-09/135165.htm" target="_blank" rel="noopener">美化教程</a></p><p>本文来自于：<a href="http://www.jianshu.com/p/16b36b912b02" target="_blank" rel="noopener">七双叶</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Ubuntu安装教程&quot;&gt;&lt;a href=&quot;#Ubuntu安装教程&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu安装教程&quot;&gt;&lt;/a&gt;Ubuntu安装教程&lt;/h3&gt;&lt;h3 id=&quot;Ubuntu-16-04安装步骤：&quot;&gt;&lt;a href=&quot;#Ubuntu-16-04安装步骤：&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu 16.04安装步骤：&quot;&gt;&lt;/a&gt;Ubuntu 16.04安装步骤：&lt;/h3&gt;
+      &lt;h3 id=&quot;Ubuntu安装教程&quot;&gt;&lt;a href=&quot;#Ubuntu安装教程&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu安装教程&quot;&gt;&lt;/a&gt;Ubuntu安装教程&lt;/h3&gt;
     
     </summary>
     
-    
-      <category term="Ubuntu" scheme="http://www.icharles.top/tags/Ubuntu/"/>
     
   </entry>
   
@@ -165,23 +180,39 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://www.icharles.top/2017/12/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
-    <id>http://www.icharles.top/2017/12/26/位运算技巧/</id>
-    <published>2017-12-26T10:03:41.241Z</published>
-    <updated>2018-01-28T03:28:09.564Z</updated>
+    <title>Tianxin</title>
+    <link href="http://www.icharles.top/2017/07/13/%E8%B4%AA%E5%BF%83/"/>
+    <id>http://www.icharles.top/2017/07/13/贪心/</id>
+    <published>2017-07-13T12:46:25.000Z</published>
+    <updated>2018-01-28T14:37:51.383Z</updated>
     
-    <content type="html"><![CDATA[<p>title: 位运算技巧<br>author: Charles<br>tags:</p><ul><li>ACM<br>categories:</li><li>位运算<br>date: 2017-12-26 18:03:00</li></ul><hr><p><strong>一.获得int型最大值</strong><br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return (1&lt;&lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略}</code></pre><a id="more"></a><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return -(1&lt;&lt;-1) - 1;    //2147483647  }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return ~(1&lt;&lt;31);//2147483647  }</code></pre><p>C语言中不知道int占几个字节时候<br>代码代码如下:</p><pre><code class="c">int getMaxInt(){      return ((unsigned int)-1) &gt;&gt; 1;//2147483647  }</code></pre><p><strong>二.获得int型最小值</strong><br>复制代码代码如下:</p><pre><code class="c">int getMinInt() {      return 1&lt;&lt;31;    //-2147483648   }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMinInt(){      return 1 &lt;&lt; -1;//-2147483648  }</code></pre><p><strong>三.获得long类型的最大值</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">long getMaxLong() {      return ((unsigned long)-1) &gt;&gt; 1;    //2147483647  }</code></pre><p>JAVA版<br>代码代码如下:</p><pre><code class="java">long getMaxLong() {      return ((long)1&lt;&lt;127)-1;    //9223372036854775807  }</code></pre><p>获得long最小值，和其他类型的最大值，最小值同理.   </p><p><strong>四.乘以2运算</strong><br>代码代码如下:</p><pre><code class="c">int mulTwo(int n) {    //计算n*2       return n&lt;&lt;1;  }</code></pre><p><strong>五.除以2运算</strong><br>代码代码如下:  </p><pre><code class="c">int divTwo(int n) {    //负奇数的运算不可用      return n&gt;&gt;1;    //除以2  }</code></pre><p><strong>六.乘以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m){    //计算n/(2^m)      return n&lt;&lt;m;  }</code></pre><p><strong>七.除以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m) {    //计算n/(2^m)      return n&gt;&gt;m;  }</code></pre><p><strong>八.判断一个数的奇偶性</strong><br>代码代码如下:</p><pre><code class="c">boolean isOddNumber(int n) {      return (n &amp; 1) == 1;  }</code></pre><p><strong>九.不用临时变量交换两个数</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">void swap(int *a,int *b) {         (*a)^=(*b)^=(*a)^=(*b);   }</code></pre><p>通用版（一些语言中得分开写）<br>代码代码如下:</p><pre><code class="c">a ^= b;  b ^= a;  a ^= b;</code></pre><p><strong>十.取绝对值</strong><br>代码代码如下:</p><pre><code class="c">int abs(int n){      return (n ^ (n &gt;&gt; 31)) - (n &gt;&gt; 31);   }/* n&gt;&gt;31 取得n的符号，若n为正数，n&gt;&gt;31等于0，若n为负数，n&gt;&gt;31等于-1 若n为正数 n^0=0,数不变，若n为负数有n^-1 需要计算n和-1的补码，然后进行异或运算， 结果n变号并且为n的绝对值减1，再减去-1就是绝对值 */</code></pre><p><strong>十一.取两个数的最大值</strong><br>通用版<br>复制代码代码如下:</p><pre><code class="c">int max(int a,int b) {      return b&amp;((a-b)&gt;&gt;31) | a&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1}</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int max(int x,int y) {      return x ^ ((x ^ y) &amp; -(x &lt; y));      /*如果x&lt;y x&lt;y返回1，否则返回0， 与0做与运算结果为0，与-1做与运算结果不变*/  }</code></pre><p><strong>十二.取两个数的最小值</strong><br>通用版<br>代码代码如下:</p><pre><code class="c">int min(int a,int b) {      return a&amp;((a-b)&gt;&gt;31) | b&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1 }</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int min(int x,int y) {      return y ^ ((x ^ y) &amp; -(x &lt; y));          // 如果x&lt;y x&lt;y返回1，否则返回0，         // 与0做与运算结果为0，与-1做与运算结果不变}</code></pre><p><strong>十三.判断符号是否相同</strong><br>代码如下:</p><pre><code class="c">boolean isSameSign(int x, int y) {      return (x ^ y) &gt; 0;     // true 表示 x和y有相同的符号， false表示x，y有相反的符号。  }</code></pre><p><strong>十四.计算2的n次方</strong><br>代码代码如下:</p><pre><code class="c">int getFactorialofTwo(int n) {    //n &gt; 0      return 2&lt;&lt;(n-1);        //2的n次方  }</code></pre><p><strong>十五.判断一个数是不是2的幂</strong><br>代码代码如下:</p><pre><code class="c">boolean isFactorialofTwo(int n) {      return (n &amp; (n - 1)) == 0;      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果为0 }</code></pre><p><strong>十六.对2的n次方取余</strong><br>代码代码如下:</p><pre><code class="c">int quyu(int m,int n) {    //n为2的次方      return m &amp; (n - 1);      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果保留m在n范围的非0的位}</code></pre><p><strong>十七.求两个整数的平均值</strong><br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return (x+y) &gt;&gt; 1;   ｝</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return ((x^y) &gt;&gt; 1) + (x&amp;y);        // (x^y) &gt;&gt; 1得到x，y其中一个为1的位并除以2，      // x&amp;y得到x，y都为1的部分，加一起就是平均数了 }</code></pre><p>下面是三个最基本对二进制位的操作<br><strong>十八.从低位到高位,取n的第m位</strong><br>代码代码如下:</p><pre><code class="c">int getBit(int n, int m) {      return (n &gt;&gt; (m-1)) &amp; 1;  }</code></pre><p><strong>十九.从低位到高位.将n的第m位置1</strong><br>代码代码如下:</p><pre><code class="c">int setBitToOne(int n, int m) {      return n | (1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，得到000...1...000     // n在和这个数做或运算}</code></pre><p><strong>二十.从低位到高位,将n的第m位置0</strong><br>代码代码如下:</p><pre><code class="c">int setBitToZero(int n, int m) {      return n &amp; ~(1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，取反后变成111...0...1111     // n再和这个数做与运算 }</code></pre><p>另附一些对程序效率上没有实质提高的位运算技巧，一些也是位运算的常识（面试也许会遇到）<br>计算n+1<br>代码代码如下:</p><pre><code class="c">-~n</code></pre><p>计算n-1<br>代码代码如下:</p><pre><code class="c">~-n</code></pre><p>取相反数<br>代码代码如下:</p><pre><code class="c">~n + 1;</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">(n ^ -1) + 1;  if(x == a) x = b; if(x == b) x = a;</code></pre><p>代码代码如下:</p><pre><code class="c">x = a ^ b ^ x;</code></pre><p>sign函数，参数为n，当n&gt;0时候返回1，n&lt;0时返回-1，n=0时返回0<br>复制代码代码如下:</p><pre><code class="c">return !!n - (((unsigned)n&gt;&gt;31)&lt;&lt;1);</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p><p><strong>分析：</strong></p><p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。</p><pre><code class="c++">#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstring&gt;#include &lt;cmath&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;vector&gt;using namespace std;int a[1005];int h[1005];int ans;int n;int main(){    while (~scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n) {        for (int i = 1; i &lt;= n; i++)            scanf(&quot;%d&quot;, h + i);        ans = 1;        a[1] = h[1];        int j;        for (int i = 2; i &lt;= n; i++) {            for (j = 1; j &lt;= ans; j++) {                if (h[i] &lt; a[j]) {                    a[j] = h[i];                    break;                }            }            if (j &gt; ans)                a[++ans] = h[i];        }        printf(&quot;%d\n&quot;, ans);    }    return 0;}</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;title: 位运算技巧&lt;br&gt;author: Charles&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ACM&lt;br&gt;categories:&lt;/li&gt;
-&lt;li&gt;位运算&lt;br&gt;date: 2017-12-26 18:03:00&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;一.获得int型最大值&lt;/strong&gt;&lt;br&gt;代码代码如下:&lt;/p&gt;
+      
+      
+        &lt;p&gt;题目地址：&lt;a href=&quot;https://cn.vjudge.net/problem/HDU-1257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://cn.vjudge.net/problem/HDU-1257&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;s
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>位运算技巧</title>
+    <link href="http://www.icharles.top/2017/01/28/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
+    <id>http://www.icharles.top/2017/01/28/位运算技巧/</id>
+    <published>2017-01-28T14:19:00.000Z</published>
+    <updated>2018-01-28T14:20:53.890Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>一.获得int型最大值</strong><br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return (1&lt;&lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略}</code></pre><a id="more"></a><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return -(1&lt;&lt;-1) - 1;    //2147483647  }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return ~(1&lt;&lt;31);//2147483647  }</code></pre><p>C语言中不知道int占几个字节时候<br>代码代码如下:</p><pre><code class="c">int getMaxInt(){      return ((unsigned int)-1) &gt;&gt; 1;//2147483647  }</code></pre><p><strong>二.获得int型最小值</strong><br>复制代码代码如下:</p><pre><code class="c">int getMinInt() {      return 1&lt;&lt;31;    //-2147483648   }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMinInt(){      return 1 &lt;&lt; -1;//-2147483648  }</code></pre><p><strong>三.获得long类型的最大值</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">long getMaxLong() {      return ((unsigned long)-1) &gt;&gt; 1;    //2147483647  }</code></pre><p>JAVA版<br>代码代码如下:</p><pre><code class="java">long getMaxLong() {      return ((long)1&lt;&lt;127)-1;    //9223372036854775807  }</code></pre><p>获得long最小值，和其他类型的最大值，最小值同理.   </p><p><strong>四.乘以2运算</strong><br>代码代码如下:</p><pre><code class="c">int mulTwo(int n) {    //计算n*2       return n&lt;&lt;1;  }</code></pre><p><strong>五.除以2运算</strong><br>代码代码如下:  </p><pre><code class="c">int divTwo(int n) {    //负奇数的运算不可用      return n&gt;&gt;1;    //除以2  }</code></pre><p><strong>六.乘以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m){    //计算n/(2^m)      return n&lt;&lt;m;  }</code></pre><p><strong>七.除以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m) {    //计算n/(2^m)      return n&gt;&gt;m;  }</code></pre><p><strong>八.判断一个数的奇偶性</strong><br>代码代码如下:</p><pre><code class="c">boolean isOddNumber(int n) {      return (n &amp; 1) == 1;  }</code></pre><p><strong>九.不用临时变量交换两个数</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">void swap(int *a,int *b) {         (*a)^=(*b)^=(*a)^=(*b);   }</code></pre><p>通用版（一些语言中得分开写）<br>代码代码如下:</p><pre><code class="c">a ^= b;  b ^= a;  a ^= b;</code></pre><p><strong>十.取绝对值</strong><br>代码代码如下:</p><pre><code class="c">int abs(int n){      return (n ^ (n &gt;&gt; 31)) - (n &gt;&gt; 31);   }/* n&gt;&gt;31 取得n的符号，若n为正数，n&gt;&gt;31等于0，若n为负数，n&gt;&gt;31等于-1 若n为正数 n^0=0,数不变，若n为负数有n^-1 需要计算n和-1的补码，然后进行异或运算， 结果n变号并且为n的绝对值减1，再减去-1就是绝对值 */</code></pre><p><strong>十一.取两个数的最大值</strong><br>通用版<br>复制代码代码如下:</p><pre><code class="c">int max(int a,int b) {      return b&amp;((a-b)&gt;&gt;31) | a&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1}</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int max(int x,int y) {      return x ^ ((x ^ y) &amp; -(x &lt; y));      /*如果x&lt;y x&lt;y返回1，否则返回0， 与0做与运算结果为0，与-1做与运算结果不变*/  }</code></pre><p><strong>十二.取两个数的最小值</strong><br>通用版<br>代码代码如下:</p><pre><code class="c">int min(int a,int b) {      return a&amp;((a-b)&gt;&gt;31) | b&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1 }</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int min(int x,int y) {      return y ^ ((x ^ y) &amp; -(x &lt; y));          // 如果x&lt;y x&lt;y返回1，否则返回0，         // 与0做与运算结果为0，与-1做与运算结果不变}</code></pre><p><strong>十三.判断符号是否相同</strong><br>代码如下:</p><pre><code class="c">boolean isSameSign(int x, int y) {      return (x ^ y) &gt; 0;     // true 表示 x和y有相同的符号， false表示x，y有相反的符号。  }</code></pre><p><strong>十四.计算2的n次方</strong><br>代码代码如下:</p><pre><code class="c">int getFactorialofTwo(int n) {    //n &gt; 0      return 2&lt;&lt;(n-1);        //2的n次方  }</code></pre><p><strong>十五.判断一个数是不是2的幂</strong><br>代码代码如下:</p><pre><code class="c">boolean isFactorialofTwo(int n) {      return (n &amp; (n - 1)) == 0;      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果为0 }</code></pre><p><strong>十六.对2的n次方取余</strong><br>代码代码如下:</p><pre><code class="c">int quyu(int m,int n) {    //n为2的次方      return m &amp; (n - 1);      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果保留m在n范围的非0的位}</code></pre><p><strong>十七.求两个整数的平均值</strong><br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return (x+y) &gt;&gt; 1;   ｝</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return ((x^y) &gt;&gt; 1) + (x&amp;y);        // (x^y) &gt;&gt; 1得到x，y其中一个为1的位并除以2，      // x&amp;y得到x，y都为1的部分，加一起就是平均数了 }</code></pre><p>下面是三个最基本对二进制位的操作<br><strong>十八.从低位到高位,取n的第m位</strong><br>代码代码如下:</p><pre><code class="c">int getBit(int n, int m) {      return (n &gt;&gt; (m-1)) &amp; 1;  }</code></pre><p><strong>十九.从低位到高位.将n的第m位置1</strong><br>代码代码如下:</p><pre><code class="c">int setBitToOne(int n, int m) {      return n | (1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，得到000...1...000     // n在和这个数做或运算}</code></pre><p><strong>二十.从低位到高位,将n的第m位置0</strong><br>代码代码如下:</p><pre><code class="c">int setBitToZero(int n, int m) {      return n &amp; ~(1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，取反后变成111...0...1111     // n再和这个数做与运算 }</code></pre><p>另附一些对程序效率上没有实质提高的位运算技巧，一些也是位运算的常识（面试也许会遇到）<br>计算n+1<br>代码代码如下:</p><pre><code class="c">-~n</code></pre><p>计算n-1<br>代码代码如下:</p><pre><code class="c">~-n</code></pre><p>取相反数<br>代码代码如下:</p><pre><code class="c">~n + 1;</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">(n ^ -1) + 1;  if(x == a) x = b; if(x == b) x = a;</code></pre><p>代码代码如下:</p><pre><code class="c">x = a ^ b ^ x;</code></pre><p>sign函数，参数为n，当n&gt;0时候返回1，n&lt;0时返回-1，n=0时返回0<br>复制代码代码如下:</p><pre><code class="c">return !!n - (((unsigned)n&gt;&gt;31)&lt;&lt;1);</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;一.获得int型最大值&lt;/strong&gt;&lt;br&gt;代码代码如下:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;int getMaxInt() {  
     return (1&amp;lt;&amp;lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略
 }

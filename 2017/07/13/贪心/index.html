@@ -3,18 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: Game | Charles博客</title>
+    <title>Tianxin | Charles博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Charles的个人博客，用此来发表个人见解与笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charles博客">
-<meta property="og:url" content="http://www.icharles.top/tags/Game/index.html">
+    <meta name="description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。 #incl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tianxin">
+<meta property="og:url" content="http://www.icharles.top/2017/07/13/贪心/index.html">
 <meta property="og:site_name" content="Charles博客">
-<meta property="og:description" content="Charles的个人博客，用此来发表个人见解与笔记">
+<meta property="og:description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。 #incl">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg">
+<meta property="og:updated_time" content="2018-01-28T14:37:51.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charles博客">
-<meta name="twitter:description" content="Charles的个人博客，用此来发表个人见解与笔记">
+<meta name="twitter:title" content="Tianxin">
+<meta name="twitter:description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。 #incl">
+<meta name="twitter:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg">
     
 
     
@@ -217,50 +220,178 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#Game</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-贪心" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/12/29/俄罗斯方块/">俄罗斯方块</a>
+        <h1 class="article-title" itemprop="name">
+            Tianxin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/12/29/俄罗斯方块/">
-            <time datetime="2017-12-29T14:16:00.000Z" itemprop="datePublished">2017-12-29</time>
+        <a href="/2017/07/13/贪心/">
+            <time datetime="2017-07-13T12:46:25.000Z" itemprop="datePublished">2017-07-13</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Game/">Game</a>
-    </div>
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p>
+<p><strong>分析：</strong></p>
+<p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+#include &lt;cmath&gt;
+#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;vector&gt;
+using namespace std;
 
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Game/">Game</a>
-    </div>
+int a[1005];
+int h[1005];
+int ans;
+int n;
+int main()
+{
+    while (~scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n) {
+        for (int i = 1; i &lt;= n; i++)
+            scanf(&quot;%d&quot;, h + i);
+        ans = 1;
+        a[1] = h[1];
 
-                </div>
-            </div>
+        int j;
+        for (int i = 2; i &lt;= n; i++) {
+            for (j = 1; j &lt;= ans; j++) {
+                if (h[i] &lt; a[j]) {
+                    a[j] = h[i];
+                    break;
+                }
+            }
+            if (j &gt; ans)
+                a[++ans] = h[i];
+        }
+        printf(&quot;%d\n&quot;, ans);
+    }
+    return 0;
+}
+</code></pre>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/12/27/Vector-STL/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Vector--STL
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/01/28/位运算技巧/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">位运算技巧</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="valine-thread"></div>
+</section>
+    
+
 </section>
             
                 
