@@ -3,25 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tianxin | Charles博客</title>
+    <title>贪心 | Charles博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。 #incl">
+    <meta name="description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tianxin">
-<meta property="og:url" content="http://www.icharles.top/2017/07/13/贪心/index.html">
+<meta property="og:title" content="贪心">
+<meta property="og:url" content="http://www.icharles.top/2017/12/29/贪心/index.html">
 <meta property="og:site_name" content="Charles博客">
-<meta property="og:description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。 #incl">
+<meta property="og:description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg">
-<meta property="og:updated_time" content="2018-01-28T14:37:51.383Z">
+<meta property="og:updated_time" content="2018-01-29T04:19:41.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tianxin">
-<meta name="twitter:description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。 #incl">
-<meta name="twitter:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg">
+<meta name="twitter:title" content="贪心">
+<meta name="twitter:description" content="题目地址：https://cn.vjudge.net/problem/HDU-1257 分析： 简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。">
     
 
-    
-        <link rel="alternate" href="/" title="Charles博客" type="application/atom+xml" />
     
 
     
@@ -43,7 +39,29 @@
         <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-111633560-1', 'auto');
+ga('send', 'pageview');
+
+</script>
     
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?c23d075f9a00d1d7d268fa29835eb3c2";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
     
 
 
@@ -183,32 +201,26 @@
                     </td>
                     
                     <td>
-                        <a href="/" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
+                        <a href="https://weibo.com/u/6024032736" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
                         </a>
                     </td>
                     
                     <td>
-                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                        <a href="https://plus.google.com/" target="_blank" title="google" class=tooltip>
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/" target="_blank" title="facebook" class=tooltip>
                             <i class="fa fa-facebook"></i>
                         </a>
                     </td>
                     
                     <td>
-                        <a href="/" target="_blank" title="dribbble" class=tooltip>
-                            <i class="fa fa-dribbble"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="rss" class=tooltip>
-                            <i class="fa fa-rss"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="fa-weixin" class=tooltip>
-                            <i class="fa fa-fa-weixin"></i>
+                        <a href="https://twitter.com/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
                         </a>
                     </td>
                     
@@ -228,7 +240,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Tianxin
+            贪心
         </h1>
     
 
@@ -237,8 +249,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/07/13/贪心/">
-            <time datetime="2017-07-13T12:46:25.000Z" itemprop="datePublished">2017-07-13</time>
+        <a href="/2017/12/29/贪心/">
+            <time datetime="2017-12-29T04:18:00.000Z" itemprop="datePublished">2017-12-29</time>
         </a>
     </div>
 
@@ -255,7 +267,7 @@
             
             <p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p>
 <p><strong>分析：</strong></p>
-<p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。</p>
+<p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。<br><a id="more"></a></p>
 <pre><code class="c++">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 #include &lt;cstring&gt;
@@ -296,8 +308,33 @@ int main()
 
         
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
+            
+                <div id="donate" style="text-align:center">
+                <!-- 添加捐赠图标 -->
+<div class="post-donate" style="margin-bottom: 30px;margin-top: 10px;">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="donate"></a>
+        <span class="donate_txt">
+           如果您觉得文章不错,可以请我喝一杯咖啡！
+        </span>
+        <br>
+    </div>
+    <div id="donate_guide" class="donate_bar donate_bar2 center hidden">
+        <img src="/css/images/alipay.jpg" id="weixin" title="alipay doante" alt="alipay doante">
+        <img src="/css/images/wechatpay.jpg" title="wechatpay donate" id="zhifubao" alt="echatpay donate">
+    </div>
+    <script type="text/javascript">
+        $('#weixin').hover()
+        document.getElementById('btn_donate').onclick = function () {
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+                </div>
+            
+            <footer class="article-footer">
+                <div class="share-container">
 
     <div class="jiathis_style">
     <span class="jiathis_txt">分享到：</span>
@@ -354,28 +391,28 @@ int main()
 
 </div>
 
-            
+                
     
 
-        </footer>
+            </footer>
     </div>
     
         
 <nav id="article-nav">
     
-        <a href="/2017/12/27/Vector-STL/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/12/29/俄罗斯方块/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    Vector--STL
+                    俄罗斯方块
                 
             </div>
         </a>
     
     
-        <a href="/2017/01/28/位运算技巧/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/12/27/欧几里得算法/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">位运算技巧</div>
+            <div class="article-nav-title">欧几里得算法</div>
         </a>
     
 </nav>
@@ -409,7 +446,7 @@ int main()
                             <a href="/2018/01/28/TOP/" class="thumbnail">
     
     
-        <span style="background-image:url(http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/salt-lake.jpg)" alt="TOP" class="thumbnail-image"></span>
+        <span style="background-image:url(http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/china-great-wall.jpg)" alt="TOP" class="thumbnail-image"></span>
     
 </a>
 
@@ -554,8 +591,8 @@ int main()
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2018 Charles<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            &copy; 2017-2018 Charles<br>
+            我的世界不允许你的消失，不管结局如何
         </div>
     </div>
 </footer>

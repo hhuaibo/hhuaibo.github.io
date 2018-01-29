@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icharles.top/"/>
-  <updated>2018-01-28T15:28:02.679Z</updated>
+  <updated>2018-01-29T06:23:15.377Z</updated>
   <id>http://www.icharles.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.icharles.top/2018/01/28/TOP/"/>
     <id>http://www.icharles.top/2018/01/28/TOP/</id>
     <published>2018-01-28T15:23:35.000Z</published>
-    <updated>2018-01-28T15:28:02.679Z</updated>
+    <updated>2018-01-29T06:23:15.377Z</updated>
     
     <summary type="html">
     
@@ -129,6 +129,26 @@
   </entry>
   
   <entry>
+    <title>贪心</title>
+    <link href="http://www.icharles.top/2017/12/29/%E8%B4%AA%E5%BF%83/"/>
+    <id>http://www.icharles.top/2017/12/29/贪心/</id>
+    <published>2017-12-29T04:18:00.000Z</published>
+    <updated>2018-01-29T04:19:41.812Z</updated>
+    
+    <content type="html"><![CDATA[<p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p><p><strong>分析：</strong></p><p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。<br><a id="more"></a></p><pre><code class="c++">#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstring&gt;#include &lt;cmath&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;vector&gt;using namespace std;int a[1005];int h[1005];int ans;int n;int main(){    while (~scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n) {        for (int i = 1; i &lt;= n; i++)            scanf(&quot;%d&quot;, h + i);        ans = 1;        a[1] = h[1];        int j;        for (int i = 2; i &lt;= n; i++) {            for (j = 1; j &lt;= ans; j++) {                if (h[i] &lt; a[j]) {                    a[j] = h[i];                    break;                }            }            if (j &gt; ans)                a[++ans] = h[i];        }        printf(&quot;%d\n&quot;, ans);    }    return 0;}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目地址：&lt;a href=&quot;https://cn.vjudge.net/problem/HDU-1257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://cn.vjudge.net/problem/HDU-1257&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分析：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>欧几里得算法</title>
     <link href="http://www.icharles.top/2017/12/27/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/"/>
     <id>http://www.icharles.top/2017/12/27/欧几里得算法/</id>
@@ -173,43 +193,17 @@
   </entry>
   
   <entry>
-    <title>Tianxin</title>
-    <link href="http://www.icharles.top/2017/07/13/%E8%B4%AA%E5%BF%83/"/>
-    <id>http://www.icharles.top/2017/07/13/贪心/</id>
-    <published>2017-07-13T12:46:25.000Z</published>
-    <updated>2018-01-28T14:37:51.383Z</updated>
-    
-    <content type="html"><![CDATA[<p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p><p><strong>分析：</strong></p><p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。</p><pre><code class="c++">#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstring&gt;#include &lt;cmath&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;vector&gt;using namespace std;int a[1005];int h[1005];int ans;int n;int main(){    while (~scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n) {        for (int i = 1; i &lt;= n; i++)            scanf(&quot;%d&quot;, h + i);        ans = 1;        a[1] = h[1];        int j;        for (int i = 2; i &lt;= n; i++) {            for (j = 1; j &lt;= ans; j++) {                if (h[i] &lt; a[j]) {                    a[j] = h[i];                    break;                }            }            if (j &gt; ans)                a[++ans] = h[i];        }        printf(&quot;%d\n&quot;, ans);    }    return 0;}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;题目地址：&lt;a href=&quot;https://cn.vjudge.net/problem/HDU-1257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://cn.vjudge.net/problem/HDU-1257&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;s
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>位运算技巧</title>
-    <link href="http://www.icharles.top/2017/01/28/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
-    <id>http://www.icharles.top/2017/01/28/位运算技巧/</id>
-    <published>2017-01-28T14:19:00.000Z</published>
-    <updated>2018-01-28T14:20:53.890Z</updated>
+    <link href="http://www.icharles.top/2017/12/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
+    <id>http://www.icharles.top/2017/12/26/位运算技巧/</id>
+    <published>2017-12-26T10:03:00.000Z</published>
+    <updated>2018-01-29T04:15:13.715Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>一.获得int型最大值</strong><br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return (1&lt;&lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略}</code></pre><a id="more"></a><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return -(1&lt;&lt;-1) - 1;    //2147483647  }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return ~(1&lt;&lt;31);//2147483647  }</code></pre><p>C语言中不知道int占几个字节时候<br>代码代码如下:</p><pre><code class="c">int getMaxInt(){      return ((unsigned int)-1) &gt;&gt; 1;//2147483647  }</code></pre><p><strong>二.获得int型最小值</strong><br>复制代码代码如下:</p><pre><code class="c">int getMinInt() {      return 1&lt;&lt;31;    //-2147483648   }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMinInt(){      return 1 &lt;&lt; -1;//-2147483648  }</code></pre><p><strong>三.获得long类型的最大值</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">long getMaxLong() {      return ((unsigned long)-1) &gt;&gt; 1;    //2147483647  }</code></pre><p>JAVA版<br>代码代码如下:</p><pre><code class="java">long getMaxLong() {      return ((long)1&lt;&lt;127)-1;    //9223372036854775807  }</code></pre><p>获得long最小值，和其他类型的最大值，最小值同理.   </p><p><strong>四.乘以2运算</strong><br>代码代码如下:</p><pre><code class="c">int mulTwo(int n) {    //计算n*2       return n&lt;&lt;1;  }</code></pre><p><strong>五.除以2运算</strong><br>代码代码如下:  </p><pre><code class="c">int divTwo(int n) {    //负奇数的运算不可用      return n&gt;&gt;1;    //除以2  }</code></pre><p><strong>六.乘以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m){    //计算n/(2^m)      return n&lt;&lt;m;  }</code></pre><p><strong>七.除以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m) {    //计算n/(2^m)      return n&gt;&gt;m;  }</code></pre><p><strong>八.判断一个数的奇偶性</strong><br>代码代码如下:</p><pre><code class="c">boolean isOddNumber(int n) {      return (n &amp; 1) == 1;  }</code></pre><p><strong>九.不用临时变量交换两个数</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">void swap(int *a,int *b) {         (*a)^=(*b)^=(*a)^=(*b);   }</code></pre><p>通用版（一些语言中得分开写）<br>代码代码如下:</p><pre><code class="c">a ^= b;  b ^= a;  a ^= b;</code></pre><p><strong>十.取绝对值</strong><br>代码代码如下:</p><pre><code class="c">int abs(int n){      return (n ^ (n &gt;&gt; 31)) - (n &gt;&gt; 31);   }/* n&gt;&gt;31 取得n的符号，若n为正数，n&gt;&gt;31等于0，若n为负数，n&gt;&gt;31等于-1 若n为正数 n^0=0,数不变，若n为负数有n^-1 需要计算n和-1的补码，然后进行异或运算， 结果n变号并且为n的绝对值减1，再减去-1就是绝对值 */</code></pre><p><strong>十一.取两个数的最大值</strong><br>通用版<br>复制代码代码如下:</p><pre><code class="c">int max(int a,int b) {      return b&amp;((a-b)&gt;&gt;31) | a&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1}</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int max(int x,int y) {      return x ^ ((x ^ y) &amp; -(x &lt; y));      /*如果x&lt;y x&lt;y返回1，否则返回0， 与0做与运算结果为0，与-1做与运算结果不变*/  }</code></pre><p><strong>十二.取两个数的最小值</strong><br>通用版<br>代码代码如下:</p><pre><code class="c">int min(int a,int b) {      return a&amp;((a-b)&gt;&gt;31) | b&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1 }</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int min(int x,int y) {      return y ^ ((x ^ y) &amp; -(x &lt; y));          // 如果x&lt;y x&lt;y返回1，否则返回0，         // 与0做与运算结果为0，与-1做与运算结果不变}</code></pre><p><strong>十三.判断符号是否相同</strong><br>代码如下:</p><pre><code class="c">boolean isSameSign(int x, int y) {      return (x ^ y) &gt; 0;     // true 表示 x和y有相同的符号， false表示x，y有相反的符号。  }</code></pre><p><strong>十四.计算2的n次方</strong><br>代码代码如下:</p><pre><code class="c">int getFactorialofTwo(int n) {    //n &gt; 0      return 2&lt;&lt;(n-1);        //2的n次方  }</code></pre><p><strong>十五.判断一个数是不是2的幂</strong><br>代码代码如下:</p><pre><code class="c">boolean isFactorialofTwo(int n) {      return (n &amp; (n - 1)) == 0;      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果为0 }</code></pre><p><strong>十六.对2的n次方取余</strong><br>代码代码如下:</p><pre><code class="c">int quyu(int m,int n) {    //n为2的次方      return m &amp; (n - 1);      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果保留m在n范围的非0的位}</code></pre><p><strong>十七.求两个整数的平均值</strong><br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return (x+y) &gt;&gt; 1;   ｝</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return ((x^y) &gt;&gt; 1) + (x&amp;y);        // (x^y) &gt;&gt; 1得到x，y其中一个为1的位并除以2，      // x&amp;y得到x，y都为1的部分，加一起就是平均数了 }</code></pre><p>下面是三个最基本对二进制位的操作<br><strong>十八.从低位到高位,取n的第m位</strong><br>代码代码如下:</p><pre><code class="c">int getBit(int n, int m) {      return (n &gt;&gt; (m-1)) &amp; 1;  }</code></pre><p><strong>十九.从低位到高位.将n的第m位置1</strong><br>代码代码如下:</p><pre><code class="c">int setBitToOne(int n, int m) {      return n | (1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，得到000...1...000     // n在和这个数做或运算}</code></pre><p><strong>二十.从低位到高位,将n的第m位置0</strong><br>代码代码如下:</p><pre><code class="c">int setBitToZero(int n, int m) {      return n &amp; ~(1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，取反后变成111...0...1111     // n再和这个数做与运算 }</code></pre><p>另附一些对程序效率上没有实质提高的位运算技巧，一些也是位运算的常识（面试也许会遇到）<br>计算n+1<br>代码代码如下:</p><pre><code class="c">-~n</code></pre><p>计算n-1<br>代码代码如下:</p><pre><code class="c">~-n</code></pre><p>取相反数<br>代码代码如下:</p><pre><code class="c">~n + 1;</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">(n ^ -1) + 1;  if(x == a) x = b; if(x == b) x = a;</code></pre><p>代码代码如下:</p><pre><code class="c">x = a ^ b ^ x;</code></pre><p>sign函数，参数为n，当n&gt;0时候返回1，n&lt;0时返回-1，n=0时返回0<br>复制代码代码如下:</p><pre><code class="c">return !!n - (((unsigned)n&gt;&gt;31)&lt;&lt;1);</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><strong>一.获得int型最大值</strong><br>代码代码如下:<br><a id="more"></a></p><pre><code class="c">int getMaxInt() {      return (1&lt;&lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略}</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return -(1&lt;&lt;-1) - 1;    //2147483647  }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMaxInt() {      return ~(1&lt;&lt;31);//2147483647  }</code></pre><p>C语言中不知道int占几个字节时候<br>代码代码如下:</p><pre><code class="c">int getMaxInt(){      return ((unsigned int)-1) &gt;&gt; 1;//2147483647  }</code></pre><p><strong>二.获得int型最小值</strong><br>复制代码代码如下:</p><pre><code class="c">int getMinInt() {      return 1&lt;&lt;31;    //-2147483648   }</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getMinInt(){      return 1 &lt;&lt; -1;//-2147483648  }</code></pre><p><strong>三.获得long类型的最大值</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">long getMaxLong() {      return ((unsigned long)-1) &gt;&gt; 1;    //2147483647  }</code></pre><p>JAVA版<br>代码代码如下:</p><pre><code class="java">long getMaxLong() {      return ((long)1&lt;&lt;127)-1;    //9223372036854775807  }</code></pre><p>获得long最小值，和其他类型的最大值，最小值同理.   </p><p><strong>四.乘以2运算</strong><br>代码代码如下:</p><pre><code class="c">int mulTwo(int n) {    //计算n*2       return n&lt;&lt;1;  }</code></pre><p><strong>五.除以2运算</strong><br>代码代码如下:  </p><pre><code class="c">int divTwo(int n) {    //负奇数的运算不可用      return n&gt;&gt;1;    //除以2  }</code></pre><p><strong>六.乘以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m){    //计算n/(2^m)      return n&lt;&lt;m;  }</code></pre><p><strong>七.除以2的m次方</strong><br>代码代码如下:</p><pre><code class="c">int divTwoPower(int n,int m) {    //计算n/(2^m)      return n&gt;&gt;m;  }</code></pre><p><strong>八.判断一个数的奇偶性</strong><br>代码代码如下:</p><pre><code class="c">boolean isOddNumber(int n) {      return (n &amp; 1) == 1;  }</code></pre><p><strong>九.不用临时变量交换两个数</strong><br>C语言版<br>代码代码如下:</p><pre><code class="c">void swap(int *a,int *b) {         (*a)^=(*b)^=(*a)^=(*b);   }</code></pre><p>通用版（一些语言中得分开写）<br>代码代码如下:</p><pre><code class="c">a ^= b;  b ^= a;  a ^= b;</code></pre><p><strong>十.取绝对值</strong><br>代码代码如下:</p><pre><code class="c">int abs(int n){      return (n ^ (n &gt;&gt; 31)) - (n &gt;&gt; 31);   }/* n&gt;&gt;31 取得n的符号，若n为正数，n&gt;&gt;31等于0，若n为负数，n&gt;&gt;31等于-1 若n为正数 n^0=0,数不变，若n为负数有n^-1 需要计算n和-1的补码，然后进行异或运算， 结果n变号并且为n的绝对值减1，再减去-1就是绝对值 */</code></pre><p><strong>十一.取两个数的最大值</strong><br>通用版<br>复制代码代码如下:</p><pre><code class="c">int max(int a,int b) {      return b&amp;((a-b)&gt;&gt;31) | a&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1}</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int max(int x,int y) {      return x ^ ((x ^ y) &amp; -(x &lt; y));      /*如果x&lt;y x&lt;y返回1，否则返回0， 与0做与运算结果为0，与-1做与运算结果不变*/  }</code></pre><p><strong>十二.取两个数的最小值</strong><br>通用版<br>代码代码如下:</p><pre><code class="c">int min(int a,int b) {      return a&amp;((a-b)&gt;&gt;31) | b&amp;(~(a-b)&gt;&gt;31);      // 如果a&gt;=b,(a-b)&gt;&gt;31为0，否则为-1 }</code></pre><p>C语言版<br>代码代码如下:</p><pre><code class="c">int min(int x,int y) {      return y ^ ((x ^ y) &amp; -(x &lt; y));          // 如果x&lt;y x&lt;y返回1，否则返回0，         // 与0做与运算结果为0，与-1做与运算结果不变}</code></pre><p><strong>十三.判断符号是否相同</strong><br>代码如下:</p><pre><code class="c">boolean isSameSign(int x, int y) {      return (x ^ y) &gt; 0;     // true 表示 x和y有相同的符号， false表示x，y有相反的符号。  }</code></pre><p><strong>十四.计算2的n次方</strong><br>代码代码如下:</p><pre><code class="c">int getFactorialofTwo(int n) {    //n &gt; 0      return 2&lt;&lt;(n-1);        //2的n次方  }</code></pre><p><strong>十五.判断一个数是不是2的幂</strong><br>代码代码如下:</p><pre><code class="c">boolean isFactorialofTwo(int n) {      return (n &amp; (n - 1)) == 0;      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果为0 }</code></pre><p><strong>十六.对2的n次方取余</strong><br>代码代码如下:</p><pre><code class="c">int quyu(int m,int n) {    //n为2的次方      return m &amp; (n - 1);      // 如果是2的幂，n一定是100... n-1就是1111....     // 所以做与运算结果保留m在n范围的非0的位}</code></pre><p><strong>十七.求两个整数的平均值</strong><br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return (x+y) &gt;&gt; 1;   ｝</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">int getAverage(int x, int y) {          return ((x^y) &gt;&gt; 1) + (x&amp;y);        // (x^y) &gt;&gt; 1得到x，y其中一个为1的位并除以2，      // x&amp;y得到x，y都为1的部分，加一起就是平均数了 }</code></pre><p>下面是三个最基本对二进制位的操作<br><strong>十八.从低位到高位,取n的第m位</strong><br>代码代码如下:</p><pre><code class="c">int getBit(int n, int m) {      return (n &gt;&gt; (m-1)) &amp; 1;  }</code></pre><p><strong>十九.从低位到高位.将n的第m位置1</strong><br>代码代码如下:</p><pre><code class="c">int setBitToOne(int n, int m) {      return n | (1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，得到000...1...000     // n在和这个数做或运算}</code></pre><p><strong>二十.从低位到高位,将n的第m位置0</strong><br>代码代码如下:</p><pre><code class="c">int setBitToZero(int n, int m) {      return n &amp; ~(1&lt;&lt;(m-1));      // 将1左移m-1位找到第m位，取反后变成111...0...1111     // n再和这个数做与运算 }</code></pre><p>另附一些对程序效率上没有实质提高的位运算技巧，一些也是位运算的常识（面试也许会遇到）<br>计算n+1<br>代码代码如下:</p><pre><code class="c">-~n</code></pre><p>计算n-1<br>代码代码如下:</p><pre><code class="c">~-n</code></pre><p>取相反数<br>代码代码如下:</p><pre><code class="c">~n + 1;</code></pre><p>另一种写法<br>代码代码如下:</p><pre><code class="c">(n ^ -1) + 1;  if(x == a) x = b; if(x == b) x = a;</code></pre><p>代码代码如下:</p><pre><code class="c">x = a ^ b ^ x;</code></pre><p>sign函数，参数为n，当n&gt;0时候返回1，n&lt;0时返回-1，n=0时返回0<br>复制代码代码如下:</p><pre><code class="c">return !!n - (((unsigned)n&gt;&gt;31)&lt;&lt;1);</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;一.获得int型最大值&lt;/strong&gt;&lt;br&gt;代码代码如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;int getMaxInt() {  
-    return (1&amp;lt;&amp;lt;31) - 1;    //2147483647， 由于优先级关系，括号不可省略
-}
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;&lt;strong&gt;一.获得int型最大值&lt;/strong&gt;&lt;br&gt;代码代码如下:&lt;br&gt;
     
     </summary>
     
