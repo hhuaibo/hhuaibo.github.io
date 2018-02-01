@@ -4,8 +4,23 @@
 
     
   <url>
+    <loc>http://www.icharles.top/2018/01/28/Dijkstra/</loc>
+    <lastmod>2018-02-01T07:51:29.594Z</lastmod>
+    <data>
+        <display>
+        <title>Dijkstra</title>
+        <pubTime>2018-01-28T14:23:11.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.icharles.top/2018/01/28/TOP/</loc>
-    <lastmod>2018-01-29T06:23:15.377Z</lastmod>
+    <lastmod>2018-02-01T06:53:02.056Z</lastmod>
     <data>
         <display>
         <title>TOP</title>
@@ -93,21 +108,6 @@
              
               <breadCrumb title="算法" url="http://www.icharles.top/categories/%E7%AE%97%E6%B3%95/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.icharles.top/2018/01/28/Dijkstra/</loc>
-    <lastmod>2018-01-28T14:53:12.465Z</lastmod>
-    <data>
-        <display>
-        <title>Dijkstra</title>
-        <pubTime>2018-01-28T14:23:11.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
