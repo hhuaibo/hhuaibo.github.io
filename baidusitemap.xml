@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.icharles.top/2018/01/02/Ubuntu/</loc>
-    <lastmod>2018-04-12T15:01:16.578Z</lastmod>
+    <lastmod>2018-04-13T13:24:34.555Z</lastmod>
     <data>
         <display>
         <title>Ubuntu</title>
@@ -19,12 +19,12 @@
 
     
   <url>
-    <loc>http://www.icharles.top/2018/01/28/Dijkstra/</loc>
-    <lastmod>2018-02-01T07:51:29.594Z</lastmod>
+    <loc>http://www.icharles.top/2018/04/13/Top/</loc>
+    <lastmod>2018-04-13T12:36:21.907Z</lastmod>
     <data>
         <display>
-        <title>Dijkstra</title>
-        <pubTime>2018-01-28T14:23:11.000Z</pubTime>
+        <title>Top</title>
+        <pubTime>2018-04-13T12:35:42.000Z</pubTime>
         
          
            
@@ -34,12 +34,32 @@
 
     
   <url>
-    <loc>http://www.icharles.top/2018/01/28/TOP/</loc>
-    <lastmod>2018-02-01T06:53:02.056Z</lastmod>
+    <loc>http://www.icharles.top/2018/04/13/Hexapod/</loc>
+    <lastmod>2018-04-13T12:33:03.173Z</lastmod>
     <data>
         <display>
-        <title>TOP</title>
-        <pubTime>2018-01-28T15:23:35.000Z</pubTime>
+        <title>Hexapod</title>
+        <pubTime>2018-04-13T12:18:02.000Z</pubTime>
+        
+        <tag>Robot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexapod" url="http://www.icharles.top/categories/Hexapod/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.icharles.top/2018/01/28/Dijkstra/</loc>
+    <lastmod>2018-02-01T07:51:29.594Z</lastmod>
+    <data>
+        <display>
+        <title>Dijkstra</title>
+        <pubTime>2018-01-28T14:23:11.000Z</pubTime>
         
          
            
