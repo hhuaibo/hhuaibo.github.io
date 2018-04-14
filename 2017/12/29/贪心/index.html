@@ -65,6 +65,7 @@ var _hmt = _hmt || [];
     
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.6.0/APlayer.min.js"></script>
 </head>
 
 <body>
@@ -265,7 +266,7 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p>
+            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>题目地址：<a href="https://cn.vjudge.net/problem/HDU-1257" target="_blank" rel="noopener">https://cn.vjudge.net/problem/HDU-1257</a></p>
 <p><strong>分析：</strong></p>
 <p>简单的贪心，没必要用dp来做。就是求非连续递减序列的个数。依次往下判断，ans 记录非连续递减序列的个数，a 数组记录各个递减序列的最小值，依次往下判断更新即可。有一点读者可能觉得模糊，如果当前的高度对于前面多个递减序列都适用，那选择哪一个，其实根本不用考虑，随便哪一个，这个仔细想想就有了。<br><a id="more"></a></p>
 <pre><code class="c++">#include &lt;iostream&gt;
@@ -613,6 +614,7 @@ var jiathis_config = {data_track_clickback:'true'};
             
         </div>
         <footer id="footer">
+    <script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
     <div class="outer">
         <div id="footer-info" class="inner">
             &copy; 2017-2018 Charles<br>
