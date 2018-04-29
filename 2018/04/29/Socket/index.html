@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Socket | Charles博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一、Socket定义 即套接字，是一个对 TCP / IP协议进行封装 的编程调用接口（API）   1.即通过Socket，我们才能在Andorid平台上通过 TCP/IP协议进行开发  2.Socket不是一种协议，而是一个编程调用接口（API），属于传输层（主要解决数据如何在网络中传输）  成对出现，一对套接字：  Socket ={(IP地址1:PORT端口号)，(IP地址2:PORT端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Socket">
+<meta property="og:url" content="http://www.icharles.top/2018/04/29/Socket/index.html">
+<meta property="og:site_name" content="Charles博客">
+<meta property="og:description" content="一、Socket定义 即套接字，是一个对 TCP / IP协议进行封装 的编程调用接口（API）   1.即通过Socket，我们才能在Andorid平台上通过 TCP/IP协议进行开发  2.Socket不是一种协议，而是一个编程调用接口（API），属于传输层（主要解决数据如何在网络中传输）  成对出现，一对套接字：  Socket ={(IP地址1:PORT端口号)，(IP地址2:PORT端口">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://icharles.top/2018/04/29/Socket/Image.jpg">
+<meta property="og:updated_time" content="2018-04-29T03:08:49.742Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Socket">
+<meta name="twitter:description" content="一、Socket定义 即套接字，是一个对 TCP / IP协议进行封装 的编程调用接口（API）   1.即通过Socket，我们才能在Andorid平台上通过 TCP/IP协议进行开发  2.Socket不是一种协议，而是一个编程调用接口（API），属于传输层（主要解决数据如何在网络中传输）  成对出现，一对套接字：  Socket ={(IP地址1:PORT端口号)，(IP地址2:PORT端口">
+<meta name="twitter:image" content="http://icharles.top/2018/04/29/Socket/Image.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-111633560-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?c23d075f9a00d1d7d268fa29835eb3c2";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.6.0/APlayer.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Charles博客</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">主页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="http://icharles.top/zuopin">作品</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">主页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="http://icharles.top/zuopin">作品</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">Charles</h2>
+            <h3 id="title">欲戴王冠，必承其重</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Jinan, China</span>
+            <a id="follow" target="_blank" href="https://github.com/hhuaibo/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                12
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                5
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/hhuaibo" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/u/6024032736" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://plus.google.com/" target="_blank" title="google" class=tooltip>
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Socket" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://icharles.top/2018/04/29/Socket/Image.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Socket
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/29/Socket/">
+            <time datetime="2018-04-29T02:42:22.000Z" itemprop="datePublished">2018-04-29</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、Socket定义"><a href="#一、Socket定义" class="headerlink" title="一、Socket定义"></a>一、Socket定义</h1><ul>
+<li>即套接字，是一个对 TCP / IP协议进行封装 的编程调用接口（API）  </li>
+<li>1.即通过Socket，我们才能在Andorid平台上通过 TCP/IP协议进行开发  2.Socket不是一种协议，而是一个编程调用接口（API），属于传输层（主要解决数据如何在网络中传输） </li>
+<li>成对出现，一对套接字：  <code>Socket ={(IP地址1:PORT端口号)，(IP地址2:PORT端口号)}</code> <a id="more"></a>
+</li>
+</ul>
+<h1 id="二、Socket基本通信模型"><a href="#二、Socket基本通信模型" class="headerlink" title="二、Socket基本通信模型"></a>二、Socket基本通信模型</h1><p><code>Socket</code>的使用类型主要有两种：</p>
+<ul>
+<li>流套接字（<code>streamsocket</code>） ：基于 <code>TCP</code>协议，采用 流的方式 提供可靠的字节流服务  </li>
+<li>数据报套接字(<code>datagramsocket</code>)：基于 <code>UDP</code>协议，采用 数据报文 提供数据打包发送的服务  具体原理图如下：              </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/944365-8df0ed7afe6b32d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="socket"></p>
+<h1 id="三、使用基于TCP协议的Socket"><a href="#三、使用基于TCP协议的Socket" class="headerlink" title="三、使用基于TCP协议的Socket"></a>三、使用基于TCP协议的Socket</h1><p>Socket通信主要分为服务端和客服端 一个客户端要发起一次通信，首先必须知道运行服务器端的主机IP地址。然后由网络基础设施利用目标地址，将客服端发送的信息传递到正确的主机上，在Java中，地址可以由一个字符串来定义，这个字符串可以使用数字型的地址(比如192.168.1.1)，也可以是主机名(example.com)。在Java当中InetAddress类代表了一个网络目标地址，包括主机名和数字类型的地址信息。  基于TCP协议操作Socket的API </p>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p><strong>1)、创建ServerSocket的方法</strong><br><code>ServerSocket(int localPort)</code>;<br><code>ServerSocket(int localPort, int queueLimit)</code>;  <code>ServerSocket(int localPort, int queueLimit, InetAddress localAddr);</code><br>创建一个ServerSocket必须指定一个端口，以便客户端能够向端口号发送连接请求。端口的有效范围是0~65535  </p>
+<p><strong>2)、ServerSocket操作</strong>  </p>
+<p><code>Socket accept()</code>——此方法为下一个传入的连接请求创建Socket实例，并将已经成功连接的Socket实例返回给服务器套接字，如果没有连接请求，accept()方法将阻塞等待<br><code>void close()</code>——此方法用于关闭套接字  </p>
+<h3 id="客户端-1-、创建Socket的方法"><a href="#客户端-1-、创建Socket的方法" class="headerlink" title="客户端  1)、创建Socket的方法"></a>客户端  <strong>1)、创建Socket的方法</strong></h3><p><code>Socket(InetAddress remoteAddress, int remotePort)</code>;  利用Socket的构造函数，可以创建一个TCP套接字后，先连接到指定的远程地址和端口号  </p>
+<p><strong>2)、操作Socket的方法</strong><br><code>InputStream getInputStream();  OutputStream getOutputStream();  void close();</code> </p>
+<h1 id="四、使用UDP的Socket"><a href="#四、使用UDP的Socket" class="headerlink" title="四、使用UDP的Socket"></a>四、使用UDP的Socket</h1><p><strong>1)、创建DatagramPacket</strong>  </p>
+<p><code>DatagramSocket(byte[] data, int offset, int length, InetAddress remoteAddr, int remotePort)</code>;  该构造函数创建一个数据报文对象，数据包含在第一个参数中  </p>
+<p><strong>2)、创建DatagramSocket</strong>  </p>
+<p><code>DatagramSocket(int localPort)</code>;  该构造函数将创建一个UDP套接字  </p>
+<p><strong>3)、DatagramSocket：发送和接收</strong>  </p>
+<p><code>void send(DatagramPacket packet)</code>;——此方法用来发送DatagramPacket实例，一旦创建连接，数据报将发送到该套接字所连接的地址  <code>void receive(DatagramPacket packet)</code>;——此方法将阻塞等待，直到接收到数据报文，并将报文中的数据复制到指定的DatagramPacket实例中 </p>
+<h1 id="五、操作总结"><a href="#五、操作总结" class="headerlink" title="五、操作总结"></a>五、操作总结</h1><p><strong>服务器端编程步骤：</strong><br>1、创建服务器端套接字并绑定到一个端口上<br>2、套接字设置监听模式等待连接请求<br>3、接收连接请求后进行通信<br>4、返回，等待另一个连接请求  </p>
+<p><strong>客户端编程步骤：</strong><br>1、创建客户端套接字(指定服务器端的IP地址和端口号)<br>2、连接(Android创建Socket时会自动连接)<br>3、与服务器端进行通信<br>4、关闭套接字  </p>
+<p><strong>Android Socket通信原理，注意地方：</strong><br>1、中间的管道连接是通过InputStream/OutputStream流实现的  2、一旦管理建立起来可以进行通信<br>3、关闭管道的同时意味着关闭Socket<br>4、当对同一个Socket创建重复管道时会异常<br>5、通信过程中顺序很重要：服务器端首先得到输入流，然后将输入流信息输出到其各个 客户端；客户端先建立连接后先写入输出流，然后再获得输入流，不然会有EOFException的异常。 # 六、具体实例  </p>
+<p><strong>步骤1：添加网络权限</strong><br><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</code>  </p>
+<p><strong>AndroidManifest.xml</strong> </p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.robot.charles.hexapod&quot;&gt;
+
+    &lt;!--允许应用程序改变网络状态--&gt;
+    &lt;uses-permission android:name=&quot;android.permission.CHANGE_NETWORK_STATE&quot;/&gt;
+
+    &lt;!--允许应用程序改变WIFI连接状态--&gt;
+    &lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_STATE&quot;/&gt;
+
+    &lt;!--允许应用程序访问有关的网络信息--&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
+
+    &lt;!--允许应用程序访问WIFI网卡的网络信息--&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
+
+    &lt;!--允许应用程序完全使用网络--&gt;
+    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/AppTheme&quot;&gt;
+        &lt;activity android:name=&quot;.MainActivity&quot;
+            android:screenOrientation=&quot;landscape&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<p><strong>步骤2：布局</strong>  </p>
+<p><strong>activity_main.xml</strong> </p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;
+    android:background=&quot;@color/colorBackground&quot;
+    android:orientation=&quot;vertical&quot;&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:id=&quot;@+id/tv_hexapod&quot;
+            style=&quot;@style/Text&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginTop=&quot;8dp&quot;
+            android:layout_marginBottom=&quot;8dp&quot;
+            android:gravity=&quot;center_horizontal&quot;
+            android:text=&quot;Hexapod Controler&quot; /&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginTop=&quot;6dp&quot;&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;&gt;
+            &lt;EditText
+                android:id=&quot;@+id/et_input&quot;
+                android:layout_width=&quot;180dp&quot;
+                android:layout_height=&quot;40dp&quot;
+                android:layout_marginLeft=&quot;18dp&quot;
+                android:gravity=&quot;center_horizontal&quot;
+                android:textColor=&quot;@color/colorBlack&quot;
+                android:hint=&quot;Input IP&quot;
+                android:text=&quot;172.26.34.27:6666&quot;/&gt;
+        &lt;/LinearLayout&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_marginTop=&quot;4dp&quot;&gt;
+            &lt;Button
+                android:id=&quot;@+id/btn_start&quot;
+                android:layout_width=&quot;66dp&quot;
+                android:layout_height=&quot;33dp&quot;
+                android:layout_marginLeft=&quot;80dp&quot;
+                android:background=&quot;@android:color/holo_purple&quot;
+                android:text=&quot;START&quot; /&gt;
+
+            &lt;Button
+                android:id=&quot;@+id/btn_end&quot;
+                android:layout_width=&quot;66dp&quot;
+                android:layout_height=&quot;33dp&quot;
+                android:layout_marginLeft=&quot;20dp&quot;
+                android:background=&quot;@android:color/holo_purple&quot;
+                android:text=&quot;END&quot; /&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;240dp&quot;
+        android:orientation=&quot;horizontal&quot;
+        android:layout_marginTop=&quot;10dp&quot;&gt;
+        &lt;LinearLayout
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_weight=&quot;1&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+
+            &lt;LinearLayout
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;0dp&quot;
+                android:layout_weight=&quot;1&quot;
+                android:gravity=&quot;center_horizontal&quot;&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_up&quot;
+                    style=&quot;@style/BtnStyleLeft&quot;
+                    android:background=&quot;@color/colorBtn&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_gravity=&quot;center_vertical&quot;
+                    android:text=&quot;↑&quot; /&gt;
+            &lt;/LinearLayout&gt;
+
+            &lt;LinearLayout
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;0dp&quot;
+                android:layout_weight=&quot;1&quot;
+                android:gravity=&quot;center_horizontal&quot;&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_left&quot;
+                    style=&quot;@style/BtnStyleLeft&quot;
+                    android:background=&quot;@color/colorBtn&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_gravity=&quot;center_vertical&quot;
+                    android:text=&quot;←&quot; /&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_right&quot;
+                    style=&quot;@style/BtnStyleLeft&quot;
+                    android:background=&quot;@color/colorBtn&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_marginLeft=&quot;90dp&quot;
+                    android:layout_gravity=&quot;center_vertical&quot;
+                    android:text=&quot;→&quot; /&gt;
+            &lt;/LinearLayout&gt;
+            &lt;LinearLayout
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;0dp&quot;
+                android:layout_weight=&quot;1&quot;
+                android:gravity=&quot;center_horizontal&quot;&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_down&quot;
+                    style=&quot;@style/BtnStyleLeft&quot;
+                    android:background=&quot;@color/colorBtn&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_gravity=&quot;center_vertical&quot;
+                    android:text=&quot;↓&quot; /&gt;
+            &lt;/LinearLayout&gt;
+        &lt;/LinearLayout&gt;
+
+        &lt;LinearLayout
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_weight=&quot;1&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+            &lt;LinearLayout
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;0dp&quot;
+                android:layout_weight=&quot;1&quot;
+                android:gravity=&quot;center_horizontal&quot;&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_y&quot;
+                    style=&quot;@style/BtnStyleRight&quot;
+                    android:layout_marginTop=&quot;18dp&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:background=&quot;@android:color/holo_orange_dark&quot;
+                    android:text=&quot;Y&quot; /&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_x&quot;
+                    style=&quot;@style/BtnStyleRight&quot;
+                    android:layout_marginTop=&quot;18dp&quot;
+                    android:layout_marginLeft=&quot;32dp&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:background=&quot;@android:color/holo_blue_dark&quot;
+                    android:text=&quot;X&quot; /&gt;
+            &lt;/LinearLayout&gt;
+
+            &lt;LinearLayout
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;0dp&quot;
+                android:layout_weight=&quot;1&quot;
+                android:gravity=&quot;center_horizontal&quot;&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_b&quot;
+                    style=&quot;@style/BtnStyleRight&quot;
+                    android:layout_marginTop=&quot;4dp&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:background=&quot;@android:color/holo_red_light&quot;
+                    android:text=&quot;B&quot; /&gt;
+                &lt;Button
+                    android:id=&quot;@+id/btn_a&quot;
+                    style=&quot;@style/BtnStyleRight&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_marginLeft=&quot;32dp&quot;
+                    android:layout_marginTop=&quot;4dp&quot;
+                    android:background=&quot;@android:color/holo_green_dark&quot;
+                    android:text=&quot;A&quot; /&gt;
+            &lt;/LinearLayout&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;&gt;
+        &lt;TextView
+            android:id=&quot;@+id/tv_server&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:text=&quot;By Charles&quot;
+            android:textSize=&quot;15dp&quot;
+            android:layout_marginTop=&quot;0dp&quot;
+            android:gravity=&quot;center_horizontal&quot;/&gt;
+    &lt;/LinearLayout&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+<p><strong>style.xml</strong> </p>
+<pre><code class="xml">&lt;resources&gt;
+
+    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+        &lt;!-- #region /设置全屏属性--&gt;
+        &lt;item name=&quot;android:windowFullscreen&quot;&gt;true&lt;/item&gt;
+
+        &lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
+        &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
+        &lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name=&quot;BtnStyleLeft&quot;&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;@color/colorWhite&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;12pt&lt;/item&gt;
+        &lt;item name=&quot;android:height&quot;&gt;65dp&lt;/item&gt;
+        &lt;item name=&quot;android:width&quot;&gt;35dp&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name=&quot;BtnStyleRight&quot;&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;@color/colorBlack&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;12pt&lt;/item&gt;
+        &lt;item name=&quot;android:height&quot;&gt;65dp&lt;/item&gt;
+        &lt;item name=&quot;android:width&quot;&gt;55dp&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name=&quot;BtnStyle&quot;&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;@color/colorBlack&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;18pt&lt;/item&gt;
+        &lt;item name=&quot;android:height&quot;&gt;66dp&lt;/item&gt;
+        &lt;item name=&quot;android:width&quot;&gt;56dp&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name=&quot;SmallBtn&quot;&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;@color/colorBlack&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;18pt&lt;/item&gt;
+        &lt;item name=&quot;android:height&quot;&gt;15dp&lt;/item&gt;
+        &lt;item name=&quot;android:width&quot;&gt;15dp&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name=&quot;Text&quot;&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;9pt&lt;/item&gt;
+        &lt;item name=&quot;android:width&quot;&gt;200dp&lt;/item&gt;
+        &lt;item name=&quot;android:height&quot;&gt;30dp&lt;/item&gt;
+    &lt;/style&gt;
+
+&lt;/resources&gt;
+</code></pre>
+<p><strong>colors.xml</strong> </p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;color name=&quot;colorPrimary&quot;&gt;#3F51B5&lt;/color&gt;
+    &lt;color name=&quot;colorPrimaryDark&quot;&gt;#303F9F&lt;/color&gt;
+    &lt;color name=&quot;colorAccent&quot;&gt;#FF4081&lt;/color&gt;
+    &lt;color name=&quot;colorBtn&quot;&gt;#757575&lt;/color&gt;
+    &lt;color name=&quot;colorBackground1&quot;&gt;#A4A4A4&lt;/color&gt;
+    &lt;color name=&quot;colorBackground&quot;&gt;#D8D8D8&lt;/color&gt;
+    &lt;color name=&quot;colorBlack&quot;&gt;#000000&lt;/color&gt;
+    &lt;color name=&quot;colorWhite&quot;&gt;#FFFFFF&lt;/color&gt;
+&lt;/resources&gt;
+</code></pre>
+<p>步骤3：Java源代码  <strong>MainActivity.java</strong> </p>
+<pre><code class="Java">package com.robot.charles.hexapod;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.os.Message;
+import android.view.View;
+import android.os.Handler;
+import android.widget.Button;
+import android.widget.Toast;
+import android.widget.TextView;
+import java.util.StringTokenizer;
+
+public class MainActivity extends AppCompatActivity {
+
+    //控件变量
+    TextView tvServer;
+    EditText etInput;
+    Button   btnStart;
+    Button   btnEnd;
+    Button   btnUp;
+    Button   btnDown;
+    Button   btnLeft;
+    Button   btnRight;
+    Button   btnX;
+    Button   btnY;
+    Button   btnA;
+    Button   btnB;
+    ClientThread clientThread;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        findView();
+        setListener();
+
+        //隐藏虚拟键
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav
+                        // bar
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+    }
+
+    //初始化控件
+    private void findView() {
+        tvServer  = (TextView) this.findViewById(R. id. tv_server);
+        etInput   = (EditText) this.findViewById(R. id. et_input);
+        btnStart  = (Button) this.findViewById(R. id. btn_start);
+        btnEnd    = (Button) this.findViewById(R. id. btn_end);
+        btnUp     = (Button) this.findViewById(R. id. btn_up);
+        btnDown   = (Button) this.findViewById(R. id. btn_down);
+        btnLeft   = (Button) this.findViewById(R. id. btn_left);
+        btnRight  = (Button) this.findViewById(R. id. btn_right);
+        btnX      = (Button) this.findViewById(R. id. btn_x);
+        btnY      = (Button) this.findViewById(R. id. btn_y);
+        btnA      = (Button) this.findViewById(R. id. btn_a);
+        btnB      = (Button) this.findViewById(R. id. btn_b);
+    }
+
+    //连接server
+    Handler handler = new Handler() //①
+    {
+        public void handleMessage(Message msg)
+        {
+            // 如果消息来自于子线程
+            // 将读取的内容追加显示在文本框中
+            //tvServer.append(msg.obj.toString()+&#39;\n&#39;);
+        }
+    };
+
+    //监听器
+    private void setListener() {
+        btnStart.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+
+                if(etInput.getText().toString().equals(&quot;&quot;))
+                {
+                    Toast.makeText(MainActivity.this,&quot;请先设置IP地址以及端口号 格式为  IP:PORT&quot;,Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    String msg_all=null;
+                    String msg_ip=null;
+                    String msg_port_string=null;
+                    int msg_port_int=0;
+                    try {
+                        msg_all=etInput.getText().toString();
+                        StringTokenizer msg_socket = new StringTokenizer(msg_all,&quot;:&quot;);
+                        msg_ip=msg_socket.nextToken();
+                        msg_port_string=msg_socket.nextToken();
+                        msg_port_int=Integer.parseInt(msg_port_string);
+                        Toast.makeText(MainActivity.this,&quot;IP：&quot;+msg_ip+&quot;  端口：&quot;+msg_port_int,Toast.LENGTH_SHORT).show();
+                    } catch (Exception e1) {}
+                    clientThread = new ClientThread(handler,msg_ip,msg_port_int);
+                    // 客户端启动ClientThread线程创建网络连接、读取来自服务器的数据
+                    new Thread(clientThread).start();
+                }//①
+            }
+        });
+        btnEnd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;exit&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                    Toast.makeText(MainActivity.this,&quot;与机器人连接断开&quot;, Toast.LENGTH_SHORT).show();
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnUp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;up&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnDown.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;down&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnLeft.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;left&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnRight.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;right&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnA.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;A&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;B&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnX.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;X&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnY.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try
+                {
+                    Message msg = new Message();
+                    msg.obj = &quot;Y&quot;;
+                    clientThread.revHandler.sendMessage(msg);
+                    //input_msg.setText(&quot;&quot;);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+}
+</code></pre>
+<p><strong>ClientThread.java</strong> </p>
+<pre><code class="Java">package com.robot.charles.hexapod;
+
+import android.annotation.SuppressLint;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
+
+public class ClientThread implements Runnable
+{
+    private Socket s;
+    // 定义向UI线程发送消息的Handler对象
+    private Handler handler;
+    // 定义接收UI线程的消息的Handler对象
+    public Handler revHandler;
+    // 该线程所处理的Socket所对应的输入流
+    BufferedReader br = null;
+    OutputStream os = null;
+    private String ip = null;
+    private int port = 0;
+
+    public ClientThread(Handler handler,String ip,int port)
+    {
+        this.handler = handler;
+        this.ip=ip;
+        this.port=port;
+    }
+    public void run()
+    {
+        try
+        {
+            s = new Socket(ip,port);
+            br = new BufferedReader(new InputStreamReader(
+                    s.getInputStream()));
+            os = s.getOutputStream();
+            new Thread()
+            {
+                @Override
+                public void run()
+                {
+                    String content = null;
+                    // 不断读取Socket输入流中的内容。
+                    try
+                    {
+                        while ((content = br.readLine()) != null)
+                        {
+                            // 每当读到来自服务器的数据之后，发送消息通知程序界面显示该数据
+                            Message msg = new Message();
+                            msg.obj = content;
+                            handler.sendMessage(msg);
+                            //System.out.println(msg.obj.toString());
+                        }
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
+            // 为当前线程初始化Looper
+            Looper.prepare();
+            // 创建revHandler对象
+            revHandler = new Handler()
+            {
+                @SuppressLint(&quot;HandlerLeak&quot;)
+                @Override
+                public void handleMessage(Message msg)
+                {
+                    // 接收到UI线程中用户输入的数据
+                    // 将用户在文本框内输入的内容写入网络
+                    try
+                    {
+                        System.out.println(&quot;Hello &quot;+msg.obj.toString());
+                        os.write((msg.obj.toString())
+                                .getBytes(&quot;utf-8&quot;));
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            // 启动Looper
+            Looper.loop();
+        }
+        catch (SocketTimeoutException e1)
+        {
+            System.out.println(&quot;网络连接超时！！&quot;);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<h1 id="七、测试-项目源码：https-github-com-hhuaibo-socket-推荐：-https-blog-csdn-net-carson-ho-article-details-53366856-https-blog-csdn-net-thanksgining-article-details-43561053"><a href="#七、测试-项目源码：https-github-com-hhuaibo-socket-推荐：-https-blog-csdn-net-carson-ho-article-details-53366856-https-blog-csdn-net-thanksgining-article-details-43561053" class="headerlink" title="七、测试    项目源码：https://github.com/hhuaibo/socket  推荐：  https://blog.csdn.net/carson_ho/article/details/53366856  https://blog.csdn.net/thanksgining/article/details/43561053"></a>七、测试  <img src="https://img-blog.csdn.net/2018042910240167?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzMzIwOTU1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述">  <strong>项目源码：<a href="https://github.com/hhuaibo/socket" target="_blank" rel="noopener">https://github.com/hhuaibo/socket</a></strong>  <strong>推荐：</strong>  <a href="https://blog.csdn.net/carson_ho/article/details/53366856" target="_blank" rel="noopener">https://blog.csdn.net/carson_ho/article/details/53366856</a>  <a href="https://blog.csdn.net/thanksgining/article/details/43561053" target="_blank" rel="noopener">https://blog.csdn.net/thanksgining/article/details/43561053</a></h1>
+        
+        </div>
+            
+                <div id="donate" style="text-align:center">
+                <!-- 添加捐赠图标 -->
+<div class="post-donate" style="margin-bottom: 30px;margin-top: 10px;">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="donate"></a>
+        <span class="donate_txt">
+           如果您觉得文章不错,可以请我喝一杯咖啡！
+        </span>
+        <br>
+    </div>
+    <div id="donate_guide" class="donate_bar donate_bar2 center hidden">
+        <img src="/css/images/alipay.jpg" id="weixin" title="alipay doante" alt="alipay doante">
+        <img src="/css/images/wechatpay.jpg" title="wechatpay donate" id="zhifubao" alt="echatpay donate">
+    </div>
+    <script type="text/javascript">
+        $('#weixin').hover()
+        document.getElementById('btn_donate').onclick = function () {
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+                </div>
+            
+            <footer class="article-footer">
+                <div class="share-container">
+
+    <!-- 
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_fb"></a>
+	<a class="jiathis_button_twitter"></a>
+	<a class="jiathis_button_googleplus"></a>
+	<a href="http://www.jiathis.com/share?uid=2151517" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2151517" charset="utf-8"></script>
+ -->
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_fb"></a>
+	<a class="jiathis_button_twitter"></a>
+	<a class="jiathis_button_googleplus"></a>
+	<a href="http://www.jiathis.com/share?uid=2151517" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2151517" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+                
+    
+        <a href="http://www.icharles.top/2018/04/29/Socket/#comments" class="article-comment-link">评论</a>
+    
+
+            </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/04/13/Top/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Top</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/29/Socket/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://icharles.top/2018/04/29/Socket/Image.jpg)" alt="Socket" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/29/Socket/" class="title">Socket</a></p>
+                            <p class="item-date"><time datetime="2018-04-29T02:42:22.000Z" itemprop="datePublished">2018-04-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/13/Top/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://icharles.top/2018/04/13/Top/salt-lake.png)" alt="Top" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/13/Top/" class="title">Top</a></p>
+                            <p class="item-date"><time datetime="2018-04-13T12:35:42.000Z" itemprop="datePublished">2018-04-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/13/Hexapod/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://icharles.top/2018/04/13/Hexapod/Image36.jpg)" alt="Hexapod" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Hexapod/">Hexapod</a></p>
+                            <p class="item-title"><a href="/2018/04/13/Hexapod/" class="title">Hexapod</a></p>
+                            <p class="item-date"><time datetime="2018-04-13T12:18:02.000Z" itemprop="datePublished">2018-04-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/28/Dijkstra/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://icharles.top/2018/01/28/Dijkstra/shoes.png)" alt="Dijkstra" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/28/Dijkstra/" class="title">Dijkstra</a></p>
+                            <p class="item-date"><time datetime="2018-01-28T14:23:11.000Z" itemprop="datePublished">2018-01-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/19/KMP/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://icharles.top/2018/01/19/KMP/starry-night.jpg)" alt="KMP" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/算法/">算法</a></p>
+                            <p class="item-title"><a href="/2018/01/19/KMP/" class="title">KMP</a></p>
+                            <p class="item-date"><time datetime="2018-01-19T13:31:00.000Z" itemprop="datePublished">2018-01-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexapod/">Hexapod</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/STL/">STL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/">Game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Robot/">Robot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Robot/" style="font-size: 10px;">Robot</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://my.csdn.net/qq_23320955" target="_blank">CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017-2018 Charles<br>
+            我的世界不允许你的消失，不管结局如何
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151517"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
