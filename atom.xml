@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icharles.top/"/>
-  <updated>2018-06-06T15:11:19.601Z</updated>
+  <updated>2018-06-06T15:20:43.719Z</updated>
   <id>http://www.icharles.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.icharles.top/2018/06/06/kvl-kcl/"/>
     <id>http://www.icharles.top/2018/06/06/kvl-kcl/</id>
     <published>2018-06-06T14:46:00.000Z</published>
-    <updated>2018-06-06T15:11:19.601Z</updated>
+    <updated>2018-06-06T15:20:43.719Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="基尔霍夫定律验证"><a href="#基尔霍夫定律验证" class="headerlink" title="基尔霍夫定律验证"></a>基尔霍夫定律验证</h3><p>!()[1.png]<br>!()[2.png]<br>!()[3.png]<br>!()[4.png]<br>!()[5.png]<br>!()[6.png]<br>!()[7.png]<br>!()[8.png]<br>!()[9.png]<br>!()[10.png]<br>!()[11.png]</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="基尔霍夫定律验证"><a href="#基尔霍夫定律验证" class="headerlink" title="基尔霍夫定律验证"></a>基尔霍夫定律验证</h3><p><img src="1.png" alt=""><br><img src="2.png" alt=""><br><img src="3.png" alt=""><br><img src="4.png" alt=""><br><img src="5.png" alt=""><br><img src="6.png" alt=""><br><img src="7.png" alt=""><br><img src="8.png" alt=""><br><img src="9.png" alt=""><br><img src="10.png" alt=""><br><img src="11.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -52,27 +52,6 @@
 &lt;li&gt;即套接字，是一个对 TCP / IP协议进行封装 的编程调用接口（API）  &lt;/li&gt;
 &lt;li&gt;1.即通过Socket，我们才能在Andorid平台上通过 TCP/IP协议进行开发  2.Socket不是一种协议，而是一个编程调用接口（API），属于传输层（主要解决数据如何在网络中传输） &lt;/li&gt;
 &lt;li&gt;成对出现，一对套接字：  &lt;code&gt;Socket ={(IP地址1:PORT端口号)，(IP地址2:PORT端口号)}&lt;/code&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Top</title>
-    <link href="http://www.icharles.top/2018/04/13/Top/"/>
-    <id>http://www.icharles.top/2018/04/13/Top/</id>
-    <published>2018-04-13T12:35:42.000Z</published>
-    <updated>2018-04-14T15:00:28.338Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="aplayer" data-id="11100236" data-server="netease" data-type="playlist" data-mode="random" data-autoplay="true"></div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
     
     </summary>
     
